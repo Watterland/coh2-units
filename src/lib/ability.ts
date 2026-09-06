@@ -1,5 +1,5 @@
 import type { Ability, DoctrineAbility, Faction } from '../types';
-import { abilities, doctrinesForFaction, unitsLite } from '../data';
+import { abilitiesForUnit, doctrinesForFaction, unitsLite } from '../data';
 
 export interface AbilityDetail {
   name: string;
@@ -16,7 +16,9 @@ export function abilitySlug(name: string): string {
 }
 
 export function abilityBySlug(slug: string): AbilityDetail | undefined {
-  const matchingUnits = abilities.filter((ability) => abilitySlug(ability.name) === slug);
+  const matchingUnits = unitsLite.flatMap((unit) =>
+    abilitiesForUnit(unit.index).filter((ability) => abilitySlug(ability.name) === slug),
+  );
   const allDoctrines = (['British', 'OKW', 'Ostheer', 'Soviet', 'USF'] as Faction[]).flatMap(
     (faction) => doctrinesForFaction(faction),
   );

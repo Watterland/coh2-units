@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { abilityBySlug } from '../lib/ability';
+import { abilityHistory } from '../data/ability-history';
 
 function Cost({ cost }: { cost: { manpower?: number; munitions?: number; fuel?: number } }) {
   const values = [
@@ -14,6 +15,7 @@ export default function AbilityPage() {
   const { slug } = useParams();
   const ability = slug ? abilityBySlug(slug) : undefined;
   if (!ability) return <Navigate to="/" replace />;
+  const history = abilityHistory[ability.name];
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -51,9 +53,18 @@ export default function AbilityPage() {
 
       <section className="rounded-xl border border-white/10 bg-panel p-5">
         <h2 className="font-display text-lg font-semibold text-zinc-100">Историческая справка</h2>
-        <p className="mt-2 text-zinc-300">
-          Игровая способность вдохновлена тактикой, вооружением или подразделениями Второй мировой войны. Проверенная историческая справка для этой записи будет добавлена отдельно.
-        </p>
+        {history ? (
+          <p className="mt-2 text-zinc-300">
+            {history.text}{' '}
+            <a href={history.source} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+              Источник
+            </a>
+          </p>
+        ) : (
+          <p className="mt-2 text-zinc-300">
+            Историческая справка для этой записи ещё проходит проверку по внешним источникам.
+          </p>
+        )}
       </section>
 
       {(ability.units.length > 0 || ability.doctrines.length > 0) && (

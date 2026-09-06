@@ -96,6 +96,7 @@ export interface Ability {
 }
 
 export interface DoctrineAbility {
+  id?: string;
   name: string;
   description: string;
   icon?: string;

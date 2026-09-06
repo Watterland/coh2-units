@@ -57,7 +57,7 @@ for (const [dir, faction] of Object.entries(FACTION_DIRS)) {
         faction,
         name: readable(basename(file.name, '.rgd')),
         description: '',
-        abilities: ids.map((id) => ({ name: readable(id), description: '' })),
+        abilities: ids.map((id) => ({ id, name: readable(id), description: '' })),
       });
     }
   }
