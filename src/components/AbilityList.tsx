@@ -1,4 +1,6 @@
 import type { Ability } from '../types';
+import { Link } from 'react-router-dom';
+import { abilitySlug } from '../lib/ability';
 
 interface Props {
   abilities: Ability[];
@@ -35,9 +37,9 @@ export default function AbilityList({ abilities, color }: Props) {
                     ◈
                   </span>
                 )}
-                <span className="font-medium text-zinc-100" style={{ color }}>
+                <Link to={`/abilities/${abilitySlug(a.name)}`} className="font-medium text-zinc-100 hover:underline" style={{ color }}>
                   {a.name}
-                </span>
+                </Link>
               </div>
               {a.cost && (
                 <span className="text-xs text-zinc-500">

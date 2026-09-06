@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { factionInfo, FACTIONS } from '../lib/factions';
 import { doctrinesForFaction } from '../data';
 import type { Faction } from '../types';
+import { abilitySlug } from '../lib/ability';
 
 export default function Doctrines() {
   const { faction } = useParams();
@@ -51,7 +52,7 @@ export default function Doctrines() {
                             ◆
                           </span>
                         )}
-                        {a.name}
+                        <Link to={`/abilities/${abilitySlug(a.name)}`} className="hover:underline">{a.name}</Link>
                       </span>
                       {a.description && <span className="text-zinc-400"> — {a.description}</span>}
                     </li>
