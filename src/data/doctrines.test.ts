@@ -47,11 +47,11 @@ describe('doctrine catalog', () => {
     }
   });
 
-  it('uses unit portraits for doctrine unit unlocks and call-ins', () => {
+  it('uses the correct unit icons for doctrine call-ins', () => {
     const soviet = doctrinesForFaction('Soviet');
     const advancedWarfare = soviet.find((doctrine) => doctrine.name === 'Advanced Warfare Tactics');
     const t3485 = advancedWarfare?.abilities.find((ability) => ability.name === 'T34 85 Unlock');
-    expect(t3485?.icon).toBe(assetUrl('/game-icons/127.png'));
+    expect(t3485?.icon).toBe(assetUrl(gameAbilityIcons.Icons_commander_cmdr_soviet_t34_85));
 
     const usf = doctrinesForFaction('USF');
     const airborne = usf.find((doctrine) => doctrine.name === 'Airborne Company');
@@ -64,5 +64,12 @@ describe('doctrine catalog', () => {
     const airborne = soviet.find((doctrine) => doctrine.name === 'Airborne Troops Tactics');
     const dshk = airborne?.abilities.find((ability) => ability.name === 'Dshk Machinegun Paradrop');
     expect(dshk?.icon).toBe(assetUrl(gameAbilityIcons.Icons_commander_dshk_paradrop));
+  });
+
+  it('uses commander icons for doctrine vehicle call-ins', () => {
+    const soviet = doctrinesForFaction('Soviet');
+    const advancedWarfare = soviet.find((doctrine) => doctrine.name === 'Advanced Warfare Tactics');
+    const t3485 = advancedWarfare?.abilities.find((ability) => ability.name === 'T34 85 Unlock');
+    expect(t3485?.icon).toBe(assetUrl(gameAbilityIcons.Icons_commander_cmdr_soviet_t34_85));
   });
 });

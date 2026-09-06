@@ -82,3 +82,19 @@ export const doctrineCrewIconIds: Record<string, string> = {
   'Pak 43 Emplacement': 'Icons_commander_cmdr_german_pak_43_at_gun',
   'Mortar 81mm': 'Icons_commander_brit_mortar',
 };
+
+// Vehicle call-ins use their commander command-card icon rather than the
+// larger unit portrait shown on unit cards.
+export const doctrineVehicleIconIds: Record<string, string> = {
+  'T34 85 Unlock': 'Icons_commander_cmdr_soviet_t34_85',
+  'Is-2 Support': 'Icons_commander_cmdr_soviet_is2_unlock',
+  'Isu152 Unlock': 'Icons_commander_cmdr_soviet_isu152_unlock',
+  'Kv-8 Unlock': 'Icons_commander_cmdr_soviet_kv8_unlock',
+  'Tiger Tank': 'Icons_commander_cmdr_german_tiger',
+  'Tiger Tank Ace': 'Icons_commander_cmdr_german_tiger_ace',
+  Jagdtiger: 'Icons_commander_okw_tiger_icon',
+  'Mortar Halftrack': 'Icons_commander_cmdr_german_mortar_halftrack',
+  'Sexton Dispatch': 'Icons_commander_cmdr_british_artillery_support_group_sexton',
+  'Observation Valentine': 'Icons_commander_cmdr_british_observation_detachment_valentine',
+  'Panzer Iv J': 'Icons_abilities_panzer_iv_j_icon',
+};
