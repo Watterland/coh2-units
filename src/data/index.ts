@@ -97,12 +97,18 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
       return {
         ...source,
         name: canonical.name,
-        abilities: source.abilities.map((ability) => ({
-          ...ability,
-          icon: ability.icon ?? findAbilityIcon(ability.name),
-        })),
+        abilities: source.abilities
+          .filter((ability) => !isInternalDoctrineAbility(ability.name))
+          .map((ability) => ({
+            ...ability,
+            icon: ability.icon ?? findAbilityIcon(ability.name),
+          })),
       };
     });
+}
+
+function isInternalDoctrineAbility(name: string): boolean {
+  return /^(Cons Commander Portrait|Aowgamepassdefaultcommanders)/i.test(name);
 }
 
 function findAbilityIcon(name: string): string | undefined {

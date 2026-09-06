@@ -26,4 +26,14 @@ describe('doctrine catalog', () => {
       expect(new Set(names).size).toBe(names.length);
     }
   });
+
+  it('does not expose internal commander portrait records as abilities', () => {
+    for (const faction of factions) {
+      for (const doctrine of doctrinesForFaction(faction)) {
+        expect(doctrine.abilities.map((ability) => ability.name)).not.toContain(
+          expect.stringMatching(/^Cons Commander Portrait|^Aowgamepassdefaultcommanders/i),
+        );
+      }
+    }
+  });
 });
