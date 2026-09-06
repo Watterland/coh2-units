@@ -4,137 +4,137 @@ import type { Ability, Doctrine, Unit } from "../types";
 
 export const unitImages: Record<number, string | null> = {
   0: null,
-  1: "/media/2c39db00a80f9da4.webp",
-  2: "/media/ccd0499e874abf17.webp",
+  1: "https://static.wikia.nocookie.net/companyofheroes/images/e/ef/Veterancy_Captain_0.png/revision/latest?cb=20110621162724&path-prefix=en",
+  2: "https://static.wikia.nocookie.net/companyofheroes/images/4/4a/Veterancy_Lieutenant_0.png/revision/latest?cb=20110619180619&path-prefix=en",
   3: null,
-  4: "/media/2e1f538a9c06a185.webp",
+  4: "https://static.wikia.nocookie.net/companyofheroes/images/4/4a/Veterancy_Airborne_Squad_0.png/revision/latest?cb=20110913111524&path-prefix=en",
   5: null,
   6: null,
   7: null,
-  8: "/media/aa51e235162c82c4.webp",
-  9: "/media/c75d792dbc97e202.webp",
+  8: "https://static.wikia.nocookie.net/companyofheroes/images/5/54/Veterancy_Ranger_Squad_0.png/revision/latest?cb=20110911210316&path-prefix=en",
+  9: "https://static.wikia.nocookie.net/companyofheroes/images/0/05/RearEchelonIcon.png/revision/latest?cb=20190724185448&path-prefix=en",
   10: null,
   11: null,
-  13: "/media/c852d64f74dc3aa5.webp",
-  14: "/media/004e73195cbb43e5.webp",
+  13: "https://static.wikia.nocookie.net/companyofheroes/images/c/cb/VehicleCrewIcon.png/revision/latest?cb=20190724135047&path-prefix=en",
+  14: "https://static.wikia.nocookie.net/companyofheroes/images/f/f7/Veterancy_M1_57mm_Anti_Tank_Gun_0.png/revision/latest?cb=20110904085247&path-prefix=en",
   15: null,
   16: null,
   17: null,
   18: null,
-  19: "/media/3cfebdb6662a56f7.webp",
+  19: "https://static.wikia.nocookie.net/companyofheroes/images/d/d5/Veterancy_M10_Tank_Destroyer_0.png/revision/latest?cb=20110904211352&path-prefix=en",
   20: null,
   21: null,
   22: null,
   23: null,
-  24: "/media/754074eabe489a12.webp",
-  25: "/media/07c5cbbdd0102e29.webp",
+  24: "https://static.wikia.nocookie.net/companyofheroes/images/3/33/Veterancy_Mortar_Halftrack_0.png/revision/latest?cb=20110718214011&path-prefix=en",
+  25: "https://static.wikia.nocookie.net/companyofheroes/images/f/fb/Veterancy_M3_Halftrack_0.png/revision/latest?cb=20110901093128&path-prefix=en",
   26: null,
   27: null,
   28: null,
   29: null,
-  30: "/media/f477e61936fffa69.webp",
-  31: "/media/6813c3e6ff0c4f0b.webp",
-  32: "/media/95c082d30b587455.webp",
+  30: "https://static.wikia.nocookie.net/companyofheroes/images/1/12/Veterancy_Stuart_Light_Tank_0.png/revision/latest?cb=20110711014941&path-prefix=en",
+  31: "https://static.wikia.nocookie.net/companyofheroes/images/8/84/M5Half-TrackEmblem.png/revision/latest?cb=20160505201749&path-prefix=en",
+  32: "https://static.wikia.nocookie.net/companyofheroes/images/9/93/PriestSelf-PropelledArtilleryHDrender.png/revision/latest?cb=20201117232210&path-prefix=en",
   33: null,
   34: null,
-  35: "/media/309821316422f1c0.webp",
+  35: "https://static.wikia.nocookie.net/companyofheroes/images/7/79/Veterancy_Sherman_Calliope_0.png/revision/latest?cb=20110916140548&path-prefix=en",
   36: null,
   37: null,
-  38: "/media/a58506cd258c8a4d.webp",
-  39: "/media/a58506cd258c8a4d.webp",
-  40: "/media/3a6d77081f591fc4.webp",
+  38: "https://static.wikia.nocookie.net/companyofheroes/images/3/34/Veterancy_Commandos_0.png/revision/latest?cb=20110711012639&path-prefix=en",
+  39: "https://static.wikia.nocookie.net/companyofheroes/images/3/34/Veterancy_Commandos_0.png/revision/latest?cb=20110711012639&path-prefix=en",
+  40: "https://static.wikia.nocookie.net/companyofheroes/images/f/fa/Icons_portraits_unit_british_engineer_s_portrait.png/revision/latest?cb=20150919103043&path-prefix=en",
   41: null,
-  42: "/media/d1e6511ce2a7e3af.webp",
-  43: "/media/ea271be894cf9040.webp",
+  42: "https://static.wikia.nocookie.net/companyofheroes/images/d/d1/Icons_portraits_unit_british_sniper_w_portrait.png/revision/latest?cb=20150919110756&path-prefix=en",
+  43: "https://static.wikia.nocookie.net/companyofheroes/images/f/f3/Veterancy_Infantry_Section_0.png/revision/latest?cb=20110711010855&path-prefix=en",
   44: null,
   45: null,
-  46: "/media/dbc9589879f70ec7.webp",
+  46: "https://static.wikia.nocookie.net/companyofheroes/images/e/e7/Icons_portraits_vehicle_british_6_pounder_at_gun_s_portrait.png/revision/latest?cb=20151008124241&path-prefix=en",
   47: null,
   48: null,
   49: null,
   50: null,
   51: null,
-  52: "/media/c86457fe3759e836.webp",
-  53: "/media/b9021203f40e9a21.webp",
-  54: "/media/efbf493d7adca640.webp",
-  55: "/media/e1b73d9da60833fd.webp",
-  56: "/media/78e5a1d89deb48cc.webp",
-  57: "/media/69fe58caefbc4049.webp",
-  58: "/media/07c5cbbdd0102e29.webp",
+  52: "https://static.wikia.nocookie.net/companyofheroes/images/f/f6/BritishForcesCentaurTank.png/revision/latest?cb=20160305101830&path-prefix=en",
+  53: "https://static.wikia.nocookie.net/companyofheroes/images/c/c2/Veterancy_Churchill_AVRE_0.png/revision/latest?cb=20110711020925&path-prefix=en",
+  54: "https://static.wikia.nocookie.net/companyofheroes/images/0/0f/Veterancy_Churchill_Crocodile_0.png/revision/latest?cb=20110711020756&path-prefix=en",
+  55: "https://static.wikia.nocookie.net/companyofheroes/images/d/dc/ChurchillMarkVII.png/revision/latest?cb=20160304154813&path-prefix=en",
+  56: "https://static.wikia.nocookie.net/companyofheroes/images/b/b1/Icons_portraits_vehicle_british_comet_s_portrait.png/revision/latest?cb=20151008122541&path-prefix=en",
+  57: "https://static.wikia.nocookie.net/companyofheroes/images/9/90/Icons_portraits_vehicle_british_cromwell_s_portrait.png/revision/latest?cb=20151008120933&path-prefix=en",
+  58: "https://static.wikia.nocookie.net/companyofheroes/images/f/fb/Veterancy_M3_Halftrack_0.png/revision/latest?cb=20110901093128&path-prefix=en",
   59: null,
-  60: "/media/e90ee82399e8ee8f.webp",
+  60: "https://static.wikia.nocookie.net/companyofheroes/images/3/30/Veterancy_Sherman_Firefly_0.png/revision/latest?cb=20110711015524&path-prefix=en",
   61: null,
   62: null,
   63: null,
   64: null,
-  65: "/media/6e1e7344cc6fc687.webp",
+  65: "https://static.wikia.nocookie.net/companyofheroes/images/7/72/Grenadier_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20160307152542&path-prefix=en",
   66: null,
-  67: "/media/4ae5943166d350d8.webp",
-  68: "/media/2b9c7d48c27639a0.webp",
-  69: "/media/200816f81a03ba00.webp",
+  67: "https://static.wikia.nocookie.net/companyofheroes/images/5/50/Mortar_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20160307184556&path-prefix=en",
+  68: "https://static.wikia.nocookie.net/companyofheroes/images/5/5d/Artillery_Field_Officer_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20160307184530&path-prefix=en",
+  69: "https://static.wikia.nocookie.net/companyofheroes/images/6/6a/Jaeger_Command_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20230704144517&path-prefix=en",
   70: null,
   71: null,
-  72: "/media/451b58fc486e74fd.webp",
-  73: "/media/7ffb86e296cb8838.webp",
+  72: "https://static.wikia.nocookie.net/companyofheroes/images/5/5c/Panzergrenadier_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20160307160613&path-prefix=en",
+  73: "https://static.wikia.nocookie.net/companyofheroes/images/4/4f/Piovet0.png/revision/latest?cb=20121115130116&path-prefix=en",
   74: null,
-  75: "/media/b93f49c1327e9666.webp",
-  76: "/media/61e68aa0206d2770.webp",
-  77: "/media/ba8381ebc480ec2b.webp",
-  78: "/media/6fa8e916b6ea7bf5.webp",
-  79: "/media/33adeb62b7f08590.webp",
-  81: "/media/60f69883d62ce140.webp",
-  82: "/media/754074eabe489a12.webp",
-  83: "/media/d16ddd75dc3c3f91.webp",
+  75: "https://static.wikia.nocookie.net/companyofheroes/images/1/19/Stormtroopers_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20160307184642&path-prefix=en",
+  76: "https://static.wikia.nocookie.net/companyofheroes/images/9/97/Pak_40_7.5cm_Anti-tank_Gun_Icon_COH2_Ostheer.png/revision/latest?cb=20170102012009&path-prefix=en",
+  77: "https://static.wikia.nocookie.net/companyofheroes/images/0/03/Pak_43_Gun_Icon_COH2_Ostheer.png/revision/latest?cb=20170220225333&path-prefix=en",
+  78: "https://static.wikia.nocookie.net/companyofheroes/images/a/ab/Sturmpanzer_IV_Brummbar_Icon_COH2_Ostheer.png/revision/latest?cb=20170101195702&path-prefix=en",
+  79: "https://static.wikia.nocookie.net/companyofheroes/images/5/50/Elefant_Heavy_Tank_Destroyer_COH2_Ostheer.png/revision/latest?cb=20160309174130&path-prefix=en",
+  81: "https://static.wikia.nocookie.net/companyofheroes/images/4/4b/SdKfz_251_Mortar_Icon_COH2_Ostheer.png/revision/latest?cb=20170101202341&path-prefix=en",
+  82: "https://static.wikia.nocookie.net/companyofheroes/images/3/33/Veterancy_Mortar_Halftrack_0.png/revision/latest?cb=20110718214011&path-prefix=en",
+  83: "https://static.wikia.nocookie.net/companyofheroes/images/f/f4/Sdkfz251veterancy0.png/revision/latest?cb=20130203171303&path-prefix=en",
   84: null,
-  85: "/media/73110c9549573680.webp",
-  86: "/media/206ecb0349ba2be6.webp",
-  87: "/media/43fab62fb723d3d7.webp",
-  88: "/media/b13599bcf3bfd22f.webp",
-  89: "/media/a1bb138a59cc113c.webp",
+  85: "https://static.wikia.nocookie.net/companyofheroes/images/7/74/Flakpanzer_IV_Ostwind_COH2_Ostheer.png/revision/latest?cb=20160309005044&path-prefix=en",
+  86: "https://static.wikia.nocookie.net/companyofheroes/images/b/b3/Panther_PzKpfw_V_Medium_Tank_COH2_Ostheer.png/revision/latest?cb=20160309005051&path-prefix=en",
+  87: "https://static.wikia.nocookie.net/companyofheroes/images/b/b9/Panzerwerfer_Rocket_Icon_COH2_Ostheer.png/revision/latest?cb=20170101222419&path-prefix=en",
+  88: "https://static.wikia.nocookie.net/companyofheroes/images/1/14/Panzer_IV_Medium_Command_Tank_COH2_Ostheer.png/revision/latest?cb=20160309005057&path-prefix=en",
+  89: "https://static.wikia.nocookie.net/companyofheroes/images/3/38/PanzerIVnoveterancy.png/revision/latest?cb=20130813163358&path-prefix=en",
   90: null,
-  91: "/media/46902e6ab12f7289.webp",
-  92: "/media/6e21b2e53b344a2d.webp",
-  93: "/media/d8c77d1c709b118c.webp",
-  94: "/media/9087fc2753b2b3a9.webp",
-  95: "/media/15c59b20fa7aa5f8.webp",
+  91: "https://static.wikia.nocookie.net/companyofheroes/images/a/a8/SdKfz_221-222_Scout_Car_Icon_COH2_Ostheer.png/revision/latest?cb=20170102005750&path-prefix=en",
+  92: "https://static.wikia.nocookie.net/companyofheroes/images/a/ae/StugIII_Ausf_E_COH2_Ostheer.png/revision/latest?cb=20160309005118&path-prefix=en",
+  93: "https://static.wikia.nocookie.net/companyofheroes/images/0/0e/StugIII_Ausf_G_COH2_Ostheer.png/revision/latest?cb=20160309005124&path-prefix=en",
+  94: "https://static.wikia.nocookie.net/companyofheroes/images/c/c6/Tiger_Ace_PzKpfw_VI_COH2_Ostheer.png/revision/latest?cb=20160309005133&path-prefix=en",
+  95: "https://static.wikia.nocookie.net/companyofheroes/images/3/33/Tiger_PzKpfw_VI_COH2_Ostheer.png/revision/latest?cb=20160309005141&path-prefix=en",
   96: null,
-  97: "/media/e6aff7b998c5669a.webp",
+  97: "https://static.wikia.nocookie.net/companyofheroes/images/d/df/Conscript_Squad_Icon_COH2_Soviet.png/revision/latest?cb=20230713163442&path-prefix=en",
   98: null,
   99: null,
-  100: "/media/5ef4bc0338d1db1c.webp",
-  101: "/media/11a5641b4f74a4d1.webp",
+  100: "https://static.wikia.nocookie.net/companyofheroes/images/c/cc/120mmMortarTeam.png/revision/latest?cb=20160425183029&path-prefix=en",
+  101: "https://static.wikia.nocookie.net/companyofheroes/images/e/e6/Mortar_Squad_Icon_COH2_Soviet.png/revision/latest?cb=20230713204315&path-prefix=en",
   102: null,
   103: null,
   104: null,
   105: null,
-  106: "/media/b87545d7359703a3.webp",
-  107: "/media/08eff661b0880244.webp",
-  108: "/media/a2be3c3ea64e6f43.webp",
-  109: "/media/f596059cc9d32963.webp",
+  106: "https://static.wikia.nocookie.net/companyofheroes/images/9/96/Guards.jpg/revision/latest?cb=20150919092320&path-prefix=en",
+  107: "https://static.wikia.nocookie.net/companyofheroes/images/9/9e/Penal_Battalion_Icon_COH2_Soviet.png/revision/latest?cb=20230714084310&path-prefix=en",
+  108: "https://static.wikia.nocookie.net/companyofheroes/images/9/90/Shock_troops.jpg/revision/latest?cb=20150919093429&path-prefix=en",
+  109: "https://static.wikia.nocookie.net/companyofheroes/images/c/cd/Is-2.png/revision/latest?cb=20190911053339&path-prefix=en",
   110: null,
-  111: "/media/23ba603a6b15b417.webp",
+  111: "https://static.wikia.nocookie.net/companyofheroes/images/f/f9/BM-13_Icon_COH2_Soviet.png/revision/latest?cb=20230714141822&path-prefix=en",
   112: null,
   113: null,
   114: null,
   115: null,
   116: null,
   117: null,
-  118: "/media/6813c3e6ff0c4f0b.webp",
+  118: "https://static.wikia.nocookie.net/companyofheroes/images/8/84/M5Half-TrackEmblem.png/revision/latest?cb=20160505201749&path-prefix=en",
   119: null,
   120: null,
   121: null,
-  122: "/media/9e8ba543d8af6be9.webp",
-  123: "/media/acc1e29c1021d9ad.webp",
+  122: "https://static.wikia.nocookie.net/companyofheroes/images/b/b1/ZiS-3_76mm_Icon_COH2_Soviet.png/revision/latest?cb=20230714084254&path-prefix=en",
+  123: "https://static.wikia.nocookie.net/companyofheroes/images/d/da/SU-76M_Icon_COH2_Soviet.png/revision/latest?cb=20230714114750&path-prefix=en",
   124: null,
-  125: "/media/a0b3bc6c09167b83.webp",
-  126: "/media/5c60b918fe0934fe.webp",
-  127: "/media/658d2a8c66369d82.webp",
+  125: "https://static.wikia.nocookie.net/companyofheroes/images/5/51/T-70_Icon_COH2_Soviet.png/revision/latest?cb=20230714114723&path-prefix=en",
+  126: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/T3476_company_of_heroes.jpg/revision/latest?cb=20110324215756&path-prefix=en",
+  127: "https://static.wikia.nocookie.net/companyofheroes/images/1/1c/Relic00707-1-.jpg/revision/latest?cb=20110526023406&path-prefix=en",
   128: null,
-  129: "/media/c301bf24dfa067d4.webp",
+  129: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/Okw_fallscrim_portrait.gif/revision/latest?cb=20150919090334&path-prefix=en",
   130: null,
-  131: "/media/71907bd760ccc17f.webp",
+  131: "https://static.wikia.nocookie.net/companyofheroes/images/3/38/Okw_jaegerlightinf_portrait.gif/revision/latest?cb=20150919090309&path-prefix=en",
   132: null,
-  133: "/media/85a6c97ae9d6eb87.webp",
+  133: "https://static.wikia.nocookie.net/companyofheroes/images/e/e8/Okw_pzfusilier_portrait.gif/revision/latest?cb=20150922012406&path-prefix=en",
   134: null,
   135: null,
   136: null,
@@ -149,13 +149,13 @@ export const unitImages: Record<number, string | null> = {
   145: null,
   146: null,
   147: null,
-  148: "/media/154f8dfd3c9503b5.webp",
+  148: "https://static.wikia.nocookie.net/companyofheroes/images/2/2f/Okw_kingtiger_portrait.gif/revision/latest?cb=20150926234401&path-prefix=en",
   149: null,
   150: null,
-  151: "/media/206ecb0349ba2be6.webp",
+  151: "https://static.wikia.nocookie.net/companyofheroes/images/b/b3/Panther_PzKpfw_V_Medium_Tank_COH2_Ostheer.png/revision/latest?cb=20160309005051&path-prefix=en",
   152: null,
-  153: "/media/7fbef4a19a783747.webp",
-  154: "/media/a1bb138a59cc113c.webp",
+  153: "https://static.wikia.nocookie.net/companyofheroes/images/4/42/OKW_Panzer_II_Luch_Portrait.png/revision/latest?cb=20190728200707&path-prefix=en",
+  154: "https://static.wikia.nocookie.net/companyofheroes/images/3/38/PanzerIVnoveterancy.png/revision/latest?cb=20130813163358&path-prefix=en",
   155: null,
   156: null,
   157: null,
@@ -163,13 +163,13 @@ export const unitImages: Record<number, string | null> = {
   159: null,
   160: null,
   161: null,
-  162: "/media/46902e6ab12f7289.webp",
-  163: "/media/15c59b20fa7aa5f8.webp",
+  162: "https://static.wikia.nocookie.net/companyofheroes/images/a/a8/SdKfz_221-222_Scout_Car_Icon_COH2_Ostheer.png/revision/latest?cb=20170102005750&path-prefix=en",
+  163: "https://static.wikia.nocookie.net/companyofheroes/images/3/33/Tiger_PzKpfw_VI_COH2_Ostheer.png/revision/latest?cb=20160309005141&path-prefix=en",
   164: null,
   165: null,
   166: null,
-  167: "/media/6ad8900f15a04296.webp",
-  168: "/media/31abebb82f479073.webp"
+  167: "https://static.wikia.nocookie.net/companyofheroes/images/1/16/Infantry_Section_Squad_Icon_COH_2_-_UKF.png/revision/latest?cb=20190729052357&path-prefix=en",
+  168: "https://static.wikia.nocookie.net/companyofheroes/images/6/61/Luftwaffe_Field_Officer_Squad_Icon_COH2_Ostheer.png/revision/latest?cb=20230629202902&path-prefix=en"
 };
 
 export const unitDetails: Record<number, Partial<Unit>> = {
@@ -1082,217 +1082,217 @@ export const abilities: Ability[] = [
     unitIndex: 1,
     name: "Maintain Command Range",
     description: "The Captain maintains a distance of no more than 30 meters from the target infantry unit, ensuring that unit receives his command bonuses. · Costs nothing · Lasts until another order is given or the target infantry unit is destroyed. · No Cooldown",
-    icon: "/media/c606ade80f069f68.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9c/Ability_Maintain_Command_Range.png/revision/latest?cb=20201121043005&path-prefix=en"
   },
   {
     unitIndex: 1,
     name: "Victor Target",
     description: "All available 25 Pounder Gun Howitzers and Priest Self-Propelled Artillerys will fire 6 shells each at the target area. · Requires at least one 25 Pounder Gun Howitzer or Priest Self-Propelled Artillery · Artillery pieces ignore normal range restrictions. · Can only target visible areas. · Costs nothing · Cooldown: 180 seconds",
-    icon: "/media/f9fc04b242cb9e5c.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2b/Ability_Victor_Target.png/revision/latest?cb=20201123035740&path-prefix=en"
   },
   {
     unitIndex: 1,
     name: "25 Pounder Artillery Barrage",
     description: "An off-map artillery volley strikes the targeted area. · Requires Forward Observation Officer ability from the Royal Artillery Support. · Costs 150 mun to activate · Duration: ~15 seconds · Cooldown: 30 seconds",
-    icon: "/media/5c251f9659af1d00.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c4/Ability_25_Pounder_Artillery_Barrage.png/revision/latest?cb=20201123002144&path-prefix=en"
   },
   {
     unitIndex: 2,
     name: "Maintain Command Range",
     description: "The Lieutenant maintains a distance of no more than 30 meters from the target infantry unit, ensuring that unit receives his command bonuses. · Costs nothing · Lasts until another order is given or the target infantry unit is destroyed. · No Cooldown",
-    icon: "/media/c606ade80f069f68.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9c/Ability_Maintain_Command_Range.png/revision/latest?cb=20201121043005&path-prefix=en"
   },
   {
     unitIndex: 2,
     name: "Heroic Charge",
     description: "All nearby Infantry units receive bonuses to attack and defense, and become immune to Suppression. · Requires at least level 1 Veterancy · Costs nothing · Duration: 15 seconds · Cooldown: 90 seconds",
-    icon: "/media/985c6fbb84d67ab2.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/6f/Ability_Heroic_Charge.png/revision/latest?cb=20201123002115&path-prefix=en"
   },
   {
     unitIndex: 2,
     name: "25 Pounder Artillery Barrage",
     description: "An off-map artillery volley strikes the targeted area. · Requires Forward Observation Officer ability from the Royal Artillery Support. · Costs 150 mun to activate · Duration: ~15 seconds · Cooldown: 30 seconds",
-    icon: "/media/5c251f9659af1d00.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c4/Ability_25_Pounder_Artillery_Barrage.png/revision/latest?cb=20201123002144&path-prefix=en"
   },
   {
     unitIndex: 4,
     name: "Throw Grenade",
     description: "Throws a small explosive charge with a modest but deadly blast radius. · Requires Barracks: Mk2 Grenades · Costs 25 mun · Cooldown: 15 seconds",
-    icon: "/media/24eb4865fd55345a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b8/Ability_Throw_Grenade.png/revision/latest?cb=20201120172548&path-prefix=en"
   },
   {
     unitIndex: 4,
     name: "Fire-Up",
     description: "The squad becomes immune to Suppression and will run at maximum speed regardless of terrain or incoming fire. · Costs nothing · Duration: 15 seconds · Cooldown: 60 seconds",
-    icon: "/media/85f49ca52882c688.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fe/Ability_Fire_Up.png/revision/latest?cb=20201120194858&path-prefix=en"
   },
   {
     unitIndex: 4,
     name: "Throw Satchel Charge",
     description: "Throws a large explosive device with a 5-second fuse that will cause massive damage to anything caught in its blast. · Costs 50 mun · Cooldown: 30 seconds",
-    icon: "/media/cee94dea37221ea5.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/48/Ability_Throw_Satchel_Charge.png/revision/latest?cb=20201120200014&path-prefix=en"
   },
   {
     unitIndex: 4,
     name: "Upgrade to Barracks",
     description: "Turns a neutral building into a Forward Barracks that can reinforce infantry units and (potentially) produce new units. · Requires the Airborne Squad to garrison the target structure. · Requires the target structure to be inside captured and connected territory. · Costs 260 mp · Takes 30 seconds to complete",
-    icon: "/media/577bde4823a63c7f.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/42/Ability_Upgrade_To_Barracks.png/revision/latest?cb=20201120002055&path-prefix=en"
   },
   {
     unitIndex: 8,
     name: "Throw Grenade",
     description: "Throws a small explosive charge with a modest but deadly blast radius. · Requires Barracks: Mk2 Grenades · Costs 25 mun · Cooldown: 15 seconds",
-    icon: "/media/24eb4865fd55345a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b8/Ability_Throw_Grenade.png/revision/latest?cb=20201120172548&path-prefix=en"
   },
   {
     unitIndex: 8,
     name: "Fire-Up",
     description: "The squad becomes immune to Suppression and will run at maximum speed regardless of terrain or incoming fire. · Costs nothing · Duration: 15 seconds · Cooldown: 60 seconds",
-    icon: "/media/85f49ca52882c688.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fe/Ability_Fire_Up.png/revision/latest?cb=20201120194858&path-prefix=en"
   },
   {
     unitIndex: 8,
     name: "Upgrade to Barracks",
     description: "Turns a neutral building into a Forward Barracks that can reinforce infantry units and (potentially) produce new units. · Requires the Ranger Squad to garrison the target structure. · Requires the target structure to be inside captured and connected territory. · Costs 260 mp · Takes 30 seconds to complete",
-    icon: "/media/577bde4823a63c7f.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/42/Ability_Upgrade_To_Barracks.png/revision/latest?cb=20201120002055&path-prefix=en"
   },
   {
     unitIndex: 9,
     name: "[[File:Icons_abilities_repair.png|right]]Repair",
     description: "Restores HP to any Building, Bridge, or Vehicle · Costs nothing · M23 Smoke Screen Grenade · Provides smoke cover after detonation · Requires Grenade Package unlock from Barracks · Costs 15 mun · rightWire Cutters · Used to cut through barbed wire · Requires Hazard Removal Package · Costs nothing · rightVolley Fire · Targeted enemy squad is slowly suppressed over time · Active for 15 seconds. · Costs 20 mun",
-    icon: "/media/08834ce3ec982746.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2b/Icons_abilities_repair.png/revision/latest?cb=20170119221410&path-prefix=en"
   },
   {
     unitIndex: 13,
     name: "[[File:Icons_abilities_repair.png|right]]Repair",
     description: "Restores HP to any Building, Bridge, or Vehicle · Costs nothing · Repair Critical · Requires Veteran 1 · Will quickly repair one critical and a small amount of damage on a Vehicle · Costs: 25 mun",
-    icon: "/media/08834ce3ec982746.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2b/Icons_abilities_repair.png/revision/latest?cb=20170119221410&path-prefix=en"
   },
   {
     unitIndex: 14,
     name: "Armor Piercing Shells",
     description: "Increases cannon Penetration to maximum, and damage by 25% · Costs 50 mun · Duration: 10 seconds · Cooldown: 45 seconds",
-    icon: "/media/fb6bdeb0ef70d130.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Armor_Piercing_Shells.png/revision/latest?cb=20201120185031&path-prefix=en"
   },
   {
     unitIndex: 24,
     name: "81mm Mortar Bombardment",
     description: "Fires 6 shells rapidly at a target location. · Costs nothing · Cooldown: 30 seconds",
-    icon: "/media/5f2befa9fe55df02.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/58/Ability_81mm_Mortar_Bombardment.png/revision/latest?cb=20201120011211&path-prefix=en"
   },
   {
     unitIndex: 24,
     name: "Incendiary Mortar Round",
     description: "Fires a single incendiary shell that does continuous damage within a wide area. · Costs 35 mun · Cooldown: 120 seconds",
-    icon: "/media/57c38b7f070978d1.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b7/Ability_Incendiary_Mortar_Round.png/revision/latest?cb=20201121044841&path-prefix=en"
   },
   {
     unitIndex: 24,
     name: "Disable Free-Fire",
     description: "Prevents the unit from acquiring targets automatically. It will only attack manually-selected targets. · Costs nothing. · Duration: permanent until deactivated. · Cooldown: 3 seconds (activate/deactivate)",
-    icon: "/media/5d4d4b0034ea6df5.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/50/Ability_Disable_Free-Fire.png/revision/latest?cb=20210221162505&path-prefix=en"
   },
   {
     unitIndex: 25,
     name: "Reinforce Squad",
     description: "Can reinforce nearby Infantry units · Costs vary by unit type",
-    icon: "/media/947d2c76aa20aa55.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Reinforce_Squad.png/revision/latest?cb=20201119231439&path-prefix=en"
   },
   {
     unitIndex: 30,
     name: "Fire Canister Round",
     description: "Instantly kills any infantry within the targeted area · Costs 75 mun. · Cooldown: 75 seconds.",
-    icon: "/media/b4b1a30d9a623129.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/60/Ability_Fire_Canister_Round.png/revision/latest?cb=20201123040411&path-prefix=en"
   },
   {
     unitIndex: 30,
     name: "Hull Down Position",
     description: "Covers the tank in sandbags and extra plating, increasing its overall armor and defense. · The unit is immobile while this ability is active. · Requires the Royal Engineers Support: Hull Down Command Upgrade. · Costs nothing. · Cooldown: 9 seconds.",
-    icon: "/media/1f650c3d0fc69878.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Hull_Down_Position.png/revision/latest?cb=20201123040444&path-prefix=en"
   },
   {
     unitIndex: 31,
     name: "Overdrive",
     description: "Increases maneuverability · Decreases chance to be hit · Cooldown: 90 seconds · Duration: 20 seconds · Costs 10 mun",
-    icon: "/media/5bfadca84dc0f988.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/37/M5OverdriveCoH2.png/revision/latest?cb=20160510112330&path-prefix=en"
   },
   {
     unitIndex: 32,
     name: "Priest 105mm Howitzer Barrage",
     description: "Fires 6 shells at a ground target between 35 and 175 meters away. · Costs nothing. · Cooldown: 105 seconds.",
-    icon: "/media/478a9c0671096744.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3e/Ability_25_Pounder_Barrage.png/revision/latest?cb=20201120195258&path-prefix=en"
   },
   {
     unitIndex: 32,
     name: "105mm Range Boost",
     description: "Fires 6 shells at a ground target between 35 and 225 meters away. · Requires Royal Artillery Support: Supercharge Artillery Rounds · Replaces the 105mm Howitzer Barrage ability. · Costs nothing. · Cooldown: 105 seconds.",
-    icon: "/media/774062cd98303c0e.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d7/Ability_25_Pounder_Super_Charge.png/revision/latest?cb=20201123020218&path-prefix=en"
   },
   {
     unitIndex: 32,
     name: "Creeping Barrage",
     description: "Fires a quick succession of about 15 shells along a 70-meter-long stretch of ground. · Requires Royal Artillery Support: Creeping Barrage · Costs 150 mun · Cooldown: 60 seconds.",
-    icon: "/media/c6100ef4c2a778df.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/88/Ability_Creeping_Barrage.png/revision/latest?cb=20201123020231&path-prefix=en"
   },
   {
     unitIndex: 32,
     name: "Overwatch Priest Barrage",
     description: "Fires 3 artillery air-burst shells at any enemy unit moving through the designated area. · Artillery can't do anything else while in this mode. · Requires Royal Artillery Support: Overwatch Artillery · Costs nothing. · Permanent until deactivated. · Cooldown: 22 seconds (on cancel)",
-    icon: "/media/bbb183f7bdcaf0d0.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a1/Ability_Overwatch_Barrage.png/revision/latest?cb=20201123014937&path-prefix=en"
   },
   {
     unitIndex: 32,
     name: "Counter Battery",
     description: "Fires 4 shells at any enemy artillery launcher. · Artillery can't do anything else while in this mode. · Requires Royal Artillery Support: Counter Battery · Costs nothing. · Permanent until deactivated. · Cooldown: 22 seconds (on cancel)",
-    icon: "/media/2755ca6760390c81.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a2/Ability_Counter_Battery.png/revision/latest?cb=20201123014959&path-prefix=en"
   },
   {
     unitIndex: 35,
     name: "Calliope Barrage",
     description: "Fires a salvo of 30 rockets at a target up to 150 meters away. · Costs nothing (*) · Cooldown: 80 seconds",
-    icon: "/media/adffa14f739974d8.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a0/Ability_Calliope_Barrage.png/revision/latest?cb=20201120200320&path-prefix=en"
   },
   {
     unitIndex: 35,
     name: "Fire Smoke Shell",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Requires Tank Depot: Defensive Smoke Screen · Costs 50 mun · Duration: 28 seconds · Cooldown: 45 seconds",
-    icon: "/media/1011351d7bd03d3c.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/ad/Ability_Fire_Smoke_Shell.png/revision/latest?cb=20201120192659&path-prefix=en"
   },
   {
     unitIndex: 38,
     name: "Throw Grenade",
     description: "Throws a single, small, high-explosive grenade. · Costs 25 mun · Cooldown: 30 seconds",
-    icon: "/media/24eb4865fd55345a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b8/Ability_Throw_Grenade.png/revision/latest?cb=20201120172548&path-prefix=en"
   },
   {
     unitIndex: 38,
     name: "Commando Demolition Charges",
     description: "The squad plants a large explosive at the target point. · You can detonate the explosive at any time, as long as it is not in the Fog of War. · Costs 50 mun · No Cooldown",
-    icon: "/media/9c7724f6cbbbc047.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/17/Ability_Commando_Demolition_Charges.png/revision/latest?cb=20201123211440&path-prefix=en"
   },
   {
     unitIndex: 38,
     name: "Concealing Smoke",
     description: "Camouflages the squad in a cloud of smoke, breaking suppression and allowing an organized disengagment. · Costs nothing · Duration: ~15 seconds · Cooldown: 30 seconds · | upgrades =",
-    icon: "/media/ab68572a57bf12f7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/55/Ability_Concealing_Smoke.png/revision/latest?cb=20201123211505&path-prefix=en"
   },
   {
     unitIndex: 39,
     name: "Throw Grenade",
     description: "Throws a single, small, high-explosive grenade. · Costs 25 mun · Cooldown: 30 seconds",
-    icon: "/media/24eb4865fd55345a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b8/Ability_Throw_Grenade.png/revision/latest?cb=20201120172548&path-prefix=en"
   },
   {
     unitIndex: 39,
     name: "Commando Demolition Charges",
     description: "The squad plants a large explosive at the target point. · You can detonate the explosive at any time, as long as it is not in the Fog of War. · Costs 50 mun · No Cooldown",
-    icon: "/media/9c7724f6cbbbc047.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/17/Ability_Commando_Demolition_Charges.png/revision/latest?cb=20201123211440&path-prefix=en"
   },
   {
     unitIndex: 39,
     name: "Concealing Smoke",
     description: "Camouflages the squad in a cloud of smoke, breaking suppression and allowing an organized disengagment. · Costs nothing · Duration: ~15 seconds · Cooldown: 30 seconds · | upgrades =",
-    icon: "/media/ab68572a57bf12f7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/55/Ability_Concealing_Smoke.png/revision/latest?cb=20201123211505&path-prefix=en"
   },
   {
     unitIndex: 42,
@@ -1303,19 +1303,19 @@ export const abilities: Ability[] = [
     unitIndex: 43,
     name: "Deploy Marksman",
     description: "A single shot that will instantly kill a single targeted enemy infantryman. · Requires the Recon Element upgrade · Costs 25 mun to activate · Cooldown: 25 seconds",
-    icon: "/media/452cf20452632bb7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c9/Ability_Deploy_Marksman.png/revision/latest?cb=20201123001015&path-prefix=en"
   },
   {
     unitIndex: 43,
     name: "Button Enemy Vehicle",
     description: "A volley from the Bren LMG forces a target vehicle to remain motionless and unable to fire back. · Requires the Bren Light Machine Gun upgrade · Costs 25 mun to activate · Duration: 20 seconds · Cooldown: 40 seconds",
-    icon: "/media/a7dfc36342412a09.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3a/Ability_Button_Enemy_Vehicle.png/revision/latest?cb=20201123001039&path-prefix=en"
   },
   {
     unitIndex: 43,
     name: "Rifle Smoke Grenade",
     description: "A volley of 2 smoke grenades obscures vision in the targeted area, protecting an advance. · Requires the Rifle Grenades upgrade · Costs 35 mun to activate · Duration: 30 seconds · Cooldown: 40 seconds",
-    icon: "/media/75a6df1c66e44999.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/ab/Ability_Rifle_Smoke_Grenade.png/revision/latest?cb=20201120011236&path-prefix=en"
   },
   {
     unitIndex: 46,
@@ -1336,25 +1336,25 @@ export const abilities: Ability[] = [
     unitIndex: 53,
     name: "Fire Petard Mortar Round",
     description: "Fires the tank's primary weapon, a devastating high-explosive 290mm mortar round. · Costs 35 mun. · Cooldown: 20 seconds.",
-    icon: "/media/5f2befa9fe55df02.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/58/Ability_81mm_Mortar_Bombardment.png/revision/latest?cb=20201120011211&path-prefix=en"
   },
   {
     unitIndex: 53,
     name: "Hull Down Position",
     description: "Covers the tank in sandbags and extra plating, increasing its overall armor and defense. · The unit is immobile while this ability is active. · Requires the Royal Engineers Support: Hull Down Command Upgrade. · Costs nothing. · Cooldown: 9 seconds.",
-    icon: "/media/1f650c3d0fc69878.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Hull_Down_Position.png/revision/latest?cb=20201123040444&path-prefix=en"
   },
   {
     unitIndex: 54,
     name: "Tank Shock",
     description: "Instantly suppresses or pins-down any nearby enemy infantry. · Costs nothing. · Cooldown: 60 seconds.",
-    icon: "/media/e0956d00ba674e1a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/50/Ability_Tank_Shock.png/revision/latest?cb=20201123212844&path-prefix=en"
   },
   {
     unitIndex: 54,
     name: "Hull Down Position",
     description: "Covers the tank in sandbags and extra plating, increasing its overall armor and defense. · The unit is immobile while this ability is active. · Requires the Royal Engineers Support: Hull Down Command Upgrade. · Costs nothing. · Cooldown: 9 seconds.",
-    icon: "/media/1f650c3d0fc69878.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Hull_Down_Position.png/revision/latest?cb=20201123040444&path-prefix=en"
   },
   {
     unitIndex: 55,
@@ -1400,193 +1400,193 @@ export const abilities: Ability[] = [
     unitIndex: 58,
     name: "Reinforce Squad",
     description: "Can reinforce nearby Infantry units · Costs vary by unit type",
-    icon: "/media/947d2c76aa20aa55.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Reinforce_Squad.png/revision/latest?cb=20201119231439&path-prefix=en"
   },
   {
     unitIndex: 60,
     name: "Hull Down Position",
     description: "Covers the tank in sandbags and extra plating, increasing its overall armor and defense. · The unit is immobile while this ability is active. · Requires the Hull down upgrade from the Royal Engineers Support. · Costs nothing. · Cooldown: 9 seconds.",
-    icon: "/media/1f650c3d0fc69878.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Hull_Down_Position.png/revision/latest?cb=20201123040444&path-prefix=en"
   },
   {
     unitIndex: 65,
     name: "Fire Panzerfaust",
     description: "Fire a short-range anti-tank weapon at enemy vehicles. · Costs: 25 mun",
-    icon: "/media/2b7782a5a445d5d7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/70/Icons_ability_german_panzerfaust.png/revision/latest?cb=20170119190140&path-prefix=en"
   },
   {
     unitIndex: 65,
     name: "Rifle Grenade Shot",
     description: "Fire a high-explosive rifle grenade · Requires: Battle Phase 1 · Cost: 30 mun",
-    icon: "/media/4e4c162f9f4258b0.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fd/Icons_ability_german_rifle_grenade_shot.png/revision/latest?cb=20170119190124&path-prefix=en"
   },
   {
     unitIndex: 65,
     name: "Field First Aid",
     description: "Heal target friendly squad. · Requires: Veteran 1 · Cost: 20 mun",
-    icon: "/media/9195630ccba3db9b.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/f4/Icons_ability_german_medkit.png/revision/latest?cb=20170119190201&path-prefix=en"
   },
   {
     unitIndex: 65,
     name: "Model 24 Stun Grenade",
     description: "Stun Grenades do light damage and temporarily shock infantry in an area. · Doctrinal ability · Cost: 20 mun",
-    icon: "/media/f9f55c9af38ca50a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/ad/Icons_ability_german_stun_grenade.png/revision/latest?cb=20170119190053&path-prefix=en"
   },
   {
     unitIndex: 65,
     name: "Sprint",
     description: "Increases movement speed for a short period of time. · Doctrinal ability · Cost: 10 mun",
-    icon: "/media/a242f2850708fda9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Icons_commander_german_sprint_ability.png/revision/latest?cb=20170116233506&path-prefix=en"
   },
   {
     unitIndex: 67,
     name: "Hold Fire",
     description: "Prevents the unit from acquiring targets automatically. It will only attack manually-selected targets. · Cost: Free",
-    icon: "/media/af742c561a4661ed.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Ability_Hold_Fire_Mortar_COH2_Ostheer.gif/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 67,
     name: "Mortar Barrage",
     description: "Rapidly fires 4 mortar shells at targeted area. · Cost: Free",
-    icon: "/media/dcf18021275080bb.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e2/Ability_Mortar_Barrage_COH2.png/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 67,
     name: "Smoke Barrage",
     description: "Rapidly fires 3 smoke shells at targeted area, concealing the entire area in smoke. · Cost: Free",
-    icon: "/media/b5af9f6215f90fc7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/95/Ability_Smoke_Barrage_COH2_Ostheer.png/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 67,
     name: "Counter Barrage",
     description: "Automatically barrage enemy artillery weapons that fire withing range. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/30704ae10d742c12.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2f/Ability_Counter_Barrage_Mortar_COH2_Ostheer.gif/revision/latest?cb=20170130180904&path-prefix=en"
   },
   {
     unitIndex: 67,
     name: "Sprint",
     description: "Increases movement speed for a short period of time. · Doctrinal ability · Cost: 10 mun",
-    icon: "/media/a242f2850708fda9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Icons_commander_german_sprint_ability.png/revision/latest?cb=20170116233506&path-prefix=en"
   },
   {
     unitIndex: 68,
     name: "Artillery Smoke Barrage",
     description: "Fires eight 75mm smoke mortars into the target area, blocking line of sight. · Costs: 30 mun",
-    icon: "/media/b5af9f6215f90fc7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/95/Ability_Smoke_Barrage_COH2_Ostheer.png/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 68,
     name: "Concentrated Fire",
     description: "The officer grants better accuracy to nearby infantry and faster reload to nearby vehicles. · Costs: 25 mun",
-    icon: "/media/76eedd9f6c7490ee.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/be/Ability_Inspiration_COH2_Ostheer.png/revision/latest?cb=20170217210333&path-prefix=en"
   },
   {
     unitIndex: 68,
     name: "Coordinated Barrage",
     description: "All available artillery pieces, mortars and rocket artillery in range will barrage the target location. · Costs: 80 mun",
-    icon: "/media/e2e43429b4342873.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/de/Ability_Barrage_COH2_Ostheer.png/revision/latest?cb=20170217210333&path-prefix=en"
   },
   {
     unitIndex: 69,
     name: "Fire Panzerfaust",
     description: "Fire a short-range anti-tank weapon at enemy vehicles. · Costs: 25 mun",
-    icon: "/media/2b7782a5a445d5d7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/70/Icons_ability_german_panzerfaust.png/revision/latest?cb=20170119190140&path-prefix=en"
   },
   {
     unitIndex: 69,
     name: "Rifle Grenade Shot",
     description: "Fire a high-explosive rifle grenade · Requires: Battle Phase 1 · Cost: 30 mun",
-    icon: "/media/4e4c162f9f4258b0.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fd/Icons_ability_german_rifle_grenade_shot.png/revision/latest?cb=20170119190124&path-prefix=en"
   },
   {
     unitIndex: 69,
     name: "Flare",
     description: "Heal target friendly squad. · Requires: Veteran 1 · Cost: 30 mun",
-    icon: "/media/718567c20ba9a89f.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a1/Icons_commander_german_flare_ability.png/revision/latest?cb=20230705071643&path-prefix=en"
   },
   {
     unitIndex: 69,
     name: "Model 24 Smoke Grenade",
     description: "Squad will throw a Stielhandgranate with a smoke charge to mask the target area. . · Cost: 15 mun",
-    icon: "/media/080be6b568f1608a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2f/Icons_ability_german_smoke_grenade.png/revision/latest?cb=20230707030216&path-prefix=en"
   },
   {
     unitIndex: 69,
     name: "Sprint",
     description: "Increases movement speed for a short period of time. · Cost: 10 mun",
-    icon: "/media/a242f2850708fda9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Icons_commander_german_sprint_ability.png/revision/latest?cb=20170116233506&path-prefix=en"
   },
   {
     unitIndex: 72,
     name: "Bundled Model 24 Grenades",
     description: "Throws a bundle of high-explosive grenades. · Requires: Battle Phase 1 · Cost: 35 mun",
-    icon: "/media/eb22b75e2280f32a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/99/Ability_Bundled_Grenade_COH2_Ostheer.png/revision/latest?cb=20170120234117&path-prefix=en"
   },
   {
     unitIndex: 72,
     name: "Combined Arms",
     description: "Increases speed and reduces received accuracy when near vehicles. · Requires Veteran 1 · Cost: Free · Passive Ability",
-    icon: "/media/35e436a3c833b794.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e4/Combined_Arms_Ability_Icon_COH2.png/revision/latest?cb=20200425135546&path-prefix=en"
   },
   {
     unitIndex: 72,
     name: "Model 24 Stun Grenade",
     description: "Stun Grenades do light damage and temporarily shock infantry in an area. · Requires the Elite Troops Doctrine · Cost: 20 mun · Doctrinal Ability",
-    icon: "/media/f9f55c9af38ca50a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/ad/Icons_ability_german_stun_grenade.png/revision/latest?cb=20170119190053&path-prefix=en"
   },
   {
     unitIndex: 72,
     name: "Sprint",
     description: "Increases movement speed for a short period of time. · Requires the Encirclement Doctrine · Cost: 10 mun · Doctrinal Ability",
-    icon: "/media/a242f2850708fda9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Icons_commander_german_sprint_ability.png/revision/latest?cb=20170116233506&path-prefix=en"
   },
   {
     unitIndex: 72,
     name: "Rudimentary Repair",
     description: "Allows Panzergrenadiers to conduct field repairs on vehicles and structures. · Requires the German Infantry Doctrine: Support Package upgrade · Cost: Free · Doctrinal ability · Mark Target · Panzergrenadiers will mark a hostile infantry unit, making them more susceptible to incoming fire. The Panzergrenadiers will be more vulnerable to incoming fire during the ability's duration. · Requires the German Infantry Doctrine: Support Package upgrade · Cost: 25 mun · Doctrinal Ability · Model 24 Smoke Grenade · Squad will throw a Stielhandgranate with a smoke charge to mask the target area. · Requires the German Infantry Doctrine: Support Package upgrade · Cost: 15 mun · Doctrinal Ability",
-    icon: "/media/e1fee74f66d0c6f1.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/66/RepairIconCoH2.png/revision/latest?cb=20160307093704&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Medical Kit",
     description: "The entire squad will slowly heal. · Can only be used in friendly territory · Costs 30 mun to activate · Duration: 60 seconds · Cooldown: 60 seconds · Requires researching Escalate to Skirmish Phase from the Reich Headquarters · Replaced with Field Medical Kit after Escalate to Battle Phase is researched",
-    icon: "/media/f3d1d25259e8a7f9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/43/Ability_Field_Medical_Kit.png/revision/latest?cb=20201119234809&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Field Medical Kit",
     description: "The entire squad will slowly heal. · Can be used anywhere · Costs 30 mun to activate · Duration: 60 seconds · Cooldown: 60 seconds · Requires researching Escalate to Battle Phase from the Reich Headquarters · Replaces Medical Kit",
-    icon: "/media/f3d1d25259e8a7f9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/43/Ability_Field_Medical_Kit.png/revision/latest?cb=20201119234809&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Salvage Wrecks",
     description: "Salvages Munitions from wrecked vehicles · Costs nothing",
-    icon: "/media/aeece4de4f1aa4c6.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/05/Ability_Salvage_Wrecks.png/revision/latest?cb=20201119234825&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Barbed Wire Cutters",
     description: "Instantly cuts through Barbed Wire · Costs nothing",
-    icon: "/media/956453b28f476ab6.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e7/Ability_Barbed_Wire_Cutters.png/revision/latest?cb=20201119234842&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Repair",
     description: "Repairs a vehicle or building for  per second · Repairing units take 50% more damage · Costs 5 mp per minute",
-    icon: "/media/1156b0cfc7bededd.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fd/Ability_Repair.png/revision/latest?cb=20201119234924&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Battlefield Repair",
     description: "Gained on third level of Veterancy · Replaces normal Repair ability · Repairing Pioneers will now take only 25% more damage rather than normal 50%",
-    icon: "/media/1156b0cfc7bededd.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fd/Ability_Repair.png/revision/latest?cb=20201119234924&path-prefix=en"
   },
   {
     unitIndex: 73,
     name: "Upgrade to Barracks",
     description: "Turns a neutral building into a Forward Barracks that can reinforce infantry units and (potentially) produce new units. · Requires the unit to garrison the target structure. · Requires the target structure to be inside captured and connected territory. · Costs 260 mp · Takes 30 seconds to complete",
-    icon: "/media/577bde4823a63c7f.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/42/Ability_Upgrade_To_Barracks.png/revision/latest?cb=20201120002055&path-prefix=en"
   },
   {
     unitIndex: 73,
@@ -1597,295 +1597,295 @@ export const abilities: Ability[] = [
     unitIndex: 75,
     name: "Bundled Model 24 Grenades",
     description: "Throws a bundle of high-explosive grenades. · Requires: Battle Phase 1 · Cost: 45 mun",
-    icon: "/media/eb22b75e2280f32a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/99/Ability_Bundled_Grenade_COH2_Ostheer.png/revision/latest?cb=20170120234117&path-prefix=en"
   },
   {
     unitIndex: 75,
     name: "Field First Aid",
     description: "Heal target friendly squad. · Requires: Veteran 1 · Cost: 20 mun",
-    icon: "/media/9195630ccba3db9b.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/f4/Icons_ability_german_medkit.png/revision/latest?cb=20170119190201&path-prefix=en"
   },
   {
     unitIndex: 75,
     name: "Hold Fire",
     description: "Prevents the unit from acquiring targets automatically. It will only attack manually-selected targets. · Cost: Free",
-    icon: "/media/bab0b22e6e3009c2.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Ability_Hold_Fire_Sniper_COH2_Ostheer.gif/revision/latest?cb=20170126220847&path-prefix=en"
   },
   {
     unitIndex: 75,
     name: "Camouflage",
     description: "The unit becomes invisible to all enemies. · Cost: Free · Passive ability",
-    icon: "/media/9ec1bd945163c211.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/cc/Icons_commander_cmdr_german_ambush_camouflage.png/revision/latest?cb=20170119185843&path-prefix=en"
   },
   {
     unitIndex: 75,
     name: "Sprint",
     description: "Increases movement speed for a short period of time. · Encirclement Doctrine · Cost: 10 mun",
-    icon: "/media/a242f2850708fda9.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Icons_commander_german_sprint_ability.png/revision/latest?cb=20170116233506&path-prefix=en"
   },
   {
     unitIndex: 75,
     name: "Model 24 Smoke Grenade",
     description: "Squad will throw a Stielhandgranate with a smoke charge to mask the target area. . · Cost: 15 mun",
-    icon: "/media/080be6b568f1608a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2f/Icons_ability_german_smoke_grenade.png/revision/latest?cb=20230707030216&path-prefix=en"
   },
   {
     unitIndex: 75,
     name: "Model 24 Stun Grenade",
     description: "Stun Grenades do light damage and temporarily shock infantry in an area. · Elite Troops Doctrine · Cost: 20 mun",
-    icon: "/media/f9f55c9af38ca50a.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/ad/Icons_ability_german_stun_grenade.png/revision/latest?cb=20170119190053&path-prefix=en"
   },
   {
     unitIndex: 76,
     name: "Target Weak Point",
     description: "Loads and fires a Gr. 39 high-explosive anti-tank round that immediately stuns the enemy vehicle crew. Provides guaranteed penetration. · Requires: Veteran 1 · Cost: 30 mun",
-    icon: "/media/9ecd41adb3f4d05d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/Ability_Target_Weak_Point_COH2_Ostheer.png/revision/latest?cb=20170201144005&path-prefix=en"
   },
   {
     unitIndex: 77,
     name: "Target Weak Point",
     description: "Loads and fires a Gr. 39 high-explosive anti-tank round that immediately stuns the enemy vehicle crew. · Requires: Veteran 1 · Cost: 30 mun",
-    icon: "/media/9ecd41adb3f4d05d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/Ability_Target_Weak_Point_COH2_Ostheer.png/revision/latest?cb=20170201144005&path-prefix=en"
   },
   {
     unitIndex: 77,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 78,
     name: "Bunker Busting Barrage",
     description: "Barrage target area with 150mm High Explosive shells. · Recharge: 90 seconds · Requires: Veteran 1 · Cost: 30 mun",
-    icon: "/media/38b83941a7928271.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fe/Ability_Bunker_Busting_Barrage_COH2_Ostheer.png/revision/latest?cb=20170212211028&path-prefix=en"
   },
   {
     unitIndex: 78,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 78,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 79,
     name: "Target Weak Point",
     description: "Loads and fires a Gr. 39 high-explosive anti-tank round that immediately stuns the enemy vehicle crew. · Requires: Veteran 1 · Cost: 35 mun",
-    icon: "/media/9ecd41adb3f4d05d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/Ability_Target_Weak_Point_COH2_Ostheer.png/revision/latest?cb=20170201144005&path-prefix=en"
   },
   {
     unitIndex: 79,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 79,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 81,
     name: "Hold Fire",
     description: "Prevents the unit from acquiring targets automatically. It will only attack manually-selected targets. · Cost: Free",
-    icon: "/media/af742c561a4661ed.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Ability_Hold_Fire_Mortar_COH2_Ostheer.gif/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 81,
     name: "Mortar Barrage",
     description: "Barrage the targeted area with six 8cm high-explosive mortar rounds. · Cost: Free",
-    icon: "/media/dcf18021275080bb.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e2/Ability_Mortar_Barrage_COH2.png/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 81,
     name: "Smoke Barrage",
     description: "Rapidly fires 3 smoke shells at targeted area, concealing the entire area in smoke. · Cost: Free",
-    icon: "/media/b5af9f6215f90fc7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/95/Ability_Smoke_Barrage_COH2_Ostheer.png/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 81,
     name: "Incendiary Mortar Barrage",
     description: "Fires an incendiary chemical round at the targeted location, burning infantry caught in the area. · Cost: 45 mun",
-    icon: "/media/4449822ce5b8c6f7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/ba/Ability_Incendiary_Barrage_COH2_Ostheer.png/revision/latest?cb=20170219191628&path-prefix=en"
   },
   {
     unitIndex: 81,
     name: "Counter Barrage",
     description: "Automatically barrage enemy artillery weapons that fire withing range. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/30704ae10d742c12.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2f/Ability_Counter_Barrage_Mortar_COH2_Ostheer.gif/revision/latest?cb=20170130180904&path-prefix=en"
   },
   {
     unitIndex: 81,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Spearhead Doctrine · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 82,
     name: "81mm Mortar Bombardment",
     description: "Fires 6 shells rapidly at a target location. · Costs nothing · Cooldown: 30 seconds",
-    icon: "/media/5f2befa9fe55df02.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/58/Ability_81mm_Mortar_Bombardment.png/revision/latest?cb=20201120011211&path-prefix=en"
   },
   {
     unitIndex: 82,
     name: "Incendiary Mortar Round",
     description: "Fires a single incendiary shell that does continuous damage within a wide area. · Costs 35 mun · Cooldown: 120 seconds",
-    icon: "/media/57c38b7f070978d1.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b7/Ability_Incendiary_Mortar_Round.png/revision/latest?cb=20201121044841&path-prefix=en"
   },
   {
     unitIndex: 82,
     name: "Disable Free-Fire",
     description: "Prevents the unit from acquiring targets automatically. It will only attack manually-selected targets. · Costs nothing. · Duration: permanent until deactivated. · Cooldown: 3 seconds (activate/deactivate)",
-    icon: "/media/5d4d4b0034ea6df5.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/50/Ability_Disable_Free-Fire.png/revision/latest?cb=20210221162505&path-prefix=en"
   },
   {
     unitIndex: 83,
     name: "Reinforce Squad",
     description: "Can reinforce nearby Infantry units · Costs vary by unit type · right Fire rockets · Halftrack fires a salvo of six rockets into designated area · Requires upgrade \"Walking Stuka\" · Costs Nothing · Cooldown: 90 seconds",
-    icon: "/media/947d2c76aa20aa55.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/a6/Ability_Reinforce_Squad.png/revision/latest?cb=20201119231439&path-prefix=en"
   },
   {
     unitIndex: 85,
     name: "Blitzkrieg Tactics",
     description: "The tank has increased acceleration and speed, and is harder to hit for a short period of time. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/cbae2f0ed7646408.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/73/Ability_Blitzkrieg_COH2_Ostheer.png/revision/latest?cb=20170201144004&path-prefix=en"
   },
   {
     unitIndex: 85,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 86,
     name: "Blitzkrieg Tactics",
     description: "The tank has increased acceleration and speed, and is harder to hit for a short period of time. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/cbae2f0ed7646408.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/73/Ability_Blitzkrieg_COH2_Ostheer.png/revision/latest?cb=20170201144004&path-prefix=en"
   },
   {
     unitIndex: 86,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 86,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 87,
     name: "15cm Rocket Barrage",
     description: "The Panzerwerfer fires ten high-explosive 15cm rockets in a rapid high-angle barrage. · Cooldown: 100 seconds · Cost: Free",
-    icon: "/media/fae91bc736325738.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/98/Ability_Panzerwerfer_Rocket_Barrage_COH2_Ostheer.png/revision/latest?cb=20170213001353&path-prefix=en"
   },
   {
     unitIndex: 87,
     name: "Low Angle 15cm Rocket Barrage",
     description: "Fire ten high-explosive 15cm rockets at a low angle, reducing the time its takes for the rockets to reach the target. · Requires Veteran 1 · Cooldown: 100 seconds · Cost: 30 mun",
-    icon: "/media/fae91bc736325738.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/98/Ability_Panzerwerfer_Rocket_Barrage_COH2_Ostheer.png/revision/latest?cb=20170213001353&path-prefix=en"
   },
   {
     unitIndex: 87,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 88,
     name: "Fire Smoke Shell",
     description: "Fires a special round that explodes with an obscuring smoke screen. A low cool down allows it to be fired frequently. · Cooldown: 15 seconds · Cost: 20 mun",
-    icon: "/media/3768bc6a60b3c080.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/49/Ability_Smoke_Shell_COH2_Ostheer.png/revision/latest?cb=20230720124533&path-prefix=en"
   },
   {
     unitIndex: 88,
     name: "Mark Target",
     description: "The tank commander marks a hostile target vehicle for destruction, making them more vulnerable to incoming fire. · Cooldown: 60 seconds · Cost: 35 mun · Requires Veterancy 1.",
-    icon: "/media/8a64dea308eff6de.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/4c/Ability_Mark_Target_COH2_Ostheer.png/revision/latest?cb=20230720124617&path-prefix=en"
   },
   {
     unitIndex: 88,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 91,
     name: "Infantry Awareness",
     description: "Heightened awareness from the vehicle crew tracks nearby infantry. · Requires: Veteran 1 · Cost: 10 mun",
-    icon: "/media/6acc40eccec9372b.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/27/Ability_Infantry_Awareness_COH2_Ostheer.png/revision/latest?cb=20170203114641&path-prefix=en"
   },
   {
     unitIndex: 91,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 91,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 92,
     name: "Target Weak Point",
     description: "Loads and fires a Gr. 39 high-explosive anti-tank round that immediately stuns the enemy vehicle crew. · Requires: Veteran 1 · Cost: 35 mun",
-    icon: "/media/9ecd41adb3f4d05d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/Ability_Target_Weak_Point_COH2_Ostheer.png/revision/latest?cb=20170201144005&path-prefix=en"
   },
   {
     unitIndex: 93,
     name: "Target Weak Point",
     description: "Loads and fires a Gr. 39 high-explosive anti-tank round that immediately stuns the enemy vehicle crew. · Requires: Veteran 1 · Cost: 35 mun",
-    icon: "/media/9ecd41adb3f4d05d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/eb/Ability_Target_Weak_Point_COH2_Ostheer.png/revision/latest?cb=20170201144005&path-prefix=en"
   },
   {
     unitIndex: 93,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 93,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 94,
     name: "Blitzkrieg Tactics",
     description: "The tank has increased acceleration and speed, and is harder to hit for a short period of time. · Requires: Veteran 1 · Cost: 30 mun",
-    icon: "/media/cbae2f0ed7646408.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/73/Ability_Blitzkrieg_COH2_Ostheer.png/revision/latest?cb=20170201144004&path-prefix=en"
   },
   {
     unitIndex: 94,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 95,
     name: "Blitzkrieg Tactics",
     description: "The tank has increased acceleration and speed, and is harder to hit for a short period of time. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/cbae2f0ed7646408.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/73/Ability_Blitzkrieg_COH2_Ostheer.png/revision/latest?cb=20170201144004&path-prefix=en"
   },
   {
     unitIndex: 95,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 95,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 97,
@@ -1901,19 +1901,19 @@ export const abilities: Ability[] = [
     unitIndex: 97,
     name: "Oorah!",
     description: "The squad lets out a scream, temporarily increasing their movement speed. · Costs 10 mun.",
-    icon: "/media/1bf8963e331e31c2.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/0e/Oorah%21.png/revision/latest?cb=20160425182547&path-prefix=en"
   },
   {
     unitIndex: 97,
     name: "Hit the Dirt!",
     description: "Conscripts drop to the ground and lie prone. · Disables movement while active. · Costs Nothing. · Available only to certain commanders.",
-    icon: "/media/7dff09f21a1d2021.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/4f/Hitthedirt.png/revision/latest?cb=20151115052154&path-prefix=en"
   },
   {
     unitIndex: 97,
     name: "Merge",
     description: "The squad can replace lost members of any infantry squad or support weapon team, picking up the weapons used by that squad and adopting their stats. · Cannot merge with Scout Sniper · Costs nothing.",
-    icon: "/media/4ff711b1dfb3db38.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9c/Merge.png/revision/latest?cb=20160423143758&path-prefix=en"
   },
   {
     unitIndex: 97,
@@ -2039,7 +2039,7 @@ export const abilities: Ability[] = [
     unitIndex: 115,
     name: "Barrage",
     description: "Fire single powerful shell at the target location. · Cost: Free",
-    icon: "/media/e2e43429b4342873.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/de/Ability_Barrage_COH2_Ostheer.png/revision/latest?cb=20170217210333&path-prefix=en"
   },
   {
     unitIndex: 115,
@@ -2060,7 +2060,7 @@ export const abilities: Ability[] = [
     unitIndex: 118,
     name: "Overdrive",
     description: "Increases maneuverability · Decreases chance to be hit · Cooldown: 90 seconds · Duration: 20 seconds · Costs 10 mun",
-    icon: "/media/5bfadca84dc0f988.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/37/M5OverdriveCoH2.png/revision/latest?cb=20160510112330&path-prefix=en"
   },
   {
     unitIndex: 120,
@@ -2156,55 +2156,55 @@ export const abilities: Ability[] = [
     unitIndex: 151,
     name: "Blitzkrieg Tactics",
     description: "The tank has increased acceleration and speed, and is harder to hit for a short period of time. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/cbae2f0ed7646408.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/73/Ability_Blitzkrieg_COH2_Ostheer.png/revision/latest?cb=20170201144004&path-prefix=en"
   },
   {
     unitIndex: 151,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 151,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 162,
     name: "Infantry Awareness",
     description: "Heightened awareness from the vehicle crew tracks nearby infantry. · Requires: Veteran 1 · Cost: 10 mun",
-    icon: "/media/6acc40eccec9372b.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/27/Ability_Infantry_Awareness_COH2_Ostheer.png/revision/latest?cb=20170203114641&path-prefix=en"
   },
   {
     unitIndex: 162,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 162,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 163,
     name: "Blitzkrieg Tactics",
     description: "The tank has increased acceleration and speed, and is harder to hit for a short period of time. · Requires: Veteran 1 · Cost: Free",
-    icon: "/media/cbae2f0ed7646408.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/73/Ability_Blitzkrieg_COH2_Ostheer.png/revision/latest?cb=20170201144004&path-prefix=en"
   },
   {
     unitIndex: 163,
     name: "Prioritize Vehicles",
     description: "Attacks vehicles freely, but holds fire against infantry and structures unless given an explicit order to fire. · Toggle ability",
-    icon: "/media/21cd1d3b8f39b316.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/91/Ability_Hold_Fire_Tanks_COH2_Ostheer.gif/revision/latest?cb=20170203104057&path-prefix=en"
   },
   {
     unitIndex: 163,
     name: "Panzer Tactician",
     description: "Conceals the tank in smoke, allowing it to avoid damage from enemy units. · Doctrinal ability · Cost: 30 mun",
-    icon: "/media/81880a2392a0772d.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
   },
   {
     unitIndex: 165,
@@ -2235,25 +2235,25 @@ export const abilities: Ability[] = [
     unitIndex: 167,
     name: "Throw No.36 \"Mills Bomb\"",
     description: "Throws a Mills Bomb, damaging infantry. · requires Unlock No.36 \"Mills Bomb upgrade. · Costs 25 mun.",
-    icon: "/media/67b6ccbe36d206b2.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/53/Icons_abilities_ability_british_mills_grenade.png/revision/latest?cb=20151115051205&path-prefix=en"
   },
   {
     unitIndex: 168,
     name: "Artillery Smoke Barrage",
     description: "Fires eight 75mm smoke mortars into the target area, blocking line of sight. · Costs: 30 mun",
-    icon: "/media/b5af9f6215f90fc7.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/95/Ability_Smoke_Barrage_COH2_Ostheer.png/revision/latest?cb=20170130180905&path-prefix=en"
   },
   {
     unitIndex: 168,
     name: "Concentrated Fire",
     description: "The officer grants better accuracy to nearby infantry and faster reload to nearby vehicles. · Costs: 25 mun",
-    icon: "/media/76eedd9f6c7490ee.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/be/Ability_Inspiration_COH2_Ostheer.png/revision/latest?cb=20170217210333&path-prefix=en"
   },
   {
     unitIndex: 168,
     name: "Coordinated Barrage",
     description: "All available artillery pieces, mortars and rocket artillery in range will barrage the target location. · Costs: 80 mun",
-    icon: "/media/e2e43429b4342873.webp"
+    icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/de/Ability_Barrage_COH2_Ostheer.png/revision/latest?cb=20170217210333&path-prefix=en"
   }
 ];
 
@@ -2266,27 +2266,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Command Tank",
         description: "A command tank that improves nearby forces can be deployed to the battlefield.",
-        icon: "/media/c61b5500ce78a16d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/8d/Icons_vehicles_german_panzer_iv_command_tank.png/revision/latest?cb=20170110233819&path-prefix=en"
       },
       {
         name: "Panzer Tactician",
         description: "All armored vehicles use their equipped smoke dischargers to prevent themselves from being seen.",
-        icon: "/media/81880a2392a0772d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
       },
       {
         name: "Tactical Movement",
         description: "All infantry are ordered to move at their fastest available speed for the duration of the ability. Does not affect anti-tank gun squads.",
-        icon: "/media/bfdaea8da9823b81.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/2f/COH_2_Commander_Ability_Icon_-_Tactical_Movement.png/revision/latest?cb=20190730043123&path-prefix=en"
       },
       {
         name: "Reconnaissance Overflight",
         description: "Available aircraft will make a reconnaissance pass on the targeted location to reveal enemy forces.",
-        icon: "/media/69952eaa57d6f93b.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/15/Icons_commander_cmdr_german_air_recon.png/revision/latest?cb=20170110233818&path-prefix=en"
       },
       {
         name: "Stuka Close Air Support",
         description: "A Stuka JU-87 will patrol the designated area, targeting enemy units with heavy 37mm cannons.",
-        icon: "/media/2c4b65280224998f.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/51/Icons_commander_cmdr_german_stuka_close_air_support.png/revision/latest?cb=20170105152001&path-prefix=en"
       }
     ]
   },
@@ -2298,27 +2298,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Defensive Fortifications",
         description: "Allows Pioneers to construct Tank Traps.",
-        icon: "/media/ef214c3f4cfc4325.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c6/Icons_buildings_building_german_tank_traps.png/revision/latest?cb=20170110001030&path-prefix=en"
       },
       {
         name: "Trench",
         description: "Allows German infantry to dig defensive trenches.",
-        icon: "/media/7b6f0f094b491d00.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/74/Icons_building_german_slit_trench.png/revision/latest?cb=20170119185959&path-prefix=en"
       },
       {
         name: "Hull Down",
         description: "Pioneers, Grenadiers and Panzer Grenadiers are able to set German armor in an immobile Hull Down position, increasing defenses and damage.",
-        icon: "/media/d3aeaaedfa943df4.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e5/Icons_ability_german_hull_down_set.png/revision/latest?cb=20170119190218&path-prefix=en"
       },
       {
         name: "Pak 43 Emplacement",
         description: "Pioneers and Sturmpioneers are able to construct powerful Pak 43 88mm anti-tank emplacements.",
-        icon: "/media/d5ea010b100dc008.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/cd/Icons_commander_cmdr_german_pak_43_at_gun.png/revision/latest?cb=20170119221633&path-prefix=en"
       },
       {
         name: "Sector Artillery",
         description: "Enemy units entering a targeted sector are barraged with 10.5cm artillery.",
-        icon: "/media/1321b7a1cc56adc8.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/f6/Icons_bob_abilities_support_sector_artillery.png/revision/latest?cb=20170110001029&path-prefix=en"
       }
     ]
   },
@@ -2330,27 +2330,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Model 24 Stun Grenades",
         description: "Grenadiers, Panzer Grenadiers, and Stormtroopers can throw model 24 stun grenades, which will stun enemy infantry.",
-        icon: "/media/f9f55c9af38ca50a.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/a/ad/Icons_ability_german_stun_grenade.png/revision/latest?cb=20170119190053&path-prefix=en"
       },
       {
         name: "Jaeger Light Infantry Upgrade",
         description: "Grenadiers, Panzer Grenadiers, and Stormtroopers can be upgraded with this package which adds two G43 rifles and includes training in interrogation.",
-        icon: "/media/5c1f13b2c6cb9c6a.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/37/Icons_commander_cmdr_german_jaeger_light_infantry.png/revision/latest?cb=20170119190311&path-prefix=en"
       },
       {
         name: "Stormtroopers",
         description: "Elite infiltration troops who are experts at disrupting enemy supply lines. These units can be deployed from any ambient building.",
-        icon: "/media/44713d7f6b948091.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/09/Icons_unit_german_stormtroopers_from_building.png/revision/latest?cb=20170110224238&path-prefix=en"
       },
       {
         name: "Panzer Tactician",
         description: "All armored vehicles use their equipped smoke dischargers to prevent themselves from being seen.",
-        icon: "/media/30d47a854a7d83be.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3e/Icons_commander_german_panzer_tactician.png/revision/latest?cb=20170110224238&path-prefix=en"
       },
       {
         name: "Tiger Ace",
         description: "High command sends in a legendary Tiger Ace. Only one is available, once deployed fuel and manpower income will be reduced by 90% and 25% respectively until the Tiger Ace is destroyed.",
-        icon: "/media/c085ce76df954bfc.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3a/Icons_vehicles_vehicle_german_tiger_ace.png/revision/latest?cb=20170110224237&path-prefix=en"
       }
     ]
   },
@@ -2362,27 +2362,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Sprint",
         description: "Allows German infantry to use the Sprint ability. Increases movement speed for a short period of time.",
-        icon: "/media/a242f2850708fda9.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/10/Icons_commander_german_sprint_ability.png/revision/latest?cb=20170116233506&path-prefix=en"
       },
       {
         name: "Stormtroopers",
         description: "Elite infiltration troops who are experts at disrupting enemy supply lines. These units can be deployed from any ambient building.",
-        icon: "/media/44713d7f6b948091.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/09/Icons_unit_german_stormtroopers_from_building.png/revision/latest?cb=20170110224238&path-prefix=en"
       },
       {
         name: "Break Supply Line",
         description: "Send in a Stuka bomber to neutralize a targeted point with a precision strike, causing the territory to shift in a neutral state.",
-        icon: "/media/159e5c9afe4cb396.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/fc/Icons_commander_cmdr_german_stuka_supply_break.png/revision/latest?cb=20170110230442&path-prefix=en"
       },
       {
         name: "Breakthrough",
         description: "Slightly improves the speed of all vehicle units and allows them to capture points very rapidly.",
-        icon: "/media/6eaaed64630d850f.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/0b/Icons_commander_cmdr_german_breakthrough.png/revision/latest?cb=20170110230441&path-prefix=en"
       },
       {
         name: "Close the Pocket",
         description: "Artillery zeros in on isolated enemy units to destroy them. Automatically attacks all cut off enemy territories and frontline territories.",
-        icon: "/media/4e3d6604269cc42e.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d8/Icons_commander_cmdr_german_crush_the_pocket.png/revision/latest?cb=20170110230441&path-prefix=en"
       }
     ]
   },
@@ -2394,27 +2394,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Panzer IV Ausf. J",
         description: "The Panzer IV J variant can be built from the HQ once either Support Armor Korps or Heavy Panzer Korps have been deployed.",
-        icon: "/media/c61b5500ce78a16d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/8d/Icons_vehicles_german_panzer_iv_command_tank.png/revision/latest?cb=20170110233819&path-prefix=en"
       },
       {
         name: "Panzer Tactician",
         description: "All armored vehicles use their equipped smoke dischargers to prevent themselves from being seen.",
-        icon: "/media/30d47a854a7d83be.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3e/Icons_commander_german_panzer_tactician.png/revision/latest?cb=20170110224238&path-prefix=en"
       },
       {
         name: "Hull Down",
         description: "Pioneers, Grenadiers and Panzer Grenadiers are able to set German armor in an immobile Hull Down position, increasing defenses and damage.",
-        icon: "/media/d3aeaaedfa943df4.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e5/Icons_ability_german_hull_down_set.png/revision/latest?cb=20170119190218&path-prefix=en"
       },
       {
         name: "Pak 43 Emplacement",
         description: "Pioneers and Sturmpioneers are able to construct powerful Pak 43 88mm anti-tank emplacements.",
-        icon: "/media/d5ea010b100dc008.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/cd/Icons_commander_cmdr_german_pak_43_at_gun.png/revision/latest?cb=20170119221633&path-prefix=en"
       },
       {
         name: "Railway Artillery Support",
         description: "Off-map railway will fire three large caliber shells at the designated target.",
-        icon: "/media/804fc3e3d0c50215.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/0b/Icons_commander_cmdr_german_off_map_dora_support.png/revision/latest?cb=20170110003301&path-prefix=en"
       }
     ]
   },
@@ -2426,27 +2426,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Command Tank",
         description: "A Panzer IV Command Tank that improves nearby forces can be deployed to the battlefield.",
-        icon: "/media/c61b5500ce78a16d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/8d/Icons_vehicles_german_panzer_iv_command_tank.png/revision/latest?cb=20170110233819&path-prefix=en"
       },
       {
         name: "SdKfz 250/7 Mortar Half-track",
         description: "The SdKfz 250/7 Mortar Half-track with its 8cm mortar can provide vital battlefield support for infantry forces.",
-        icon: "/media/7980c074cb756a6e.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/68/COH_2_Commander_Ability_Icon_-_Mortar_Half-track.png/revision/latest?cb=20190802033748&path-prefix=en"
       },
       {
         name: "Forward Supply Station",
         description: "Allows ambient buildings to be converted into a Forward Supply Station. This depot will allow infantry to reinforce and automatically repair nearby vehicles. Vehicles will also fire faster when near this structure. Repair bunkers are also available.",
-        icon: "/media/d5279271dfc35cc7.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e3/COH_2_Commander_Ability_Icon_-_Forward_Supply_Station.png/revision/latest?cb=20230629222808&path-prefix=en"
       },
       {
         name: "Relief Infantry",
         description: "Command releases reserve infantry to replace losses suffered during combat. Forces will be replaced with Osttruppen infantry.",
-        icon: "/media/790a14f0ace34688.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d9/Icons_commander_cmdr_german_relief_infantry.png/revision/latest?cb=20170105152000&path-prefix=en"
       },
       {
         name: "Sector Artillery",
         description: "Enemy units entering the targeted sector are barraged with 10.5cm artillery.",
-        icon: "/media/1321b7a1cc56adc8.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/f6/Icons_bob_abilities_support_sector_artillery.png/revision/latest?cb=20170110001029&path-prefix=en"
       }
     ]
   },
@@ -2458,27 +2458,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Panzer Tactician",
         description: "All armored vehicles use their equipped smoke dischargers to prevent themselves from being seen.",
-        icon: "/media/30d47a854a7d83be.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3e/Icons_commander_german_panzer_tactician.png/revision/latest?cb=20170110224238&path-prefix=en"
       },
       {
         name: "Stuka Reconnaissance Overflight",
         description: "Available aircraft will make a reconnaissance loiter on the targeted location to reveal enemy forces.",
-        icon: "/media/69952eaa57d6f93b.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/15/Icons_commander_cmdr_german_air_recon.png/revision/latest?cb=20170110233818&path-prefix=en"
       },
       {
         name: "Hull Down",
         description: "Pioneers, Grenadiers and Panzer Grenadiers are able to set German armor in an immobile Hull Down position, increasing defenses and damage.",
-        icon: "/media/d3aeaaedfa943df4.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e5/Icons_ability_german_hull_down_set.png/revision/latest?cb=20170119190218&path-prefix=en"
       },
       {
         name: "Command Tank",
         description: "A Panzer IV Command Tank that improves nearby forces can be deployed to the battlefield.",
-        icon: "/media/c61b5500ce78a16d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/8d/Icons_vehicles_german_panzer_iv_command_tank.png/revision/latest?cb=20170110233819&path-prefix=en"
       },
       {
         name: "Elefant Tank Destroyer",
         description: "Allows the requisition of the Elefant Tank Destroyer to the battlefield.",
-        icon: "/media/df94a8a50a2554fd.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b1/Icons_vehicle_german_elefant_tank_destroyer.png/revision/latest?cb=20170110233819&path-prefix=en"
       }
     ]
   },
@@ -2490,27 +2490,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Sd.Kfz. 250/1 Half-track",
         description: "The Sd.Kfz. 250/1 can be deployed from the Kampfgruppe Headquarters to\nprovide infantry support.",
-        icon: "/media/7980c074cb756a6e.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/68/COH_2_Commander_Ability_Icon_-_Mortar_Half-track.png/revision/latest?cb=20190802033748&path-prefix=en"
       },
       {
         name: "Stormtroopers",
         description: "Elite infiltration troops who are experts at disrupting enemy supply lines. These units can be deployed from any ambient building.",
-        icon: "/media/44713d7f6b948091.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/09/Icons_unit_german_stormtroopers_from_building.png/revision/latest?cb=20170110224238&path-prefix=en"
       },
       {
         name: "Veteran Squad Leaders",
         description: "Infantry squads can be upgraded with veteran squad leaders and training to improve combat effectiveness.",
-        icon: "/media/3846b9c6e2edc0db.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/f/f2/COH_2_Commander_Ability_Icon_-_Veteran_Squad_Leader.png/revision/latest?cb=20230628221332&path-prefix=en"
       },
       {
         name: "Assault and Hold",
         description: "Infantry squads are told to take and hold ground, increasing their combat abilities and the speed at which they can seize territory.",
-        icon: "/media/ca4a19ae41530e7f.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/1e/COH_2_Commander_Ability_Icon_-_Assault_Hold.png/revision/latest?cb=20230628221359&path-prefix=en"
       },
       {
         name: "Stuka Fragmentation Bombing",
         description: "High-explosive fragmentation bombs are dropped on the target location.",
-        icon: "/media/c32637bba2ccb564.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/dc/COH_2_Commander_Ability_Icon_-_Fragmentation_Bombing.png/revision/latest?cb=20230628221417&path-prefix=en"
       }
     ]
   },
@@ -2522,27 +2522,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Command Tank",
         description: "A command tank that improves nearby forces can be deployed to the battlefield.",
-        icon: "/media/c61b5500ce78a16d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/8d/Icons_vehicles_german_panzer_iv_command_tank.png/revision/latest?cb=20170110233819&path-prefix=en"
       },
       {
         name: "Sd.Kfz. 250/1 Half-track",
         description: "The Sd.Kfz. 250/1 can be deployed from the Kampfgruppe Headquarters to provide infantry support.",
-        icon: "/media/7980c074cb756a6e.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/68/COH_2_Commander_Ability_Icon_-_Mortar_Half-track.png/revision/latest?cb=20190802033748&path-prefix=en"
       },
       {
         name: "Vehicle Critical Repair",
         description: "All vehicles crews can do emergency repairs to restore health and remove critical damage.",
-        icon: "/media/452d6cfee35cd1cf.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e4/COH_2_Commander_Ability_Icon_-_Critical_Repair.png/revision/latest?cb=20230628234215&path-prefix=en"
       },
       {
         name: "Spotting Scope",
         description: "Vehicles can be equipped with spotting scopes that allow them to see farther when stationary.",
-        icon: "/media/8b87e567e0541d78.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9e/Upgrade_Spotting_Scopes_COH2_Ostheer.png/revision/latest?cb=20170201144006&path-prefix=en"
       },
       {
         name: "leFH 18 Artillery",
         description: "This light 10.5cm Field Howitzer doesn't have the destructive power of some Soviet artillery but it counters with a good rate of fire and reasonably long range.",
-        icon: "/media/8167884531bb87ed.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9a/Icons_vehicle_german_howitzer.png/revision/latest?cb=20170119221600&path-prefix=en"
       }
     ]
   },
@@ -2554,27 +2554,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Mobile Observation Posts",
         description: "Sdkfz. 251 Half-tracks are capable of camouflaging themselves and acting as an observation post to scout for hostile units.",
-        icon: "/media/6962c31ea4b79d68.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/7b/COH_2_Commander_Ability_Icon_-_Mobile_Observation_Post.png/revision/latest?cb=20190730064256&path-prefix=en"
       },
       {
         name: "Breakthrough Equipment",
         description: "Pioneers can be upgraded with special packages to clear obstacles, while Panzergrenadiers are granted Model 24 Smoke Grenades.",
-        icon: "/media/bab2117b68565ace.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/87/COH_2_Commander_Ability_Icon_-_Breakthrough_Equipment.png/revision/latest?cb=20190730052821&path-prefix=en"
       },
       {
         name: "Reconnaissance Overflight",
         description: "Available aircraft will make a reconnaissance pass on the targeted location to reveal enemy forces.",
-        icon: "/media/69952eaa57d6f93b.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/15/Icons_commander_cmdr_german_air_recon.png/revision/latest?cb=20170110233818&path-prefix=en"
       },
       {
         name: "Spotting Scope",
         description: "Vehicles can be equipped with spotting scopes that allow them to see farther when stationary.",
-        icon: "/media/8b87e567e0541d78.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9e/Upgrade_Spotting_Scopes_COH2_Ostheer.png/revision/latest?cb=20170201144006&path-prefix=en"
       },
       {
         name: "Elefant Tank Destroyer",
         description: "Allows the requisition of the Elefant Tank Destroyer to the battlefield.",
-        icon: "/media/df94a8a50a2554fd.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b1/Icons_vehicle_german_elefant_tank_destroyer.png/revision/latest?cb=20170110233819&path-prefix=en"
       }
     ]
   },
@@ -2586,27 +2586,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Jaeger Command Squad",
         description: "A veteran Jaeger unit is dispatched to provide support. This is a powerful combat unit that can provide support to other units in the field.",
-        icon: "/media/74138b0a4c0222df.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d3/COH_2_Commander_Ability_Icon_-_Jaeger_Command_Squad.png/revision/latest?cb=20230629224820&path-prefix=en"
       },
       {
         name: "Jaeger Light Infantry Upgrade",
         description: "Grenadiers, Panzer Grenadiers, and Stormtroopers can be upgraded with this package which adds two G43 rifles and includes training in interrogation.",
-        icon: "/media/5c1f13b2c6cb9c6a.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/37/Icons_commander_cmdr_german_jaeger_light_infantry.png/revision/latest?cb=20170119190311&path-prefix=en"
       },
       {
         name: "Ambush Camouflage",
         description: "Grenadiers, Panzer Grenadiers, and HMGs can be upgraded with better camouflage, concealing them in cover or deep snow. Attacking enemy units while in camouflage will briefly increase their damage.",
-        icon: "/media/9ec1bd945163c211.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/cc/Icons_commander_cmdr_german_ambush_camouflage.png/revision/latest?cb=20170119185843&path-prefix=en"
       },
       {
         name: "Light Artillery Barrage",
         description: "A light artillery barrage from nearby 7.5cm le.IG 18 infantry support guns can scatter enemy forces.",
-        icon: "/media/b166d8e42d781ee7.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c6/Icons_commander_german_light_artillery_support.png/revision/latest?cb=20170110233820&path-prefix=en"
       },
       {
         name: "Stuka Close Air Support",
         description: "Two Stuka JU-87 will patrol the designated area, targetting enemy vehicles with heavy 37mm cannons.",
-        icon: "/media/2c4b65280224998f.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/51/Icons_commander_cmdr_german_stuka_close_air_support.png/revision/latest?cb=20170105152001&path-prefix=en"
       }
     ]
   },
@@ -2618,27 +2618,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Jaeger Light Infantry Upgrade",
         description: "Grenadiers, Panzer Grenadiers, and Stormtroopers can be upgraded with this package which adds two G43 rifles and includes training in interrogation.",
-        icon: "/media/5c1f13b2c6cb9c6a.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/37/Icons_commander_cmdr_german_jaeger_light_infantry.png/revision/latest?cb=20170119190311&path-prefix=en"
       },
       {
         name: "Tactical Movement",
         description: "All infantry are ordered to move at their fastest available speed for the duration of the ability. Does not affect anti-tank gun squads.",
-        icon: "/media/08a64c0417bf8530.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/48/Icons_commander_cmdr_german_fast_march.png/revision/latest?cb=20170105152000&path-prefix=en"
       },
       {
         name: "Relief Infantry",
         description: "Command releases reserve infantry to replace losses suffered during combat. Forces will be replaced with Osttruppen infantry.",
-        icon: "/media/790a14f0ace34688.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d9/Icons_commander_cmdr_german_relief_infantry.png/revision/latest?cb=20170105152000&path-prefix=en"
       },
       {
         name: "Stuka Close Air Support",
         description: "Two Stuka JU-87 will patrol the designated area, targetting enemy vehicles with heavy 37mm cannons.",
-        icon: "/media/2c4b65280224998f.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/51/Icons_commander_cmdr_german_stuka_close_air_support.png/revision/latest?cb=20170105152001&path-prefix=en"
       },
       {
         name: "Tiger Heavy Tank",
         description: "Allows the requisition of the Tiger Heavy Tank to the battlefield.",
-        icon: "/media/c71b5f501bbb6df9.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/6d/Icons_commander_cmdr_german_tiger.png/revision/latest?cb=20170105152001&path-prefix=en"
       }
     ]
   },
@@ -2650,27 +2650,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Assault Grenadiers",
         description: "Deploy Assault Grenadiers equipped with MP40 submachineguns and Model 24 grenades.",
-        icon: "/media/99b2134fc11c881b.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/98/COH_2_Assault_Grenadiers_Unit_Icon.png/revision/latest?cb=20190730051636&path-prefix=en"
       },
       {
         name: "Mechanized Assault group",
         description: "Deploys a Panzer grenadier squad in a 250 halftrack to the battlefield",
-        icon: "/media/b4d6788dd100516e.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/17/Mechanized_Assault_Group_Icon_2.png/revision/latest?cb=20260123040110&path-prefix=en"
       },
       {
         name: "Stug III Ausf. E Assault Gun",
         description: "Allows the requisition of the Stug III Ausf. E Assault gun on the battlefield.",
-        icon: "/media/83e7624ce2815b29.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e1/Stug_III_Icon.png/revision/latest?cb=20260123042154&path-prefix=en"
       },
       {
         name: "Light Artillery barrage",
         description: "A light artillery barrage from nearby 7.5cm le.IG 18 infantry support guns can scatter enemy forces.",
-        icon: "/media/b166d8e42d781ee7.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c6/Icons_commander_german_light_artillery_support.png/revision/latest?cb=20170110233820&path-prefix=en"
       },
       {
         name: "Tiger tank",
         description: "Allows the requisition of the tiger heavy tank to the battlefield.",
-        icon: "/media/c71b5f501bbb6df9.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/6/6d/Icons_commander_cmdr_german_tiger.png/revision/latest?cb=20170105152001&path-prefix=en"
       }
     ]
   },
@@ -2682,27 +2682,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Command Tank",
         description: "A command tank that improves nearby forces can be deployed to the battlefield.",
-        icon: "/media/c61b5500ce78a16d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/8d/Icons_vehicles_german_panzer_iv_command_tank.png/revision/latest?cb=20170110233819&path-prefix=en"
       },
       {
         name: "Counterattack Tactics",
         description: "Infantry units are trained to retake territory quickly. Neutral territory is captured more rapidly while active.",
-        icon: "/media/60bc37f7c2e04077.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/11/COH_2_Commander_Ability_Icon_-_Counterattack_Tactics.png/revision/latest?cb=20230629003743&path-prefix=en"
       },
       {
         name: "Panzer Tactician",
         description: "All armored vehicles use their equipped smoke dischargers to prevent themselves from being seen.",
-        icon: "/media/81880a2392a0772d.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/1/13/Ability_Panzer_Tactician_COH2_Ostheer.png/revision/latest?cb=20170201144230&path-prefix=en"
       },
       {
         name: "Mobile Observation Posts",
         description: "Sdkfz. 251 Half-tracks are capable of camouflaging themselves and acting as an observation post to scout for hostile units.",
-        icon: "/media/6962c31ea4b79d68.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/7b/COH_2_Commander_Ability_Icon_-_Mobile_Observation_Post.png/revision/latest?cb=20190730064256&path-prefix=en"
       },
       {
         name: "Sdkfz 234 'Puma' Armored Car",
         description: "Dispatch a Sdkfz 234 'Puma' Armored Car to the battlefield.",
-        icon: "/media/813ee5220abd8986.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/4/40/COH_2_Commander_Ability_Icon_-_Puma.png/revision/latest?cb=20230629003731&path-prefix=en"
       }
     ]
   },
@@ -2714,27 +2714,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Osttruppen Squad",
         description: "Deploy weak but numerous Osttruppen infantry to the battlefield.",
-        icon: "/media/277c54fd9f60c279.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/2/23/Icons_units_unit_german_ostruppen.png/revision/latest?cb=20170110003302&path-prefix=en"
       },
       {
         name: "Trench",
         description: "Allows German infantry to dig defensive trenches.",
-        icon: "/media/7b6f0f094b491d00.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/74/Icons_building_german_slit_trench.png/revision/latest?cb=20170119185959&path-prefix=en"
       },
       {
         name: "Artillery Field Officer",
         description: "An Artillery Field Officer specializing in supporting troops is allocated to your command.",
-        icon: "/media/8bbdeed1543e91e9.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/5/53/Icons_commander_cmdr_german_field_officer_group.png/revision/latest?cb=20170110003300&path-prefix=en"
       },
       {
         name: "Supply Drop Zone",
         description: "Cargo planes will fly over a designated Fuel or Munitions point, dropping off resource crates that can be recovered by infantry.",
-        icon: "/media/9a11cfb10878a413.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/e/e5/Icons_commander_cmdr_german_air_dropped_resources.png/revision/latest?cb=20170110003259&path-prefix=en"
       },
       {
         name: "Railway Artillery Support",
         description: "Off-map railway will fire three large caliber shells at the designated target.",
-        icon: "/media/804fc3e3d0c50215.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/0b/Icons_commander_cmdr_german_off_map_dora_support.png/revision/latest?cb=20170110003301&path-prefix=en"
       }
     ]
   },
@@ -2746,27 +2746,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Ambush Camouflage",
         description: "Grenadiers, Panzer Grenadiers, and HMGs can be upgraded with better camouflage, concealing them in cover or deep snow. Attacking enemy units while in camouflage will briefly increase their damage.",
-        icon: "/media/9ec1bd945163c211.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/cc/Icons_commander_cmdr_german_ambush_camouflage.png/revision/latest?cb=20170119185843&path-prefix=en"
       },
       {
         name: "Jaeger Command Squad",
         description: "A veteran Jaeger unit is dispatched to provide support. This is a powerful combat unit that can provide support to other units in the field.",
-        icon: "/media/74138b0a4c0222df.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d3/COH_2_Commander_Ability_Icon_-_Jaeger_Command_Squad.png/revision/latest?cb=20230629224820&path-prefix=en"
       },
       {
         name: "Smoke Bombs",
         description: "Large smoke pots are dropped on the battlefield, blocking line of sight.",
-        icon: "/media/b1111128ac00eb6b.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/c/c3/Ability_Stuka_Smoke_Drop_COH2_Ostheer.png/revision/latest?cb=20230629194344&path-prefix=en"
       },
       {
         name: "leFH 18 Artillery",
         description: "This light 10.5cm Field Howitzer doesn't have the destructive power of some Soviet artillery, but it counters with a good rate of fire and reasonably long range.",
-        icon: "/media/8167884531bb87ed.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/9a/Icons_vehicle_german_howitzer.png/revision/latest?cb=20170119221600&path-prefix=en"
       },
       {
         name: "Stuka JU-87D Bombing Strike",
         description: "A Stuke JU-87D will dive in and drop a 50kg bomb on the target location. Capture points are neutralized if hit.",
-        icon: "/media/aa1a2fb78f85b1d9.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/bd/Icons_commander_cmdr_german_stuka_bomb_strike.png/revision/latest?cb=20170110233820&path-prefix=en"
       }
     ]
   },
@@ -2778,27 +2778,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Defensive Oprations",
         description: "Infantry Sections now have the ability to construct emplacements and repair buildings.",
-        icon: "/media/6c58a5573b9427c8.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/d/d3/COH_2_Commander_Ability_Icon_-_Defensive_Operations.png/revision/latest?cb=20190802045522&path-prefix=en"
       },
       {
         name: "Improved Fortifications",
         description: "Emplacements and Forward Assemblies will now have access to the \"Improved Fortification\" upgrade.",
-        icon: "/media/a17ae4a843065990.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/0c/COH_2_Commander_Ability_Icon_-_Improved_Fortifications.png/revision/latest?cb=20190802045655&path-prefix=en"
       },
       {
         name: "Advanced Assembly",
         description: "Forward Assemblies will now have access to the \"Advance Assembly\" upgrade. Once researched, the assembly will dispatch royal engineers to repair.",
-        icon: "/media/0ff6fa076031bbe6.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/0/0d/COH_2_Commander_Ability_Icon_-_Advanced_Assembly.png/revision/latest?cb=20190802045831&path-prefix=en"
       },
       {
         name: "Counter Battery",
         description: "Available 25-pounder howitzers and mortar pits will now have access to the \"Counter Battery\" Ability.",
-        icon: "/media/ec034ef34ef7260c.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/95/COH_2_Commander_Ability_Icon_-_British_Counter_Battery.png/revision/latest?cb=20190802050005&path-prefix=en"
       },
       {
         name: "Precision Barrage",
         description: "Calls down a coordinated artillery barrage on the target location.",
-        icon: "/media/1e576fdaed735d5f.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/3/3a/COH_2_Commander_Ability_Icon_-_British_Precision_Barrage.png/revision/latest?cb=20190802050253&path-prefix=en"
       }
     ]
   },
@@ -2810,27 +2810,27 @@ export const doctrines: Doctrine[] = [
       {
         name: "Assault Grenadiers",
         description: "Deploy Assault Grenadiers equipped with MP40 submachineguns and Model 24 grenades.",
-        icon: "/media/99b2134fc11c881b.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/9/98/COH_2_Assault_Grenadiers_Unit_Icon.png/revision/latest?cb=20190730051636&path-prefix=en"
       },
       {
         name: "Panzer IV Ausf. J",
         description: "The Panzer IV J variant can be built from the HQ once either Support Armor Korps or Heavy Panzer Korps have been deployed.",
-        icon: "/media/95dc237d95ff5ab8.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/78/COH_2_OKW_Panzer_IV_Unit_Icon.png/revision/latest?cb=20190730052614&path-prefix=en"
       },
       {
         name: "Breakthrough Equipment",
         description: "Pioneers can be upgraded with special packages to clear obstacles, while Panzergrenadiers are granted Model 24 Smoke Grenades.",
-        icon: "/media/bab2117b68565ace.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/8/87/COH_2_Commander_Ability_Icon_-_Breakthrough_Equipment.png/revision/latest?cb=20190730052821&path-prefix=en"
       },
       {
         name: "Mobile Observation Posts",
         description: "Sdkfz. 251 Half-tracks are capable of camouflaging themselves and acting as an observation post to scout for hostile units.",
-        icon: "/media/6962c31ea4b79d68.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/7/7b/COH_2_Commander_Ability_Icon_-_Mobile_Observation_Post.png/revision/latest?cb=20190730064256&path-prefix=en"
       },
       {
         name: "Tiger Ace",
         description: "High command sends in a legendary Tiger Ace. Only one available at a time. Available once Heavy Panzer Korps is available.",
-        icon: "/media/9bf73f028a636bcc.webp"
+        icon: "https://static.wikia.nocookie.net/companyofheroes/images/b/b7/COH_2_Commander_Ability_Icon_-_Tiger_Ace_Call-In.png/revision/latest?cb=20190730054058&path-prefix=en"
       }
     ]
   }

@@ -36,4 +36,12 @@ describe('doctrine catalog', () => {
       }
     }
   });
+
+  it('includes five player-facing abilities for every doctrine', () => {
+    for (const faction of factions) {
+      for (const doctrine of doctrinesForFaction(faction)) {
+        expect(doctrine.abilities).toHaveLength(5);
+      }
+    }
+  });
 });
