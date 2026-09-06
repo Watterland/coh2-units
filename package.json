@@ -1,0 +1,45 @@
+{
+  "name": "coh2-units",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "extract": "node tools/extract.mjs",
+    "fetch-wiki": "node tools/fetch-wiki.mjs",
+    "cache-wiki-assets": "node tools/cache-wiki-assets.mjs",
+    "extract-game-icons": "node tools/extract-game-icons.mjs",
+    "extract-veterancy": "node tools/extract-veterancy.mjs",
+    "extract-game-abilities": "node tools/extract-game-abilities.mjs",
+    "extract-game-doctrines": "node tools/extract-game-doctrines.mjs",
+    "extract-game-ability-icons": "node tools/extract-game-ability-icons.mjs",
+    "extract-faction-symbols": "node tools/extract-faction-symbols.mjs",
+    "split-data": "node tools/split-data.mjs",
+    "test": "vitest run",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3",
+    "vitest": "^2.1.5",
+    "eslint": "^9.17.0",
+    "@eslint/js": "^9.17.0",
+    "typescript-eslint": "^8.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2"
+  }
+}

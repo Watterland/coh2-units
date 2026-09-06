@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+}
+
+body {
+  @apply bg-[#0e0f12] text-zinc-200 font-body antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 20% -10%, rgba(201, 162, 39, 0.06), transparent 60%),
+    radial-gradient(1000px 500px at 90% 0%, rgba(90, 110, 150, 0.08), transparent 50%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+a,
+button,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #c9a227;
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0f12;
+}
+::-webkit-scrollbar-thumb {
+  background: #33383f;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5058;
+}
