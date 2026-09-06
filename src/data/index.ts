@@ -11,7 +11,7 @@ import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
-import { doctrineUnitIconIndexes } from './doctrine-unit-icons';
+import { doctrineCrewIconIds, doctrineUnitIconIndexes } from './doctrine-unit-icons';
 import { assetUrl } from '../lib/assets';
 
 export const meta = {
@@ -113,6 +113,8 @@ function isInternalDoctrineAbility(name: string): boolean {
 }
 
 function findDoctrineAbilityIcon(name: string): string | undefined {
+  const crewIcon = gameAbilityIcons[doctrineCrewIconIds[name]];
+  if (crewIcon) return assetUrl(crewIcon);
   const unitIndex = doctrineUnitIconIndexes[name];
   const icon = unitIndex === undefined ? undefined : gameUnitIcons[unitIndex];
   return icon ? assetUrl(icon) : undefined;

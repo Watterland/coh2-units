@@ -3,7 +3,7 @@ import { basename, join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const TEMP = '/var/folders/8d/w6vszvjd3hg4p5sw6b8pbnn80000gn/T/opencode/coh2-game-icons';
+const TEMP = process.env.COH2_UI_TEMP ?? '/var/folders/8d/w6vszvjd3hg4p5sw6b8pbnn80000gn/T/opencode/coh2-game-icons';
 const UI = join(TEMP, 'ui');
 const GFX = join(UI, 'ui/bin/coh2ui.gfx');
 const SYMBOLS = join(TEMP, 'symbols.csv');
@@ -82,8 +82,11 @@ const ids = new Map(
   readFileSync(SYMBOLS, 'utf8')
     .split('\n')
     .flatMap((line) => {
-      const [id, name] = line.trim().split(';');
-      return name?.startsWith('Icons_abilities_') ? [[name, Number(id)]] : [];
+      const [id, rawName] = line.trim().split(';');
+      const name = rawName?.replace(/^"|"$/g, '');
+      return /^(Icons_abilities_|Icons_commander_(?!portrait))/.test(name)
+        ? [[name, Number(id)]]
+        : [];
     }),
 );
 const rects = parseRects(swf);
@@ -124,6 +127,6 @@ for (const [name, id] of ids) {
 
 writeFileSync(
   MAP,
-  `// Generated from CoH2 UI ability atlas.\nexport const gameAbilityIcons: Record<string, string> = ${JSON.stringify(output, null, 2)};\n`,
+  `// Generated from CoH2 UI ability and commander icon atlases.\nexport const gameAbilityIcons: Record<string, string> = ${JSON.stringify(output, null, 2)};\n`,
 );
 console.log(`Extracted ${Object.keys(output).length}/${ids.size} game ability icons.`);

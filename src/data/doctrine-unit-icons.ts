@@ -71,3 +71,14 @@ export const doctrineUnitIconIndexes: Record<string, number> = {
   'Ostwind Dispatch': 150,
   'Command Panther': 152,
 };
+
+// Team-weapon call-ins use their dedicated commander icon. These show the
+// weapon itself rather than the crew portrait used on unit cards.
+export const doctrineCrewIconIds: Record<string, string> = {
+  'Paradrop Machine Gun': 'Icons_commander_cmdr_aef_air_dropped_browning',
+  'Dshk Machinegun Paradrop': 'Icons_commander_dshk_paradrop',
+  'Dshk Machinegun': 'Icons_commander_dshk_icon',
+  'Hm120 Mortar Unlock': 'Icons_commander_cmdr_german_120mm_mortar_unlock',
+  'Pak 43 Emplacement': 'Icons_commander_cmdr_german_pak_43_at_gun',
+  'Mortar 81mm': 'Icons_commander_brit_mortar',
+};

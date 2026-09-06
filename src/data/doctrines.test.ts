@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { doctrineCatalog } from './doctrine-catalog';
 import { doctrinesForFaction, factions } from './index';
 import { assetUrl } from '../lib/assets';
+import { gameAbilityIcons } from './game-ability-icons';
 
 const expectedCounts = {
   USF: 9,
@@ -56,5 +57,12 @@ describe('doctrine catalog', () => {
     const airborne = usf.find((doctrine) => doctrine.name === 'Airborne Company');
     const paratroopers = airborne?.abilities.find((ability) => ability.name === 'Paratroopers');
     expect(paratroopers?.icon).toBe(assetUrl('/game-icons/4.png'));
+  });
+
+  it('uses weapon icons for doctrine team-weapon call-ins', () => {
+    const soviet = doctrinesForFaction('Soviet');
+    const airborne = soviet.find((doctrine) => doctrine.name === 'Airborne Troops Tactics');
+    const dshk = airborne?.abilities.find((ability) => ability.name === 'Dshk Machinegun Paradrop');
+    expect(dshk?.icon).toBe(assetUrl(gameAbilityIcons.Icons_commander_dshk_paradrop));
   });
 });
