@@ -5,8 +5,9 @@ import { factionInfo } from '../lib/factions';
 import { round } from '../lib/units';
 import { abilitiesForUnit } from '../data';
 import { tRole, tUnit } from '../lib/translations';
+import { assetUrl } from '../lib/assets';
 
-const NO_IMAGE = '/units/no-image.svg';
+const NO_IMAGE = assetUrl('/units/no-image.svg');
 
 export default function UnitCard({ unit }: { unit: Unit }) {
   const [src, setSrc] = useState(unit.imageUrl ?? NO_IMAGE);

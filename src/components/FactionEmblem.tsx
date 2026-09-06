@@ -1,4 +1,5 @@
 import type { Faction } from '../types';
+import { assetUrl } from '../lib/assets';
 
 const FILES: Record<Faction, string> = {
   USF: '/factions/usf.png',
@@ -15,5 +16,7 @@ export default function FactionEmblem({
   faction: Faction;
   className?: string;
 }) {
-  return <img src={FILES[faction]} alt={faction} className={className} draggable={false} />;
+  return (
+    <img src={assetUrl(FILES[faction])} alt={faction} className={className} draggable={false} />
+  );
 }

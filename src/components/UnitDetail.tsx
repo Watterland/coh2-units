@@ -8,8 +8,9 @@ import WeaponPanel from './WeaponPanel';
 import VetPanel from './VetPanel';
 import AbilityList from './AbilityList';
 import { tCategory, tRole, tUnit } from '../lib/translations';
+import { assetUrl } from '../lib/assets';
 
-const NO_IMAGE = '/units/no-image.svg';
+const NO_IMAGE = assetUrl('/units/no-image.svg');
 
 export default function UnitDetail({ unit }: { unit: Unit }) {
   const info = factionInfo(unit.faction);

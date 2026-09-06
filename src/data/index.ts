@@ -10,6 +10,7 @@ import { gameUnitIcons } from './game-icons';
 import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
+import { assetUrl } from '../lib/assets';
 
 export const meta = {
   source: 'https://coh2.serealia.ca/',
@@ -18,13 +19,26 @@ export const meta = {
 };
 export const factions: Faction[] = ['British', 'OKW', 'Ostheer', 'Soviet', 'USF'];
 export const unitsLite = unitsLiteRaw as UnitLite[];
-export const abilities: Ability[] = wikiAbilities;
-export const doctrines: Doctrine[] = wikiDoctrines;
+export const abilities: Ability[] = wikiAbilities.map((ability) => ({
+  ...ability,
+  icon: ability.icon ? assetUrl(ability.icon) : undefined,
+}));
+export const doctrines: Doctrine[] = wikiDoctrines.map((doctrine) => ({
+  ...doctrine,
+  abilities: doctrine.abilities.map((ability) => ({
+    ...ability,
+    icon: ability.icon ? assetUrl(ability.icon) : undefined,
+  })),
+}));
 
 function enrichUnit(unit: Unit): Unit {
   return {
     ...unit,
-    imageUrl: gameUnitIcons[unit.index] ?? unitImages[unit.index] ?? undefined,
+    imageUrl: gameUnitIcons[unit.index]
+      ? assetUrl(gameUnitIcons[unit.index])
+      : unitImages[unit.index]
+        ? assetUrl(unitImages[unit.index] as string)
+        : undefined,
     ...unitDetails[unit.index],
   };
 }
@@ -87,7 +101,7 @@ function findAbilityIcon(name: string): string | undefined {
   const match = [...abilities, ...doctrines.flatMap((doctrine) => doctrine.abilities)].find(
     (ability) => normalizeAbilityName(ability.name) === key && ability.icon,
   );
-  if (match?.icon) return match.icon;
+  if (match?.icon) return assetUrl(match.icon);
   const words =
     name
       .toLowerCase()
@@ -100,7 +114,7 @@ function findAbilityIcon(name: string): string | undefined {
       score: words.filter((word) => id.toLowerCase().includes(word)).length,
     }))
     .sort((a, b) => b.score - a.score)[0];
-  return candidate?.score ? candidate.icon : undefined;
+  return candidate?.score ? assetUrl(candidate.icon) : undefined;
 }
 
 function readableAbilityName(id: string): string {

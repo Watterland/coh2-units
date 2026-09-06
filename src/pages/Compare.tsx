@@ -5,8 +5,9 @@ import { factionInfo } from '../lib/factions';
 import { classifyUnit, tUnit } from '../lib/translations';
 import { round } from '../lib/units';
 import type { Unit } from '../types';
+import { assetUrl } from '../lib/assets';
 
-const NO_IMAGE = '/units/no-image.svg';
+const NO_IMAGE = assetUrl('/units/no-image.svg');
 
 export default function Compare() {
   const { first, second } = useParams();
