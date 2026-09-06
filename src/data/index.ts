@@ -11,6 +11,7 @@ import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
+import { doctrineUnitIconIndexes } from './doctrine-unit-icons';
 import { assetUrl } from '../lib/assets';
 
 export const meta = {
@@ -101,7 +102,7 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
           .filter((ability) => !isInternalDoctrineAbility(ability.name))
           .map((ability) => ({
             ...ability,
-            icon: ability.icon ?? findAbilityIcon(ability.name),
+            icon: findDoctrineAbilityIcon(ability.name) ?? ability.icon ?? findAbilityIcon(ability.name),
           })),
       };
     });
@@ -109,6 +110,12 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
 
 function isInternalDoctrineAbility(name: string): boolean {
   return /^(Cons Commander Portrait|Aowgamepassdefaultcommanders)/i.test(name);
+}
+
+function findDoctrineAbilityIcon(name: string): string | undefined {
+  const unitIndex = doctrineUnitIconIndexes[name];
+  const icon = unitIndex === undefined ? undefined : gameUnitIcons[unitIndex];
+  return icon ? assetUrl(icon) : undefined;
 }
 
 function findAbilityIcon(name: string): string | undefined {

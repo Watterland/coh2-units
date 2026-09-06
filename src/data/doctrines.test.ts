@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { doctrineCatalog } from './doctrine-catalog';
 import { doctrinesForFaction, factions } from './index';
+import { assetUrl } from '../lib/assets';
 
 const expectedCounts = {
   USF: 9,
@@ -43,5 +44,17 @@ describe('doctrine catalog', () => {
         expect(doctrine.abilities).toHaveLength(5);
       }
     }
+  });
+
+  it('uses unit portraits for doctrine unit unlocks and call-ins', () => {
+    const soviet = doctrinesForFaction('Soviet');
+    const advancedWarfare = soviet.find((doctrine) => doctrine.name === 'Advanced Warfare Tactics');
+    const t3485 = advancedWarfare?.abilities.find((ability) => ability.name === 'T34 85 Unlock');
+    expect(t3485?.icon).toBe(assetUrl('/game-icons/127.png'));
+
+    const usf = doctrinesForFaction('USF');
+    const airborne = usf.find((doctrine) => doctrine.name === 'Airborne Company');
+    const paratroopers = airborne?.abilities.find((ability) => ability.name === 'Paratroopers');
+    expect(paratroopers?.icon).toBe(assetUrl('/game-icons/4.png'));
   });
 });
