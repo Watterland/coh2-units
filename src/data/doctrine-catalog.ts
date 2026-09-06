@@ -1,0 +1,87 @@
+import type { Faction } from '../types';
+
+export interface CanonicalDoctrine {
+  faction: Faction;
+  name: string;
+  sourceNames: string[];
+}
+
+// This is the curated multiplayer commander roster. Source names preserve the
+// different labels used by the game extraction and the Wiki.
+export const doctrineCatalog: CanonicalDoctrine[] = [
+  { faction: 'USF', name: 'Airborne Company', sourceNames: ['Usf Airborne'] },
+  { faction: 'USF', name: 'Armor Company', sourceNames: ['Usf Armor'] },
+  { faction: 'USF', name: 'Heavy Cavalry Company', sourceNames: ['Usf Forward Assault'] },
+  { faction: 'USF', name: 'Infantry Company', sourceNames: ['Usf Infantry'] },
+  { faction: 'USF', name: 'Mechanized Company', sourceNames: ['Usf Mechanized'] },
+  { faction: 'USF', name: 'Recon Support Company', sourceNames: ['Usf Recon Support'] },
+  { faction: 'USF', name: 'Rifle Company', sourceNames: ['Usf Rifle'] },
+  { faction: 'USF', name: 'Tactical Support Company', sourceNames: ['Usf Tactical Support'] },
+  { faction: 'USF', name: 'Urban Assault Company', sourceNames: ['Usf Urban Assault'] },
+
+  { faction: 'British', name: 'Advanced Emplacement Regiment', sourceNames: ['British Advanced Emplacement', 'Advanced Emplacement Regiment'] },
+  { faction: 'British', name: 'Lend Lease Assault Regiment', sourceNames: ['British Lend Lease Assault'] },
+  { faction: 'British', name: 'Mobile Assault Regiment', sourceNames: ['British Mobile Assault'] },
+  { faction: 'British', name: 'Royal Artillery Regiment', sourceNames: ['British Artillery'] },
+  { faction: 'British', name: 'Royal Commando Regiment', sourceNames: ['British Commando'] },
+  { faction: 'British', name: 'Royal Engineer Regiment', sourceNames: ['British Engineer'] },
+  { faction: 'British', name: 'Special Weapons Regiment', sourceNames: ['British Weapons'] },
+  { faction: 'British', name: 'Tactical Support Regiment', sourceNames: ['British Support'] },
+  { faction: 'British', name: 'Vanguard Operations Regiment', sourceNames: ['British Vanguard'] },
+
+  { faction: 'OKW', name: 'Breakthrough Doctrine', sourceNames: ['Okw Breakthrough'] },
+  { faction: 'OKW', name: 'Elite Armored Doctrine', sourceNames: ['Okw Elite Armored'] },
+  { faction: 'OKW', name: 'Feuersturm Doctrine', sourceNames: ['Okw Firestorm'] },
+  { faction: 'OKW', name: 'Fortifications Doctrine', sourceNames: ['Okw Fortifications'] },
+  { faction: 'OKW', name: 'Grand Offensive Doctrine', sourceNames: ['Okw Grand Offensive'] },
+  { faction: 'OKW', name: 'Luftwaffe Ground Forces Doctrine', sourceNames: ['Okw Luftwaffe Ground Forces'] },
+  { faction: 'OKW', name: 'Overwatch Doctrine', sourceNames: ['Okw Battlefield Reconnaissance'] },
+  { faction: 'OKW', name: 'Scavenge Doctrine', sourceNames: ['Okw Scavenge'] },
+  { faction: 'OKW', name: 'Special Operations Doctrine', sourceNames: ['Okw Special Operations'] },
+
+  { faction: 'Soviet', name: 'Advanced Warfare Tactics', sourceNames: ['Advanced Warfare'] },
+  { faction: 'Soviet', name: 'Airborne Troops Tactics', sourceNames: ['Airbourne Troops'] },
+  { faction: 'Soviet', name: 'Anti-Infantry Tactics', sourceNames: ['Anti Infantry'] },
+  { faction: 'Soviet', name: 'Armored Assault Tactics', sourceNames: ['Soviet War Machine'] },
+  { faction: 'Soviet', name: 'Conscripts Support Tactics', sourceNames: ['Conscripts Support'] },
+  { faction: 'Soviet', name: 'Counterattack Tactics', sourceNames: ['Soviet Counterattack'] },
+  { faction: 'Soviet', name: 'Defensive Tactics', sourceNames: ['Soviet Community Defense'] },
+  { faction: 'Soviet', name: 'Guard Motor Coordination Tactics', sourceNames: ['Guard Motor Coordination'] },
+  { faction: 'Soviet', name: 'Guard Rifle Combined Arms Tactics', sourceNames: ['Guard Rifle Anti Tank'] },
+  { faction: 'Soviet', name: 'Lend Lease Tactics', sourceNames: ['Soviet Lend Lease'] },
+  { faction: 'Soviet', name: 'Mechanized Support Tactics', sourceNames: ['Mechanized Support'] },
+  { faction: 'Soviet', name: 'NKVD Rifle Disruption Tactics', sourceNames: ['Nkvd Rifle Disruption'] },
+  { faction: 'Soviet', name: 'Partisan Tactics', sourceNames: ['Soviet Partisan'] },
+  { faction: 'Soviet', name: 'Shock Motor Heavy Tactics', sourceNames: ['Shock Motor Heavy'] },
+  { faction: 'Soviet', name: 'Shock Rifle Frontline Tactics', sourceNames: ['Shock Rifle Frontline'] },
+  { faction: 'Soviet', name: 'Soviet Combined Arms Army Tactics', sourceNames: ['1941 Tow Soviet Combined Arms Army'] },
+  { faction: 'Soviet', name: 'Soviet Industry Tactics', sourceNames: ['Soviet Industry Commander'] },
+  { faction: 'Soviet', name: 'Soviet Reserve Army Tactics', sourceNames: ['1941 Tow Soviet Reserve Army'] },
+  { faction: 'Soviet', name: 'Soviet Shock Army Tactics', sourceNames: ['1941 Tow Soviet Shock Army'] },
+  { faction: 'Soviet', name: 'Tank Hunter Tactics', sourceNames: ['Soviet Tank Hunters'] },
+  { faction: 'Soviet', name: 'Terror Tactics', sourceNames: ['Terror'] },
+  { faction: 'Soviet', name: 'Urban Defense Tactics', sourceNames: ['Soviet Urban'] },
+
+  { faction: 'Ostheer', name: 'Assault Support Doctrine', sourceNames: ['Assault Support'] },
+  { faction: 'Ostheer', name: 'Blitzkrieg Doctrine', sourceNames: ['1941 Tow German Blitzkrieg', 'Blitzkrieg Doctrine'] },
+  { faction: 'Ostheer', name: 'Close Air Support Doctrine', sourceNames: ['Aerial Superiority'] },
+  { faction: 'Ostheer', name: 'Defensive Doctrine', sourceNames: ['German Community Defense'] },
+  { faction: 'Ostheer', name: 'Elite Troops Doctrine', sourceNames: ['German Elite Troops', 'Elite Troops Doctrine'] },
+  { faction: 'Ostheer', name: 'Encirclement Doctrine', sourceNames: ['German Encirclement', 'Encirclement Doctrine'] },
+  { faction: 'Ostheer', name: 'Festung Armor Doctrine', sourceNames: ['Festung Armor', 'Festung Armor Doctrine'] },
+  { faction: 'Ostheer', name: 'Festung Support Doctrine', sourceNames: ['Festung Support', 'Festung Support Doctrine'] },
+  { faction: 'Ostheer', name: 'Fortified Armor Doctrine', sourceNames: ['Fortified Armor', 'Fortified Armor Doctrine'] },
+  { faction: 'Ostheer', name: 'German Infantry Doctrine', sourceNames: ['1941 Tow German Infantry', 'German Infantry Doctrine'] },
+  { faction: 'Ostheer', name: 'German Mechanized Doctrine', sourceNames: ['1941 Tow German Mechanized', 'German Mechanized Doctrine'] },
+  { faction: 'Ostheer', name: 'Jaeger Armor Doctrine', sourceNames: ['Jaeger Armor', 'Jaeger Armor Doctrine'] },
+  { faction: 'Ostheer', name: 'Jaeger Infantry Doctrine', sourceNames: ['Jaeger Infantry', 'Jaeger Infantry Doctrine'] },
+  { faction: 'Ostheer', name: 'Joint Operations Doctrine', sourceNames: ['Joint Operations'] },
+  { faction: 'Ostheer', name: 'Lightning War Doctrine', sourceNames: ['Lightning War', 'Lightning War Doctrine'] },
+  { faction: 'Ostheer', name: 'Luftwaffe Supply Doctrine', sourceNames: ['German Air Supply'] },
+  { faction: 'Ostheer', name: 'Mechanized Assault Doctrine', sourceNames: ['German Infantry Assault', 'Mechanized Assault Doctrine'] },
+  { faction: 'Ostheer', name: 'Mobile Defense Doctrine', sourceNames: ['German Mobile Defense', 'Mobile Defense Doctrine'] },
+  { faction: 'Ostheer', name: 'Osttruppen Doctrine', sourceNames: ['German Ostruppen', 'Osttruppen Doctrine'] },
+  { faction: 'Ostheer', name: 'Spearhead Doctrine', sourceNames: ['Spearhead'] },
+  { faction: 'Ostheer', name: 'Storm Doctrine', sourceNames: ['Storm Tactics', 'Storm Doctrine'] },
+  { faction: 'Ostheer', name: 'Strategic Reserves Doctrine', sourceNames: ['Strategic Reserves', 'Strategic Reserves Doctrine'] },
+];

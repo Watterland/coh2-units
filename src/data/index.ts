@@ -10,6 +10,7 @@ import { gameUnitIcons } from './game-icons';
 import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
+import { doctrineCatalog } from './doctrine-catalog';
 import { assetUrl } from '../lib/assets';
 
 export const meta = {
@@ -80,20 +81,28 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
 }
 
 export function doctrinesForFaction(faction: Faction): Doctrine[] {
-  const wiki = doctrines.filter((d) => d.faction === faction);
-  const seen = new Set(wiki.map((doctrine) => normalizeAbilityName(doctrine.name)));
-  const game = gameDoctrines
-    .filter(
-      (doctrine) => doctrine.faction === faction && !seen.has(normalizeAbilityName(doctrine.name)),
-    )
-    .map((doctrine) => ({
-      ...doctrine,
-      abilities: doctrine.abilities.map((ability) => ({
-        ...ability,
-        icon: findAbilityIcon(ability.name),
-      })),
-    }));
-  return [...wiki, ...game];
+  return doctrineCatalog
+    .filter((doctrine) => doctrine.faction === faction)
+    .map((canonical) => {
+      const matchesSourceName = (doctrine: Doctrine) =>
+        canonical.sourceNames.includes(doctrine.name);
+      const source =
+        gameDoctrines.find((doctrine) => doctrine.faction === faction && matchesSourceName(doctrine)) ??
+        doctrines.find((doctrine) => doctrine.faction === faction && matchesSourceName(doctrine));
+
+      if (!source) {
+        throw new Error(`Missing source data for ${canonical.name}`);
+      }
+
+      return {
+        ...source,
+        name: canonical.name,
+        abilities: source.abilities.map((ability) => ({
+          ...ability,
+          icon: ability.icon ?? findAbilityIcon(ability.name),
+        })),
+      };
+    });
 }
 
 function findAbilityIcon(name: string): string | undefined {
