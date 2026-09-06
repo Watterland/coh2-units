@@ -100,6 +100,11 @@ export interface DoctrineAbility {
   name: string;
   description: string;
   icon?: string;
+  cost?: {
+    manpower?: number;
+    munitions?: number;
+    fuel?: number;
+  };
 }
 
 export interface Doctrine {

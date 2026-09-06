@@ -6,6 +6,8 @@ describe('ability pages', () => {
     const ability = abilityBySlug(abilitySlug('T34 85 Unlock'));
     expect(ability?.name).toBe('T34 85 Unlock');
     expect(ability?.doctrines).toContain('Advanced Warfare Tactics');
+    expect(ability?.description).toContain('Т-34-85');
+    expect(ability?.cost).toEqual({ manpower: 360, fuel: 130 });
   });
 
   it('resolves a unit ability', () => {

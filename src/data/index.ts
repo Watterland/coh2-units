@@ -11,6 +11,7 @@ import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
+import { doctrineAbilityDetails } from './doctrine-ability-details';
 import {
   doctrineCrewIconIds,
   doctrineUnitIconIndexes,
@@ -106,6 +107,7 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
           .filter((ability) => !isInternalDoctrineAbility(ability.name))
           .map((ability) => ({
             ...ability,
+            ...doctrineAbilityDetails[ability.id ?? ''],
             icon: findDoctrineAbilityIcon(ability.name) ?? ability.icon ?? findAbilityIcon(ability.name),
           })),
       };

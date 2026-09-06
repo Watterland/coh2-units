@@ -54,12 +54,7 @@ export default function AbilityPage() {
       <section className="rounded-xl border border-white/10 bg-panel p-5">
         <h2 className="font-display text-lg font-semibold text-zinc-100">Историческая справка</h2>
         {history ? (
-          <p className="mt-2 text-zinc-300">
-            {history.text}{' '}
-            <a href={history.source} target="_blank" rel="noreferrer" className="text-accent hover:underline">
-              Источник
-            </a>
-          </p>
+          <p className="mt-2 text-zinc-300">{history.text}</p>
         ) : (
           <p className="mt-2 text-zinc-300">
             Историческая справка для этой записи ещё проходит проверку по внешним источникам.
