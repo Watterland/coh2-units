@@ -1,8 +1,9 @@
 import type { Ability, DoctrineAbility, Faction } from '../types';
-import { abilitiesForUnit, doctrinesForFaction, unitsLite } from '../data';
+import { abilitiesForUnit, doctrinesForFaction, unitsLite, unitRussianName } from '../data';
 
 export interface AbilityDetail {
   name: string;
+  nameRu?: string;
   description: string;
   extra?: string;
   icon?: string;
@@ -41,6 +42,7 @@ export function abilityBySlug(slug: string): AbilityDetail | undefined {
 
   return {
     name: first.name,
+    nameRu: 'nameRu' in first ? (first.nameRu as string | undefined) : undefined,
     description: first.description,
     extra: 'extra' in first ? (first.extra as string | undefined) : undefined,
     icon: first.icon,
@@ -48,7 +50,7 @@ export function abilityBySlug(slug: string): AbilityDetail | undefined {
     factions: [...factions],
     units: unitIndexes.flatMap((index) => {
       const unit = unitsLite.find((candidate) => candidate.index === index);
-      return unit ? [{ index, name: unit.name }] : [];
+      return unit ? [{ index, name: unitRussianName(index) ?? unit.name }] : [];
     }),
     doctrines: [...new Set(matchingDoctrines.map(({ doctrine }) => doctrine.name))],
   };

@@ -1,6 +1,6 @@
 import type { DoctrineAbility } from '../types';
 
-type Text = Pick<DoctrineAbility, 'description'> & { extra?: string };
+type Text = Pick<DoctrineAbility, 'description'> & { extra?: string; nameRu?: string };
 
 // Branch ids whose commander RGD carries no localization. Texts are curated
 // against the ability's game behaviour.

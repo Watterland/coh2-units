@@ -52,7 +52,7 @@ export default function Doctrines() {
                             ◆
                           </span>
                         )}
-                        <Link to={`/abilities/${abilitySlug(a.name)}`} className="hover:underline">{a.name}</Link>
+                        <Link to={`/abilities/${abilitySlug(a.name)}`} className="hover:underline">{a.nameRu ?? a.name}</Link>
                       </span>
                       {a.description && <span className="text-zinc-400"> — {a.description}</span>}
                     </li>

@@ -85,6 +85,7 @@ export interface UnitBuild {
 export interface Ability {
   unitIndex: number;
   name: string;
+  nameRu?: string;
   description: string;
   icon?: string;
   type?: 'active' | 'passive';
@@ -99,6 +100,7 @@ export interface Ability {
 export interface DoctrineAbility {
   id?: string;
   name: string;
+  nameRu?: string;
   description: string;
   extra?: string;
   icon?: string;

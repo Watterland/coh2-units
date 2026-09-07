@@ -112,6 +112,7 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       return {
         unitIndex,
         name,
+        nameRu: detail?.name,
         description: detail?.description ?? '',
         cost: detail?.cost,
         icon: (gameIcon ? assetUrl(gameIcon) : undefined) ?? findAbilityIcon(name),
@@ -171,6 +172,7 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
             const detail = gameAbilityDetails[id] ?? gameAbilityDetails[`${id}_mp`];
             return {
               ...ability,
+              nameRu: detail?.name ?? doctrineAbilityTexts[id]?.nameRu,
               description:
                 ability.description || detail?.description || doctrineAbilityTexts[id]?.description || '',
               extra: ability.extra ?? detail?.extra ?? doctrineAbilityTexts[id]?.extra,

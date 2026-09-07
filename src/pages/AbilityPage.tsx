@@ -31,7 +31,12 @@ export default function AbilityPage() {
           )}
           <div>
             <p className="text-sm text-zinc-500">Способность</p>
-            <h1 className="font-display text-2xl font-bold text-zinc-100">{ability.name}</h1>
+            <h1 className="font-display text-2xl font-bold text-zinc-100">
+              {ability.nameRu ?? ability.name}
+            </h1>
+            {ability.nameRu && ability.nameRu !== ability.name && (
+              <p className="text-xs text-zinc-500">{ability.name}</p>
+            )}
             {ability.factions.length > 0 && <p className="mt-1 text-sm text-zinc-400">{ability.factions.join(' · ')}</p>}
           </div>
         </div>

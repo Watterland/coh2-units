@@ -38,7 +38,7 @@ export default function AbilityList({ abilities, color }: Props) {
                   </span>
                 )}
                 <Link to={`/abilities/${abilitySlug(a.name)}`} className="font-medium text-zinc-100 hover:underline" style={{ color }}>
-                  {a.name}
+                  {a.nameRu ?? a.name}
                 </Link>
               </div>
               {a.cost && (
