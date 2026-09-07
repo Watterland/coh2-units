@@ -13,7 +13,7 @@ import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
 import { doctrineAbilityTexts, unitAbilityTexts } from './doctrine-ability-texts';
 import { gameAbilityDetails } from './game-ability-details';
-import { gameUnitNames } from './game-unit-names';
+import { gameUnitDescriptions, gameUnitNames } from './game-unit-names';
 import {
   DOCTRINE_ONLY_UNIT_INDEXES,
   doctrineNamesForAbilityName,
@@ -56,6 +56,8 @@ function enrichUnit(unit: Unit): Unit {
         ? assetUrl(unitImages[unit.index] as string)
         : undefined,
     ...unitDetails[unit.index],
+    // Official Russian lore text from the game locale wins over the Wiki.
+    description: gameUnitDescriptions[unit.index] ?? unitDetails[unit.index]?.description,
   };
 }
 
