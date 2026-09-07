@@ -99,6 +99,7 @@ export interface DoctrineAbility {
   id?: string;
   name: string;
   description: string;
+  extra?: string;
   icon?: string;
   cost?: {
     manpower?: number;

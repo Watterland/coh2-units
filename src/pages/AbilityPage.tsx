@@ -42,6 +42,7 @@ export default function AbilityPage() {
         <p className="mt-2 text-zinc-300">
           {ability.description || 'Точное описание этой способности ещё не извлечено из игровых данных.'}
         </p>
+        {ability.extra && <p className="mt-2 text-sm text-zinc-400">{ability.extra}</p>}
       </section>
 
       <section className="rounded-xl border border-white/10 bg-panel p-5">

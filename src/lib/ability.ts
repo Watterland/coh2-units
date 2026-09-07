@@ -4,6 +4,7 @@ import { abilitiesForUnit, doctrinesForFaction, unitsLite } from '../data';
 export interface AbilityDetail {
   name: string;
   description: string;
+  extra?: string;
   icon?: string;
   cost?: Ability['cost'];
   factions: Faction[];
@@ -41,6 +42,7 @@ export function abilityBySlug(slug: string): AbilityDetail | undefined {
   return {
     name: first.name,
     description: first.description,
+    extra: 'extra' in first ? (first.extra as string | undefined) : undefined,
     icon: first.icon,
     cost: 'cost' in first ? first.cost : undefined,
     factions: [...factions],

@@ -11,7 +11,7 @@ import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
-import { doctrineAbilityDetails } from './doctrine-ability-details';
+import { gameAbilityDetails } from './game-ability-details';
 import {
   doctrineCrewIconIds,
   doctrineUnitIconIndexes,
@@ -70,13 +70,18 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
   const wiki = abilities.filter((a) => a.unitIndex === unitIndex);
   const seen = new Set(wiki.map((ability) => normalizeAbilityName(ability.name)));
   const game = (gameAbilityIds[unitIndex] ?? [])
-    .map((id) => ({
-      unitIndex,
-      name: readableAbilityName(id),
-      description: '',
-      icon: findAbilityIcon(readableAbilityName(id)),
-      type: 'active' as const,
-    }))
+    .map((id) => {
+      const detail = gameAbilityDetails[id] ?? gameAbilityDetails[id.replace(/_mp$/i, '')];
+      const name = readableAbilityName(id);
+      return {
+        unitIndex,
+        name,
+        description: detail?.description ?? '',
+        cost: detail?.cost,
+        icon: findAbilityIcon(name),
+        type: 'active' as const,
+      };
+    })
     .filter((ability) => {
       const key = normalizeAbilityName(ability.name);
       if (seen.has(key)) return false;
@@ -105,11 +110,17 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
         name: canonical.name,
         abilities: source.abilities
           .filter((ability) => !isInternalDoctrineAbility(ability.name))
-          .map((ability) => ({
-            ...ability,
-            ...doctrineAbilityDetails[ability.id ?? ''],
-            icon: findDoctrineAbilityIcon(ability.name) ?? ability.icon ?? findAbilityIcon(ability.name),
-          })),
+          .map((ability) => {
+            const id = ability.id ?? '';
+            const detail = gameAbilityDetails[id] ?? gameAbilityDetails[`${id}_mp`];
+            return {
+              ...ability,
+              description: ability.description || detail?.description || '',
+              extra: ability.extra ?? detail?.extra,
+              cost: ability.cost ?? detail?.cost,
+              icon: findDoctrineAbilityIcon(ability.name) ?? ability.icon ?? findAbilityIcon(ability.name),
+            };
+          }),
       };
     });
 }

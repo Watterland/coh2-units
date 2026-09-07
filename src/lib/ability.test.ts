@@ -7,7 +7,11 @@ describe('ability pages', () => {
     expect(ability?.name).toBe('T34 85 Unlock');
     expect(ability?.doctrines).toContain('Advanced Warfare Tactics');
     expect(ability?.description).toContain('Т-34-85');
-    expect(ability?.cost).toEqual({ manpower: 360, fuel: 130 });
+  });
+
+  it('uses game file costs when available', () => {
+    const tiger = abilityBySlug(abilitySlug('Tiger Tank'));
+    expect(tiger?.cost).toEqual({ manpower: 640, fuel: 230 });
   });
 
   it('resolves a unit ability', () => {
