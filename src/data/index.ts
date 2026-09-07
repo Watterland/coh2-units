@@ -118,7 +118,7 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
               description: ability.description || detail?.description || '',
               extra: ability.extra ?? detail?.extra,
               cost: ability.cost ?? detail?.cost,
-              icon: findDoctrineAbilityIcon(ability.name) ?? ability.icon ?? findAbilityIcon(ability.name),
+              icon: findDoctrineAbilityIcon(ability.name, id) ?? ability.icon ?? findAbilityIcon(ability.name),
             };
           }),
       };
@@ -129,14 +129,16 @@ function isInternalDoctrineAbility(name: string): boolean {
   return /^(Cons Commander Portrait|Aowgamepassdefaultcommanders)/i.test(name);
 }
 
-function findDoctrineAbilityIcon(name: string): string | undefined {
+function findDoctrineAbilityIcon(name: string, id?: string): string | undefined {
   const crewIcon = gameAbilityIcons[doctrineCrewIconIds[name]];
   if (crewIcon) return assetUrl(crewIcon);
   const vehicleIcon = gameAbilityIcons[doctrineVehicleIconIds[name]];
   if (vehicleIcon) return assetUrl(vehicleIcon);
   const unitIndex = doctrineUnitIconIndexes[name];
-  const icon = unitIndex === undefined ? undefined : gameUnitIcons[unitIndex];
-  return icon ? assetUrl(icon) : undefined;
+  if (unitIndex !== undefined && gameUnitIcons[unitIndex]) return assetUrl(gameUnitIcons[unitIndex]);
+  const iconName = id ? gameAbilityDetails[id]?.icon_name : undefined;
+  if (iconName && gameAbilityIcons[iconName]) return assetUrl(gameAbilityIcons[iconName]);
+  return undefined;
 }
 
 function findAbilityIcon(name: string): string | undefined {
@@ -145,19 +147,24 @@ function findAbilityIcon(name: string): string | undefined {
     (ability) => normalizeAbilityName(ability.name) === key && ability.icon,
   );
   if (match?.icon) return assetUrl(match.icon);
+  // Fuzzy matching is intentionally strict: a single shared token or a tie
+  // produces confidently wrong icons, so require a unique two-token lead.
   const words =
     name
       .toLowerCase()
       .match(/[a-z0-9]+/g)
       ?.filter((word) => word.length > 2) ?? [];
-  const candidate = Object.entries(gameAbilityIcons)
+  const scored = Object.entries(gameAbilityIcons)
     .map(([id, icon]) => ({
-      id: id.toLowerCase(),
       icon,
       score: words.filter((word) => id.toLowerCase().includes(word)).length,
     }))
-    .sort((a, b) => b.score - a.score)[0];
-  return candidate?.score ? assetUrl(candidate.icon) : undefined;
+    .sort((a, b) => b.score - a.score);
+  const best = scored[0];
+  const runnerUp = scored[1];
+  return best && best.score >= 2 && best.score > (runnerUp?.score ?? 0)
+    ? assetUrl(best.icon)
+    : undefined;
 }
 
 function readableAbilityName(id: string): string {

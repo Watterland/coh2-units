@@ -72,4 +72,20 @@ describe('doctrine catalog', () => {
     const t3485 = advancedWarfare?.abilities.find((ability) => ability.name === 'T34 85 Unlock');
     expect(t3485?.icon).toBe(assetUrl(gameAbilityIcons.Icons_commander_cmdr_soviet_t34_85));
   });
+
+  it('shows each vehicle its own picture, not a lookalike', () => {
+    const okw = doctrinesForFaction('OKW');
+    const breakthrough = okw.find((doctrine) => doctrine.name === 'Breakthrough Doctrine');
+    const jagdtiger = breakthrough?.abilities.find((ability) => ability.name === 'Jagdtiger');
+    expect(jagdtiger?.icon).toBe(assetUrl(gameAbilityIcons.Icons_vehicles_vehicle_west_german_jagdtiger));
+  });
+
+  it('shows British infantry call-ins their own pictures', () => {
+    const british = doctrinesForFaction('British');
+    const abilities = british.flatMap((doctrine) => doctrine.abilities);
+    const raid = abilities.find((ability) => ability.name === 'Raid Tommys');
+    expect(raid?.icon).toBe(assetUrl('/game-icons/167.png'));
+    const assault = abilities.find((ability) => ability.name === 'Assault Tommys');
+    expect(assault?.icon).toBe(assetUrl('/game-icons/159.png'));
+  });
 });

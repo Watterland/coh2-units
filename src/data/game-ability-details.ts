@@ -1,13 +1,14 @@
 // Generated from CoH2 ability/upgrade RGD data and the Russian game locale.
 import type { DoctrineAbility } from '../types';
 
-export type AbilityDetail = Partial<Pick<DoctrineAbility, 'description' | 'cost'>> & { name?: string; extra?: string };
+export type AbilityDetail = Partial<Pick<DoctrineAbility, 'description' | 'cost'>> & { name?: string; extra?: string; icon_name?: string };
 
 export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "cover_to_cover": {
     "name": "Из укрытия в укрытие",
     "description": "Обстрел заданной области дымовыми снарядами с последующим кратковременным рывком пехоты в этой области.",
     "extra": "Бросает дымовую шашку в центр указанной области. Ближайшая пехота выполнит рывок длительностью в 20 сек.",
+    "icon_name": "Icons_abilities_cover_to_cover",
     "cost": {
       "munitions": 60
     }
@@ -16,6 +17,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Тяжелый танк M26 \"Першинг\"",
     "description": "В указанное место отправляется тяжелый танк M-26 \"Першинг\"",
     "extra": "Доступна новая техника - танк M26 \"Першинг\". Укажите место прибытия. Применение: против любых целей.",
+    "icon_name": "Icons_vehicles_vehicle_aef_m26_pershing",
     "cost": {
       "manpower": 630,
       "fuel": 230
@@ -25,6 +27,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Ракетный удар P-47",
     "description": "Самолет P-47 \"Тандерболт\" патрулирует указанную область, обстреливая замеченную технику авиационными реактивными снарядами.",
     "extra": "Щелкните по нужной позиции. Самолет будет патрулировать указанный район в течение ограниченного времени.",
+    "icon_name": "Icons_commander_cmdr_aef_p47_rocket_strike",
     "cost": {
       "munitions": 225
     }
@@ -32,37 +35,44 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "elite_vehicle_crews": {
     "name": "(постоянно) Улучшение: элитные экипажи",
     "description": "Экипажи техники вооружаются пистолетами-пулеметами Томпсона.",
-    "extra": "Пассивное улучшение."
+    "extra": "Пассивное улучшение.",
+    "icon_name": "Icons_commander_cmdr_aef_elite_crews"
   },
   "mechanized_group": {
     "name": "(ПАССИВН.) Механизированные отряды",
     "description": "Из казарм можно вызывать автомобиль WC51 и БТР M3.",
-    "extra": "Позволяет производить автомобили WC51 и БТР M3. Для M3 нужен офицер."
+    "extra": "Позволяет производить автомобили WC51 и БТР M3. Для M3 нужен офицер.",
+    "icon_name": "Icons_commander_cmdr_aef_mechanized_group"
   },
   "rifleman_fire_up_mp": {
     "name": "(Постоянно) Бегом марш!",
     "description": "Возможность отдать стрелкам приказ \"Бегом марш!\", временно повышающий скорость их перемещения.",
-    "extra": "Длительность 10 сек."
+    "extra": "Длительность 10 сек.",
+    "icon_name": "Icons_abilities_ability_aef_sprint_hmg"
   },
   "riflemen_30_caliber_lmg": {
     "name": "(постоянно) Ручной пулемет M1919A6",
     "description": "На базе становится доступна оружейная стойка с ручными пулеметами M1919A6. Вооружившись этими пулеметами, стрелки получают доступ к способности \"Оборона позиции\".",
-    "extra": "В штабе доступна оружейная стойка."
+    "extra": "В штабе доступна оружейная стойка.",
+    "icon_name": "Icons_upgrades_icon_upgrade_aef_m1919a6"
   },
   "riflemen_defensive_buildings": {
     "name": "(постоянно) Стрелковые укрепления",
     "description": "Стрелки учатся обустраивать огневые позиции, а также размещать мешки с песком и мины.",
-    "extra": "Доступно меню строительства для стрелков."
+    "extra": "Доступно меню строительства для стрелков.",
+    "icon_name": "Icons_commander_cmdr_aef_field_defenses"
   },
   "urban_assault_kit": {
     "name": "(ПАССИВН.) Городское штурмовое снаряжение",
     "description": "Войска второго эшелона можно вооружать винтовочными гранатометами, а стрелков – зажигательными устройствами.",
-    "extra": "Новое улучшение для войск второго эшелона. Открывает ветеранскую способность \"Зажигательное устройство\"."
+    "extra": "Новое улучшение для войск второго эшелона. Открывает ветеранскую способность \"Зажигательное устройство\".",
+    "icon_name": "Icons_upgrades_urban_grenades_usf"
   },
   "time_on_target_artillery": {
     "name": "Координированный обстрел",
     "description": "Вызов координированного артиллерийского обстрела указанной области. Снаряды ложатся буквально один за другим.",
     "extra": "Щелкните по нужной позиции.",
+    "icon_name": "Icons_commander_cmdr_aef_time_on_target",
     "cost": {
       "munitions": 180
     }
@@ -71,6 +81,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Штурмовые саперы",
     "description": "Вызов отряда штурмовых саперов. Они эффективны против пехоты на ближних дистанциях и могут сносить укрепления.",
     "extra": "Доступен новый вид войск - штурмовые саперы. Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_aef_assault_engineers",
     "cost": {
       "manpower": 280
     }
@@ -79,6 +90,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Стрелки-кавалеристы",
     "description": "На поле боя можно отправлять стрелков-кавалеристов. Эта универсальная боевая единица подготовлена к ведению ближнего боя.",
     "extra": "Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_aef_assault_riflemen",
     "cost": {
       "manpower": 280
     }
@@ -87,6 +99,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "M8 \"Грейхаунд\"",
     "description": "Возможность вызвать на поле боя бронеавтомобиль M8 \"Грейхаунд\". Он достаточно эффективен против пехоты, но его броня не отличается прочностью.",
     "extra": "Доступна новая техника - бронеавтомобиль M8 \"Грейхаунд\". Укажите место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_aef_m8_greyhound",
     "cost": {
       "manpower": 280,
       "fuel": 60
@@ -96,6 +109,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "M21 с минометом",
     "description": "Возможность вызвать на поле боя бронетранспортер M21 с минометом. Этот вид самоходной артиллерии эффективен против неподвижной пехоты на дальних дистанциях.",
     "extra": "Доступна новая техника -  бронетранспортер M21 с минометом. Укажите место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_aef_halftrack_m21_mortar",
     "cost": {
       "manpower": 200,
       "fuel": 30
@@ -104,12 +118,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "m3_halftrack_mp": {
     "name": "Бронетранспортер M3",
     "description": "На поле боя можно вызывать бронетранспортеры M3, перевозящие солдат и обеспечивающие мобильное подкрепление.",
-    "extra": "В полевом штабе доступна новая техника - бронетранспортер M3."
+    "extra": "В полевом штабе доступна новая техника - бронетранспортер M3.",
+    "icon_name": "Icons_vehicles_vehicle_aef_halftrack_m3"
   },
   "paradrop_machine_gun": {
     "name": "Выброска крупнокалиберного пулемета M2HB",
     "description": "На поле боя сбрасывается пулемет M2HB 50-го калибра, который можно укомплектовать дружественной пехотой. При правильном выборе позиции это оружие эффективно против крупных скоплений пехоты.",
     "extra": "Укажите зону выброски щелчком мыши. Оружие будет сброшено в указанную точку.",
+    "icon_name": "Icons_commander_cmdr_aef_air_dropped_browning",
     "cost": {
       "manpower": 125,
       "munitions": 50
@@ -119,6 +135,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Самоходная гаубица M7B1 \"Прист\"",
     "description": "Вызов самоходной гаубицы M7B1 \"Прист\". Эта САУ эффективна против неподвижных целей и скоплений противника.",
     "extra": "Доступна новая техника - САУ M7B1 \"Прист\". Укажите место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_aef_m7b1_priest",
     "cost": {
       "manpower": 480,
       "fuel": 115
@@ -128,6 +145,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Инженерный \"Шерман\" со 105-мм орудием",
     "description": "Возможность вызвать на поле боя инженерный танк \"Шерман\" со 105-мм орудием. Применение: против пехоты и укреплений. Может возводить и сносить загражения.",
     "extra": "Доступна новая техника - инженерный \"Шерман\" со 105-мм орудием. Укажите место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_aef_m4a3_sherman_bulldozer",
     "cost": {
       "manpower": 380,
       "fuel": 140
@@ -136,12 +154,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "sherman_easy8_dispatch": {
     "name": "(ПОСТОЯННО) M4A3E8 \"Шерман Изи Эйт\"",
     "description": "В батальонном командном пункте можно вызвать  танк M4A3E8 \"Шерман Изи Эйт\" - самую передовую модификацию \"Шермана\". Применение: против любых целей.",
-    "extra": "Доступна новая техника - танк M4A3E8 \"Шерман Изи Эйт\". Для вызова воспользуйтесь батальонным КП."
+    "extra": "Доступна новая техника - танк M4A3E8 \"Шерман Изи Эйт\". Для вызова воспользуйтесь батальонным КП.",
+    "icon_name": "Icons_vehicles_vehicle_aef_m4a3e8_sherman"
   },
   "paratrooper_mk2_fragmentation_grenade_mp": {
     "name": "Взведенная граната Mk 2",
     "description": "Опытный десантник, бросая гранату Mk II, ждет несколько мгновений после выдергивания чеки. Так у противника остается меньше времени на спасение.",
     "extra": "Щелкните сначала по способности, затем по цели. Малый радиус поражения.",
+    "icon_name": "Icons_abilities_ability_aef_mk2_pinapple_grenade",
     "cost": {
       "munitions": 35
     }
@@ -150,6 +170,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Огонь на подавление",
     "description": "Прицельный огонь на подавление заставляет пехоту противника залечь, временно снижая скорость ее перемещения.",
     "extra": "Щелкните сначала по способности, затем по отряду пехоты противника.",
+    "icon_name": "Icons_abilities_ability_aef_suppressing_fire",
     "cost": {
       "munitions": 20
     }
@@ -157,17 +178,20 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "aef_repair_ability_rear_echelon_mp": {
     "name": "Ремонт",
     "description": "Демонстрируя техническую смекалку, войска второго эшелона могут ремонтировать любые постройки, машины и мосты.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "aef_repair_ability_vehicle_crew_mp": {
     "name": "Ремонт",
     "description": "Экипажи техники могут выполнять несложный ремонт любых построек, машин и мостов.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "aef_repair_critical_mp": {
     "name": "Ремонт критических повреждений",
     "description": "Быстрое устранение одного критического и небольшой части общих повреждений техники.",
     "extra": "Щелкните сначала по способности, затем по поврежденной технике.",
+    "icon_name": "Icons_abilities_ability_aef_burst_repair",
     "cost": {
       "munitions": 25
     }
@@ -176,6 +200,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Прикрывающий огонь",
     "description": "Мощный обстрел вынудит вражескую пехоту искать укрытие, что снизит точность ее стрельбы и замедлит передвижение.",
     "extra": "Щелкните мышью способность, затем щелкните нужный вражеский отряд пехоты. Замедляет цель и снижает точность ее стрельбы.",
+    "icon_name": "Icons_bob_abilities_assasinate",
     "cost": {
       "munitions": 20
     }
@@ -184,6 +209,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Совместные действия",
     "description": "Находясь рядом, пехота и техника координируют усилия и повышают эффективность друг друга.",
     "extra": "Повышение эффективности войск, находящихся рядом с техникой или пехотой.",
+    "icon_name": "Icons_commander_cmdr_aef_combined_arms",
     "cost": {
       "munitions": 110
     }
@@ -192,6 +218,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Тактика рейда",
     "description": "Техника может быстро захватывать территорию и повышает радиус обзора у пехоты.",
     "extra": "Временная способность. Щелкните мышью, чтобы активировать.",
+    "icon_name": "Icons_bob_specializations_support_tactics",
     "cost": {
       "munitions": 40
     }
@@ -200,6 +227,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Плотный огонь",
     "description": "Войска второго эшелона открывают плотный огонь из своих карабинов, постепенно подавляя указанный отряд противника.",
     "extra": "Время действия 15 сек. Указанный отряд подавляется.",
+    "icon_name": "Icons_abilities_ability_aef_volley_fire",
     "cost": {
       "munitions": 20
     }
@@ -207,12 +235,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "usf_hold_fire_mp": {
     "name": "Не стрелять",
     "description": "Не стрелять до прямого приказа.",
-    "extra": "Переключаемая способность."
+    "extra": "Переключаемая способность.",
+    "icon_name": "Icons_abilities_ability_soviet_sniper_hold_fire_off"
   },
   "qf_25lb_coordinated_fire_order_officer_mp": {
     "name": "Координация огня",
     "description": "Приказ всем 25-фунтовым гаубицам при штабе Британской армии выполнить наводку и выстрелить по указанной цели.",
     "extra": "Щелкните сначала по способности, затем по цели. Все штабные гаубицы выпустят по 6 снарядов по указанной цели.",
+    "icon_name": "Icons_abilities_ability_british_coordinated_fire",
     "cost": {
       "munitions": 45
     }
@@ -221,6 +251,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Координация огня",
     "description": "Приказ всем 25-фунтовым гаубицам при штабе Британской армии выполнить наводку и выстрелить по указанной цели.",
     "extra": "Щелкните сначала по способности, затем по цели. Все штабные гаубицы выпустят по 6 снарядов по указанной цели.",
+    "icon_name": "Icons_abilities_ability_british_coordinated_fire",
     "cost": {
       "munitions": 45
     }
@@ -229,6 +260,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Координация огня",
     "description": "Приказ всем 25-фунтовым гаубицам при штабе Британской армии выполнить наводку и выстрелить по указанной цели.",
     "extra": "Щелкните сначала по способности, затем по цели. Все штабные гаубицы выпустят по 6 снарядов по указанной цели.",
+    "icon_name": "Icons_abilities_ability_british_coordinated_fire",
     "cost": {
       "munitions": 45
     }
@@ -237,6 +269,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовая шашка",
     "description": "Плотный обстрел указанной области дымовыми снарядами M89, ухудшающими обзор.",
     "extra": "Щелкнуть по умению, затем по целевому району. Загораживает обзор противнику.",
+    "icon_name": "Icons_abilities_smoke_barrage_tommy",
     "cost": {
       "munitions": 25
     }
@@ -245,6 +278,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовая шашка",
     "description": "Плотный обстрел указанной области дымовыми снарядами M89, ухудшающими обзор.",
     "extra": "Щелкнуть по умению, затем по целевому району. Загораживает обзор противнику.",
+    "icon_name": "Icons_abilities_smoke_barrage_tommy",
     "cost": {
       "munitions": 25
     }
@@ -253,6 +287,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Сосредоточенный огонь \"Секстонов\"",
     "description": "Приказ всем доступным \"Секстонам\" открыть огонь усиленными снарядами повышенной дальнобойности по указанной области.",
     "extra": "Щелкните сначала по способности, затем по цели. Все САУ \"Секстон\" выпустят по 8 снарядов по указанной цели.",
+    "icon_name": "Icons_abilities_ability_british_concentrated_barrage",
     "cost": {
       "munitions": 60
     }
@@ -261,6 +296,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Операция \"Превосходство в воздухе\"",
     "description": "Вылет самолета-разведчика, за которым следуют штурмовики. После них по указанному району наносят удар тяжелые бомбардировщики.",
     "extra": "Щелкните по нужной позиции. Применение: против неподвижных целей.",
+    "icon_name": "Icons_commander_cmdr_british_air_superiority_operation",
     "cost": {
       "munitions": 250
     }
@@ -269,6 +305,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Передовой наблюдательный пункт",
     "description": "Превращение гражданской постройки, занятой вашими войсками, в передовой наблюдательный пункт. Эта постройка позволяет управлять артиллерийской и авиационной поддержкой с помощью уникальных способностей.",
     "extra": "Выберите гражданскую постройку, расположенную на дружественной территории и занятую вашими войсками.",
+    "icon_name": "Icons_commander_cmdr_british_forward_observation_post",
     "cost": {
       "manpower": 250,
       "fuel": 30
@@ -278,6 +315,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Раннее обнаружение",
     "description": "Артиллерийские батареи периодически стреляют осветительными снарядами по прифронтовым секторам противника, облегчая разведку местности.",
     "extra": "Выберите сектор фронта. Длительность 30 сек.",
+    "icon_name": "Icons_commander_cmdr_british_early_warning",
     "cost": {
       "munitions": 60
     }
@@ -286,6 +324,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Высадка коммандос на планере",
     "description": "Отправка десантного планера с коммандос на борту в указанную точку. Планер может восполнять потери даже на чужой территории.",
     "extra": "Коммандос представляют собой пехоту ближнего боя, специализирующуюся на операциях в тылу противника. Они обладают рядом способностей, связанных с засадами и штурмом.",
+    "icon_name": "Icons_commander_cmdr_british_glider_operation",
     "cost": {
       "manpower": 390
     }
@@ -294,6 +333,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Минометное прикрытие",
     "description": "Расчеты соседних легких минометов будут автоматически открывать огонь фугасными и зажигательными боеприпасами по целям в указанной области, а затем давать осветительные залпы.",
     "extra": "Щелкните по нужной позиции.",
+    "icon_name": "Icons_commander_cmdr_british_mortar_cover_operation",
     "cost": {
       "munitions": 130
     }
@@ -302,6 +342,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "9,75-дюймовые зажигательные минометы",
     "description": "Длительный обстрел указанной области 9,75-дюймовыми зажигательными минами, наносящими огромный урон гражданским постройкам.",
     "extra": "Щелкните по нужной позиции. Применение: против пехоты и гарнизонов.",
+    "icon_name": "Icons_commander_cmdr_british_burn_them_out_operation",
     "cost": {
       "munitions": 110
     }
@@ -310,6 +351,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Указание командирской машины",
     "description": "Указанная машина объявляется командирской. При этом повышается боеспособность отрядов, находящихся рядом с ней, и ускоряется восстановление командирских способностей.",
     "extra": "Укажите британскую технику. Командирская машина перемещается и атакует медленнее, но может вызывать авиаподдержку.",
+    "icon_name": "Icons_commander_cmdr_british_command_vehicle_operation",
     "cost": {
       "munitions": 75
     }
@@ -318,6 +360,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Операция \"Массированный обстрел\"",
     "description": "Координирование массированного обстрела указанной зоны. Сперва будет выпущен один крупнокалиберный артиллерийский снаряд, затем серия из 25-фунтовых снарядов.",
     "extra": "Выберите способность, затем выберите позицию. Первый снаряд попадает точно в центр обстреливаемой зоны.",
+    "icon_name": "Icons_commander_cmdr_british_concentrated_fire_operation",
     "cost": {
       "munitions": 250
     }
@@ -326,6 +369,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Операция \"Рейд под прикрытием дыма\"",
     "description": "По указанной позиции будет выполнен залп дымовыми снарядами, а пехота начнет маневры под прикрытием дымовых гранат. Это действие позволяет быстро освобождать территории противника.",
     "extra": "Щелкните для включения. Во время действия способности пехота маскируется в укрытиях и быстрее освобождает территории. Длительность 60 сек.",
+    "icon_name": "Icons_commander_cmdr_british_smoke_raid_operation",
     "cost": {
       "munitions": 60
     }
@@ -334,6 +378,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Противотанковое пехотное отделение",
     "description": "Вызов противотанкового пехотного отделения. Его бойцы вооружены противотанковыми винтовками Бойса и могут обнаруживать технику неподалеку от себя. Также они могут получить противотанковые гранаты.",
     "extra": "Укажите место прибытия.",
+    "icon_name": "Icons_units_brit_at_section_5",
     "cost": {
       "manpower": 300
     }
@@ -342,6 +387,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Штурмовая операция \"Крокодил”",
     "description": "Ближайшие артиллерийские батареи дают быстрый залп осветительными снарядами по указанной области, а танк \"Черчилль-Крокодайл\" прибывает на поле боя.",
     "extra": "Укажите место прибытия.",
+    "icon_name": "Icons_commander_cmdr_british_vanguard_operations_crocodile",
     "cost": {
       "manpower": 640,
       "fuel": 230
@@ -351,6 +397,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Инженерный AVRE",
     "description": "Вызов инженерного танка \"Черчилль\" с мощной петардной мортирой.",
     "extra": "Укажите место прибытия.",
+    "icon_name": "Icons_commander_cmdr_british_demolitions_operation",
     "cost": {
       "manpower": 560,
       "fuel": 175
@@ -360,6 +407,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Сосредоточение огня",
     "description": "Приказ всем 25-фунтовым гаубицам при штабе Британской армии нанести быстрый удар по указанной области.",
     "extra": "Щелкните сначала по способности, затем по цели. Все гаубицы, находящиеся в районе, выпустят по 3 снаряда по указанной цели.",
+    "icon_name": "Icons_commander_cmdr_british_coordinated_fire_operation",
     "cost": {
       "munitions": 100
     }
@@ -368,6 +416,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Эвакуационный отряд Королевских саперов",
     "description": "Вызов отряда Королевских саперов, обученных забирать ценные ресурсы с остовов уничтоженной техники.",
     "extra": "Укажите цель щелчком мыши.",
+    "icon_name": "Icons_units_unit_british_engineer_recovery",
     "cost": {
       "manpower": 250
     }
@@ -376,6 +425,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Планер передового снабжения",
     "description": "Разворачивание штабного планера. Штаб может отправлять на фронт оружие и коммандос, а также служить точкой отступления.",
     "extra": "Укажите место прибытия. Это место можно будет использовать в качестве сборного пункта при отступлении.",
+    "icon_name": "Icons_vehicles_vehicle_british_airspeed_horsa_glider_hq",
     "cost": {
       "manpower": 200
     }
@@ -384,6 +434,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Коммандос-диверсанты",
     "description": "Элитный диверсионный отряд, специализирующийся на нарушении линий снабжения противника. Может выйти на поле боя из любой гражданской постройки.",
     "extra": "Доступен новый вид войск - коммандос-диверсанты. Укажите гражданскую постройку в качестве места прибытия.",
+    "icon_name": "Icons_units_unit_british_commando_from_building",
     "cost": {
       "manpower": 320
     }
@@ -391,12 +442,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "observation_valentine": {
     "name": "Разведывательный \"Валентайн\"",
     "description": "Позволяет отправить на поле боя командирский танк \"Валентайн\" Mk. XI.",
-    "extra": "Доступна новая техника в штабе - командирский танк \"Валентайн\" Mk. XI."
+    "extra": "Доступна новая техника в штабе - командирский танк \"Валентайн\" Mk. XI.",
+    "icon_name": "Icons_commander_cmdr_british_observation_detachment_valentine"
   },
   "british_smoke_grenade_mp": {
     "name": "Дымовая граната",
     "description": "Бросить в указанное место небольшую дымовую гранату.",
     "extra": "Щелкните и укажите место броска. Блокирует обзор.",
+    "icon_name": "Icons_abilities_ability_soviet_rgd_1_smoke_grenade",
     "cost": {
       "munitions": 15
     }
@@ -405,6 +458,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Противотанковая граната",
     "description": "Боец отряда бросит гранату в указанную технику противника.",
     "extra": "Щелкните сначала по способности, затем по технике противника. Применение: против любой техники.",
+    "icon_name": "Icons_abilities_ability_british_heat_grenade",
     "cost": {
       "munitions": 25
     }
@@ -413,6 +467,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Противотанковая граната",
     "description": "Боец отряда бросит гранату в указанную технику противника.",
     "extra": "Щелкнуть по умению, затем по целевой вражеской технике. Применение: против любой техники.",
+    "icon_name": "Icons_abilities_ability_british_heat_grenade",
     "cost": {
       "munitions": 25
     }
@@ -421,6 +476,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Зажигательная граната",
     "description": "Самодельное зажигательное устройство, способное поджигать вражескую пехоту.",
     "extra": "Кликните мышью способность, затем кликните нужный район. Эффективно против неподвижных войск, войск в гарнизоне и войск в укрытии.",
+    "icon_name": "Icons_abilities_ability_soviet_molotov_cocktail",
     "cost": {
       "munitions": 30
     }
@@ -429,6 +485,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Модифицированная мина M6",
     "description": "Рейдовое отделение может ставить модифицированные мины M6, наносящие урон как пехоте, так и технике.",
     "extra": "Щелкнуть по умению, затем по цели.",
+    "icon_name": "Icons_abilities_ability_british_ap_mine_no_3_mk1",
     "cost": {
       "munitions": 30
     }
@@ -436,37 +493,44 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "brit_repair_ability_recovery_sappers_mp": {
     "name": "Ремонт",
     "description": "Королевские саперы могут ремонтировать поврежденные постройки, технику и мосты.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "brit_repair_ability_sappers_mp": {
     "name": "Ремонт",
     "description": "Королевские саперы могут ремонтировать любые постройки, машины и мосты.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "brit_repair_ews_ability_recovery_sappers_mp": {
     "name": "Специализированный ремонт",
     "description": "Королевские саперы могут ремонтировать поврежденные постройки, технику и мосты. Если целью ремонта является британская техника, саперы также форсируют ее двигатель.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "brit_repair_ews_ability_sappers_mp": {
     "name": "Специализированный ремонт",
     "description": "Королевские саперы могут ремонтировать любые постройки, технику и мосты. Если целью ремонта является британская техника, саперы также форсируют ее двигатель.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "advanced_assembly": {
     "name": "(ПОСТОЯННО) Улучшенная перегруппировка",
     "description": "Для передовых сборных пунктов доступно улучшение \"Перегруппировка\". После его разработки на сборном пункте появятся королевские саперы, готовые ремонтировать все поврежденные постройки и технику в окрестностях пункта.",
-    "extra": "Доступно на передовом сборном пункте."
+    "extra": "Доступно на передовом сборном пункте.",
+    "icon_name": "Icons_commander_cmdr_british_advanced_assembly"
   },
   "defensive_operations": {
     "name": "(ПОСТОЯННО) Оборонительные операции",
     "description": "Пехотные отряды и Королевские саперы получают дополнительные шанцевые инструменты и снаряжение, позволяющее возводить дополнительные укрепления и позиции.",
-    "extra": "Пехотным отделениям и Королевским саперам доступны новые предметы для строительства. Открывает способность \"Ремонт построек\" для пехотных отделений."
+    "extra": "Пехотным отделениям и Королевским саперам доступны новые предметы для строительства. Открывает способность \"Ремонт построек\" для пехотных отделений.",
+    "icon_name": "Icons_commander_cmdr_british_defensive_operations"
   },
   "assault": {
     "name": "Штурм",
     "description": "Пехотные отряды быстрее перемещаются и обладают повышенной боеспособностью. Над прифронтовыми секторами противника пролетают самолеты-разведчики.",
     "extra": "Щелкните для включения. Длительность 60 сек.",
+    "icon_name": "Icons_commander_cmdr_british_assault_operation",
     "cost": {
       "munitions": 90
     }
@@ -475,6 +539,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Держать строй!",
     "description": "Оборонительные характеристики пехоты на дружественных территориях повышаются. Спустя определенное время истребители \"Хоукер Тайфун\" атакуют цели на линии фронта реактивными снарядами и пулеметным огнем.",
     "extra": "Щелкните для использования.",
+    "icon_name": "Icons_commander_cmdr_british_hold_the_line",
     "cost": {
       "munitions": 150
     }
@@ -483,6 +548,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Операция \"Снабжение по воздуху\"",
     "description": "Транспортные самолеты будут автоматически сбрасывать медикаменты и боеприпасы рядом с дружественными войсками на прифронтовых территориях. Скорость перемещения пехоты и восполнения ее потерь повысится.",
     "extra": "Выберите способность, затем выберите позицию.",
+    "icon_name": "Icons_commander_cmdr_british_resupply_operation_mortar",
     "cost": {
       "manpower": 125,
       "munitions": 80
@@ -491,12 +557,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "heroic_charge_mp": {
     "name": "Решительная атака",
     "description": "Офицер призывает выбранный отряд передвигаться бегом, стрелять точнее и лучше уклоняться от вражеского огня.",
-    "extra": "Выберите способность, затем выберите свой пехотный отряд."
+    "extra": "Выберите способность, затем выберите свой пехотный отряд.",
+    "icon_name": "Icons_abilities_ability_british_heroic_charge"
   },
   "rapid_advance": {
     "name": "Операция \"Рейд\"",
     "description": "Все виды пехоты и британской техники могут быстрее захватывать точки в целях прорыва фронта.",
     "extra": "Щелкните для включения. Длительность 60 сек.",
+    "icon_name": "Icons_commander_cmdr_british_raid_operation",
     "cost": {
       "munitions": 50
     }
@@ -505,13 +573,15 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Рывок",
     "description": "Отряд кратковременно будет перемещаться на максимальной скорости.",
     "extra": "Временная способность. Повышает скорость передвижения, но лишает способности вести огонь с хода.",
+    "icon_name": "Icons_abilities_ability_british_tommy_sprint",
     "cost": {
       "munitions": 15
     }
   },
   "british_mortar_hold_fire_mp": {
     "name": "Не стрелять",
-    "description": "Не стрелять до прямого приказа."
+    "description": "Не стрелять до прямого приказа.",
+    "icon_name": "Icons_abilities_ability_soviet_mortar_on"
   },
   "stormtrooper_in_cover_auto_camouflage_mp": {
     "name": "Маскировка",
@@ -521,6 +591,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Выстрел гранатой из винтовки",
     "description": "Гренадеры ведут огонь 30-мм винтовочными гранатами.",
     "extra": "Щелкнуть по цели. Небольшой урон, но по дальности поражения превышает бросок гранаты.",
+    "icon_name": "Icons_abilities_ability_german_rifle_grenade_shot",
     "cost": {
       "munitions": 30
     }
@@ -529,6 +600,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Осветительная шашка",
     "description": "Осветительная шашка, медленно снижающаяся на парашюте, позволяет разведать обстановку в указанной области.",
     "extra": "Время действия - около 30 сек.",
+    "icon_name": "Icons_commander_cmdr_aef_flare",
     "cost": {
       "munitions": 30
     }
@@ -537,6 +609,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Выстрел из панцерфауста",
     "description": "Выстрел из \"Панцерфауста\" по указанной технике противника. Это оружие эффективно на ближних дистанциях.",
     "extra": "Щелкнуть по умению, затем по целевой технике.",
+    "icon_name": "Icons_abilities_ability_german_panzerfaust",
     "cost": {
       "munitions": 25
     }
@@ -544,12 +617,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "armor_commander": {
     "name": "Командирский танк",
     "description": "Вы можете вызвать командирский танк, повышающий эффективность войск, находящихся рядом с ним.",
-    "extra": "Доступна новая техника - командирский танк Pz.IV."
+    "extra": "Доступна новая техника - командирский танк Pz.IV.",
+    "icon_name": "Icons_vehicles_vehicle_german_panzer_commander"
   },
   "assault_field_officer": {
     "name": "Офицер-артиллерист",
     "description": "В ваше распоряжение поступает артиллерийский офицер, специализирующийся на войсках поддержки.",
     "extra": "На поле боя можно отправить артиллерийского офицера. Выберите мышью место прибытия.",
+    "icon_name": "Icons_units_unit_german_officer",
     "cost": {
       "manpower": 240
     }
@@ -558,6 +633,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Тактическое передвижение",
     "description": "Пока действует эта способность, вся пехота движется на максимально доступной ей скорости. Не оказывает влияния на отряды с противотанковым оружием.",
     "extra": "Временная способность. Влияет на всю пехоту. Длительность 20 сек.",
+    "icon_name": "Icons_commander_cmdr_german_fast_march",
     "cost": {
       "munitions": 40
     }
@@ -566,6 +642,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Передовая база снабжения",
     "description": "Дает возможность переоборудовать гражданскую постройку в передовую базу снабжения. База позволяет пополнять пехотные подразделения и автоматически ремонтировать технику, находящуюся поблизости. Ближайшая к базе техника быстрее ведет огонь. Также доступны ремонтные бункеры.",
     "extra": "Выберите мышью гражданскую постройку, занятую вашими войсками.",
+    "icon_name": "Icons_commander_cmdr_german_forward_hq",
     "cost": {
       "manpower": 150,
       "fuel": 30
@@ -575,6 +652,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Отделение егерей",
     "description": "На поле боя прибывает отряд егерей-ветеранов - очень эффективная боевая единица, способная поддерживать другие войска.",
     "extra": "На поле боя можно отправить отделение егерей. Выберите мышью место прибытия.",
+    "icon_name": "Icons_units_unit_jaegar_ost",
     "cost": {
       "manpower": 300
     }
@@ -583,6 +661,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Старший офицер люфтваффе",
     "description": "Отправляет старшего офицера люфтваффе на фронт для обеспечения поддержки.",
     "extra": "Доступен новый вид войск - старший офицер люфтваффе. Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_german_luftwaffe_new",
     "cost": {
       "manpower": 240
     }
@@ -590,12 +669,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "defensive_fortifications": {
     "name": "(постоянно) Оборонительные сооружения",
     "description": "Саперы могут возводить противотанковые ловушки.",
-    "extra": "Присутствует в базовом меню строительства саперов."
+    "extra": "Присутствует в базовом меню строительства саперов.",
+    "icon_name": "Icons_commander_cmdr_german_defensive_operations"
   },
   "elefant_unlock": {
     "name": "Тяжелый истребитель танков \"Элефант\"",
     "description": "Вы можете заказывать постройку истребителей танков \"Элефант\".",
     "extra": "Доступна новая техника - САУ \"Элефант\". Укажите место прибытия. Применение: против танков на дальних дистанциях.",
+    "icon_name": "Icons_vehicles_vehicle_german_elefant_tank_destroyer",
     "cost": {
       "manpower": 720,
       "fuel": 245
@@ -605,6 +686,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Самоходный миномет SdKfz.250/7",
     "description": "Самоходный миномет SdKfz.250/7 калибра 80 мм дает необходимую поддержку пехоте в бою.",
     "extra": "Вам доступна новая техника - SdKfz.250/7. Укажите место прибытия.",
+    "icon_name": "Icons_commander_cmdr_german_mortar_halftrack",
     "cost": {
       "manpower": 200,
       "fuel": 30
@@ -613,12 +695,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "mortar_incendiary_barrage": {
     "name": "(постоянно) Обстрел боеприпасами",
     "description": "Позволяет минометным расчетам обстреливать указанную область зажигательными боеприпасами.",
-    "extra": "Доступно для немецких минометов."
+    "extra": "Доступно для немецких минометов.",
+    "icon_name": "Icons_abilities_ability_german_incendiary_barrage"
   },
   "tiger_tank": {
     "name": "Pz.VI \"Тигр\"",
     "description": "Вы можете заказывать постройку тяжелых танков \"Тигр\".",
     "extra": "Доступна новая техника - танк PzKpfw.VI \"Тигр\". Укажите место прибытия. Применение: против пехоты.",
+    "icon_name": "Icons_commander_cmdr_german_tiger",
     "cost": {
       "manpower": 640,
       "fuel": 230
@@ -628,6 +712,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Секторная артиллерия",
     "description": "По противнику в указанном секторе проводится артобстрел из 105-мм орудий.",
     "extra": "Применить к вашей территории. Будет обстреливать врагов на этой территории. Длительность 45 сек.",
+    "icon_name": "Icons_commander_cmdr_german_sector_artillery",
     "cost": {
       "munitions": 200
     }
@@ -636,6 +721,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Стратегическая бомбардировка",
     "description": "Ковровая бомбардировка указанной области с самолетов \"Хейнкель\" He.111. Разброс бомб очень велик, но область может находиться за пределами зоны видимости ваших войск.",
     "extra": "Цель может находиться в \"тумане войны\". Очень долгое время подготовки и большой разброс бомб.",
+    "icon_name": "Icons_commander_cmdr_german_strategic_bombing",
     "cost": {
       "munitions": 300
     }
@@ -644,6 +730,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Стратегическая бомбардировка",
     "description": "Ковровая бомбардировка указанной области с самолетов \"Хейнкель\" He.111. Разброс бомб очень велик, но область может находиться за пределами зоны видимости ваших войск.",
     "extra": "Цель может находиться в \"тумане войны\". Очень долгое время подготовки и большой разброс бомб.",
+    "icon_name": "Icons_commander_cmdr_german_strategic_bombing",
     "cost": {
       "munitions": 300
     }
@@ -652,6 +739,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Авиаподдержка \"Штукой\"",
     "description": "Указанный район будет патрулировать самолет Ju.87 \"Штука\", обстреливая войска противника из тяжелых 37-мм пушек.",
     "extra": "Выбрано. Самолеты будут атаковать только технику.",
+    "icon_name": "Icons_commander_cmdr_german_stuka_close_air_support_loiter",
     "cost": {
       "munitions": 225
     }
@@ -660,6 +748,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Осколочные бомбы",
     "description": "Бомбардировщик сбрасывает осколочные бомбы на целевой район.",
     "extra": "Щелкните сначала по способности, затем по цели.",
+    "icon_name": "Icons_commander_cmdr_german_fragmentation_bomb",
     "cost": {
       "munitions": 180
     }
@@ -668,6 +757,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовые бомбы",
     "description": "На поле боя сбрасываются дымовые бомбы, создающие обширную дымовую завесу.",
     "extra": "Применять по площади.",
+    "icon_name": "Icons_commander_smoke_recon",
     "cost": {
       "munitions": 40
     }
@@ -675,12 +765,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "stuka_smoke_bomb_officer_mp": {
     "name": "Дымовая бомба \"Штуки\"",
     "description": "Сброс больших дымовых шашек, дым от которых загораживает обзор.",
-    "extra": "Выберите способность, затем выберите позицию и направление."
+    "extra": "Выберите способность, затем выберите позицию и направление.",
+    "icon_name": "Icons_commander_cmdr_german_stuka_smoke_bomb"
   },
   "supply_break": {
     "name": "Нарушение снабжения",
     "description": "Отправьте бомбардировщик \"Штука\" для нейтрализации выбранного пункта точным ударом, и эта территория перейдет в нейтральное состояние.",
     "extra": "Укажите точки ресурсов; цели могут быть вне зоны видимости.",
+    "icon_name": "Icons_commander_cmdr_german_supply_break",
     "cost": {
       "munitions": 80
     }
@@ -689,6 +781,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Штурмовые гренадеры",
     "description": "Отправить на поле боя мотопехоту, вооруженную пистолетами-пулеметами MP40 и осколочными противопехотными гранатами Model 24.",
     "extra": "На поле боя можно отправить гренадеров из войск спецназначения. Выберите мышью место прибытия.",
+    "icon_name": "Icons_units_unit_german_assault_grenadier_update",
     "cost": {
       "manpower": 280
     }
@@ -697,6 +790,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Механизированная штурмовая группа",
     "description": "В ваше распоряжение поступает бронетранспортер SdKfz 250 с отрядом панцергренадиров.",
     "extra": "Вызов на поле боя панцергренадиров с ручными пулеметами на бронетранспортере. Укажите место прибытия.",
+    "icon_name": "Icons_commander_cmdr_german_mechanized_assault_group",
     "cost": {
       "manpower": 490,
       "fuel": 20
@@ -705,17 +799,20 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "ostruppen": {
     "name": "Отряд \"Восточного легиона\"",
     "description": "Возможность вызвать восточный легион на поле боя. Эти бойцы эффективны в укрытии или в гарнизоне.",
-    "extra": "Доступен новый отряд в пехотной роте - Восточный легион."
+    "extra": "Доступен новый отряд в пехотной роте - Восточный легион.",
+    "icon_name": "Icons_units_unit_german_ostruppen"
   },
   "puma_dispatch": {
     "name": "Бронеавтомобиль SdKfz.234 \"Пума\"",
     "description": "Вызов бронеавтомобиля SdKfz.234 \"Пума\".",
-    "extra": "Доступна новая техника - бронеавтомобиль SdKfz.234 \"Пума\"."
+    "extra": "Доступна новая техника - бронеавтомобиль SdKfz.234 \"Пума\".",
+    "icon_name": "Icons_vehicles_vehicle_german_puma_east"
   },
   "stormtroopers": {
     "name": "Штурмовой отряд",
     "description": "Элитный диверсионный отряд, специализирующийся на нарушении линий снабжения противника. Может выйти на поле боя из любой гражданской постройки.",
     "extra": "Выберите мышью постройку или место прибытия.",
+    "icon_name": "Icons_units_unit_german_stormtrooper_from_building_new",
     "cost": {
       "manpower": 340
     }
@@ -724,6 +821,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Элитный \"Тигр\"",
     "description": "Командование высылает вам \"Тигр\" с экипажем танкистов-асов. Есть только один такой экипаж; пока танк не будет уничтожен, поставки топлива сократятся на 90%, а людских резервов - на 25%.",
     "extra": "В указанное место отправляется танк PzKpfw.VI \"Тигр\" с ветеранским расчетом.",
+    "icon_name": "Icons_commander_tiger_ace_call_in",
     "cost": {
       "manpower": 720,
       "fuel": 250
@@ -733,6 +831,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бросок гранаты Model 24",
     "description": "Бросок гранаты Model 24 по указанной области. Применение: против пехоты.",
     "extra": "Щелкните сначала по способности, затем по цели. Применение: против пехоты.",
+    "icon_name": "Icons_abilities_ability_west_german_m24_grenade",
     "cost": {
       "munitions": 25
     }
@@ -741,6 +840,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовая граната Model 24",
     "description": "Отряд бросит гранату с дымовым зарядом, чтобы скрыть указанную область.",
     "extra": "Щелкнуть по умению, затем по цели. Дымовая завеса длится примерно 30 сек.",
+    "icon_name": "Icons_abilities_ability_german_smoke_grenade",
     "cost": {
       "munitions": 15
     }
@@ -749,6 +849,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовая граната Model 24",
     "description": "Отряд бросит гранату с дымовым зарядом, чтобы скрыть указанную область.",
     "extra": "Щелкнуть по умению, затем по цели. Дымовая завеса длится примерно 30 сек.",
+    "icon_name": "Icons_abilities_ability_german_smoke_grenade",
     "cost": {
       "munitions": 15
     }
@@ -757,6 +858,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Связка гранат Model 24",
     "description": "Бросает в указанное место связку из семи гранат Model 24.",
     "extra": "Применение: против пехоты, легкой техники.",
+    "icon_name": "Icons_abilities_ability_german_bundled_grenade",
     "cost": {
       "munitions": 45
     }
@@ -765,6 +867,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бросок взрывпакета",
     "description": "Взрывпакеты - это мощные взрывные устройства, способные наносить значительные повреждения постройкам, технике и любым другим целям в зоне поражения.",
     "extra": "Взрывное устройство с большим радиусом поражения, эффективное против большинства целей. Может использоваться для повреждения двигателей техники.",
+    "icon_name": "Icons_abilities_ability_soviet_satchel_charge",
     "cost": {
       "munitions": 45
     }
@@ -773,6 +876,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Зажигательная граната",
     "description": "Бросить зажигательную гранату в указанную область.",
     "extra": "Щелкните мышью способность, затем щелкните нужный район. Применение: против пехоты и складов.",
+    "icon_name": "Icons_abilities_ability_west_german_incendiary_grenade",
     "cost": {
       "munitions": 30
     }
@@ -781,6 +885,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Медпомощь",
     "description": "У отряда имеются медикаменты, с помощью которых можно оказать помощь раненым.",
     "extra": "Щелкнуть по умению, затем по целевому отряду.",
+    "icon_name": "Icons_abilities_ability_german_medkit",
     "cost": {
       "munitions": 20
     }
@@ -788,12 +893,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "panzer_grenadier_rudimentary_repair_ability_mp": {
     "name": "Начальный ремонт",
     "description": "Базовое обучение позволяет панцергренадерам проводить простой ремонт техники и построек.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "assault_grenadier_sprint_mp": {
     "name": "Рывок",
     "description": "Скорость перемещения отряда ненадолго возрастет. Стрельба при этом будет невозможна.",
     "extra": "Длительность 5 сек.",
+    "icon_name": "Icons_commander_german_sprint_ability",
     "cost": {
       "munitions": 20
     }
@@ -802,6 +909,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бесстрашная атака",
     "description": "Пехотные отряды получают приказ удерживать территорию, что усиливает их боевые способности и скорость захвата территории.",
     "extra": "Повышает точность, живучесть и темп захвата у отрядов пехоты. Действует 45 секунд.",
+    "icon_name": "Icons_commander_cmdr_west_german_for_the_fatherland",
     "cost": {
       "munitions": 70
     }
@@ -810,6 +918,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Прорыв",
     "description": "Экипаж разгоняет машины до предела, повышая скорость, ускоряя перезарядку и быстро захватывая территорию, что позволяет совершать прорыв.",
     "extra": "Щелкните для включения. Длительность 45 сек.",
+    "icon_name": "Icons_commander_cmdr_german_breakthrough",
     "cost": {
       "fuel": 50
     }
@@ -818,6 +927,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Тактика контратаки",
     "description": "Пехотинцы учатся быстрее захватывать территории. Пока активна способность, нейтральная и вражеская территория захватывается быстрее.",
     "extra": "Щелкните мышью, чтобы активировать. Повышает темп захвата у всей пехоты. Длительность 60 сек.",
+    "icon_name": "Icons_commander_cmdr_west_german_breakthrough_tactics",
     "cost": {
       "munitions": 35
     }
@@ -826,6 +936,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Подавление очагов сопротивления",
     "description": "Артиллерия обстреливает изолированные отряды противника. Огонь ведется по окруженным и прифронтовым неприятельским территориям. Все прифронтовые секторы противника обстреливаются из легких минометов.",
     "extra": "Обстрел всех территорий противника, отрезанных от путей снабжения или находящихся вблизи фронта. Длительность 45 сек.",
+    "icon_name": "Icons_commander_cmdr_german_crush_the_pocket",
     "cost": {
       "munitions": 200
     }
@@ -834,6 +945,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Вспомогательная пехота",
     "description": "Командование срочно отправляет резервные отряды и подкрепление на линию фронта, потери пехоты возмещаются силами Восточного легиона.",
     "extra": "Временная способность. Заменяет один отряд, ускоряет подкрепление и производство. Новые отряды вызываются после потери 5 бойцов.",
+    "icon_name": "Icons_commander_cmdr_german_relief_infantry",
     "cost": {
       "munitions": 90
     }
@@ -842,6 +954,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Рывок",
     "description": "Скорость перемещения отряда ненадолго возрастет. Стрельба при этом будет невозможна.",
     "extra": "Длительность 5 сек.",
+    "icon_name": "Icons_commander_german_sprint_ability",
     "cost": {
       "munitions": 10
     }
@@ -850,6 +963,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Рывок",
     "description": "Скорость перемещения отряда ненадолго возрастет. Стрельба при этом будет невозможна.",
     "extra": "Длительность 5 сек.",
+    "icon_name": "Icons_abilities_ability_west_german_jaeger_sprint",
     "cost": {
       "munitions": 10
     }
@@ -858,6 +972,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Рывок",
     "description": "Скорость перемещения отряда ненадолго возрастет. Стрельба при этом будет невозможна.",
     "extra": "Длительность 5 сек.",
+    "icon_name": "Icons_commander_german_sprint_ability",
     "cost": {
       "munitions": 10
     }
@@ -865,46 +980,55 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "ambush_camo_hold_fire_mg_mp": {
     "name": "Не стрелять",
     "description": "Не стрелять до прямого приказа.",
-    "extra": "Переключаемая способность."
+    "extra": "Переключаемая способность.",
+    "icon_name": "Icons_abilities_ability_soviet_sniper_hold_fire_off"
   },
   "ambush_camo_hold_fire_mp": {
     "name": "Не стрелять",
     "description": "Не стрелять до прямого приказа.",
-    "extra": "Переключаемая способность."
+    "extra": "Переключаемая способность.",
+    "icon_name": "Icons_abilities_ability_soviet_sniper_hold_fire_off"
   },
   "ambush_camouflage": {
     "name": "Засадная маскировка",
     "description": "Пехота в укрытии может замаскироваться. Попавший в засаду противник получает от замаскированного отряда больший урон.",
-    "extra": "Можно обнаружить только на малой дистанции или в бою."
+    "extra": "Можно обнаружить только на малой дистанции или в бою.",
+    "icon_name": "Icons_abilities_ability_german_ambush_camo_on"
   },
   "supply_truck_lockdown": {
     "name": "Закрепление",
     "description": "Останавливает машину в секторе, увеличивая поступление ресурсов из него.",
-    "extra": "Не действует в командном секторе игрока и не защищает сектор от захвата."
+    "extra": "Не действует в командном секторе игрока и не защищает сектор от захвата.",
+    "icon_name": "Icons_abilities_ability_german_lockdown_enable"
   },
   "german_mortar_hold_fire_mp": {
     "name": "Не стрелять",
-    "description": "Не стрелять до прямого приказа."
+    "description": "Не стрелять до прямого приказа.",
+    "icon_name": "Icons_abilities_hold_fire_off"
   },
   "stuka_strafe": {
     "name": "Атака с бреющего полета",
     "description": "Ju.87D обстреляет вражескую пехоту из своих пулеметов MG-17, чтобы подавить ее огнем.",
-    "extra": "Щелкнуть по умению, затем по цели."
+    "extra": "Щелкнуть по умению, затем по цели.",
+    "icon_name": "Icons_commander_cmdr_german_suppression_strafe"
   },
   "kaytusha_rocket_truck_barrage_mp": {
     "name": "Обстрел 132-мм ракетами",
     "description": "БМ-13 выпускает все шестнадцать 132-мм ракет, поражая указанный район взрывами и шрапнелью.",
-    "extra": "Беглый огонь. Щелкнуть по умению, затем по целевому району."
+    "extra": "Беглый огонь. Щелкнуть по умению, затем по целевому району.",
+    "icon_name": "Icons_abilities_ability_soviet_katyusha_rocket_barrage"
   },
   "kaytusha_rocket_truck_barrage_vet3_mp": {
     "name": "Обстрел 132-мм ракетами",
     "description": "БМ-13 выпускает все шестнадцать 132-мм ракет, поражая указанный район взрывами и шрапнелью.",
-    "extra": "Беглый огонь. Щелкнуть по умению, затем по целевому району."
+    "extra": "Беглый огонь. Щелкнуть по умению, затем по целевому району.",
+    "icon_name": "Icons_abilities_ability_soviet_katyusha_rocket_barrage"
   },
   "anti_tank_overwatch": {
     "name": "Контроль противотанковой артиллерии",
     "description": "Вражеские танки в указанной зоне будут обстреляны артиллерией. Чем дольше видна техника, тем интенсивнее будет обстрел.",
     "extra": "Щелкните и укажите позицию. Автоматически атакует технику противника, обнаруженную в зоне.",
+    "icon_name": "Icons_bob_abilities_at_overwatch",
     "cost": {
       "munitions": 200
     }
@@ -912,12 +1036,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "booby_trap": {
     "name": "Минирование территории",
     "description": "Установка на указанной территории мины-ловушки, которая наносит урон войскам противника, пытающимся захватить эту территорию.",
-    "extra": "Точки захвата с ловушками автоматически подрываются при попытке захвата их врагом."
+    "extra": "Точки захвата с ловушками автоматически подрываются при попытке захвата их врагом.",
+    "icon_name": "Icons_commander_cmdr_soviet_booby_trap"
   },
   "fire_artillery": {
     "name": "Обстрел зажигательными снарядами",
     "description": "Можно обстреливать указанный район карты зажигательными снарядами, поражая пехоту противника и закрывая ей пути прохода.",
     "extra": "Беглый огонь. Применение: против пехоты.",
+    "icon_name": "Icons_abilities_ability_incendiary_artillery",
     "cost": {
       "munitions": 120
     }
@@ -926,6 +1052,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Передовой штаб",
     "description": "Возможность переоборудовать гражданскую постройку в передовой штаб. Он позволяет пополнять, лечить и воодушевлять пехотные подразделения, сражающиеся неподалеку.",
     "extra": "Выберите мышью гражданскую постройку, занятую вашими войсками. Обеспечивает пополнение, лечение и воодушевление пехоты и орудийных расчетов.",
+    "icon_name": "Icons_commander_cmdr_soviet_forward_hq",
     "cost": {
       "manpower": 250,
       "fuel": 40
@@ -935,6 +1062,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Разведка с воздуха",
     "description": "Доступные самолеты совершают разведывательный полет над указанным районом.",
     "extra": "Открыть местонахождение вражеских войск.",
+    "icon_name": "Icons_commander_cmdr_soviet_recon_plane_loiter",
     "cost": {
       "munitions": 60
     }
@@ -943,6 +1071,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Атаки штурмовика Ил-2",
     "description": "Штурмовик Ил-2 направится в указанный район и будет обстреливать обнаруженную пехоту из мощных 23-мм пушек.",
     "extra": "Применение: против большинства целей.",
+    "icon_name": "Icons_commander_cmdr_soviet_il2_loiter",
     "cost": {
       "munitions": 180
     }
@@ -951,6 +1080,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Атака Ил-2",
     "description": "Применение: против небронированных целей. Кликните мышью способность, затем кликните нужный район.",
     "extra": "Штурмовик Ил-2 выполнит проход над указанной областью, обстреливая обнаруженную технику противника из 23-мм пушек.",
+    "icon_name": "Icons_abilities_ability_soviet_strafing_run",
     "cost": {
       "munitions": 100
     }
@@ -959,6 +1089,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Срочное пополнение",
     "description": "Верховное командование предоставляет вам людские резервы. Немедленное получение 500 ед. людских резервов; потеря 200 ед. людских резервов в течение 5 минут.",
     "extra": "Количество действующих запросов на срочное пополнение отображается на значке штаба.",
+    "icon_name": "Icons_commander_cmdr_soviet_manpower_blitz",
     "cost": {
       "munitions": 65,
       "fuel": 40
@@ -968,6 +1099,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Отметить технику",
     "description": "Выбранная вражеская техника атакуется ближайшими войсками с повышенной интенсивностью.",
     "extra": "Щелкнуть по целевой технике. Цель получает повышенный урон от атак.",
+    "icon_name": "Icons_commander_cmdr_soviet_mark_vehicle",
     "cost": {
       "munitions": 80
     }
@@ -975,17 +1107,20 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "light_anti_vehicle_mines": {
     "name": "(Пассивный) Противотанковые укрепления",
     "description": "Штурмовые саперы могут создавать дешевые противотанковые мины, противотанковые ловушки и бункеры для защиты территории.",
-    "extra": "Открывает легкие противотанковые мины ПМД-6, бункеры и противотанковые ловушки."
+    "extra": "Открывает легкие противотанковые мины ПМД-6, бункеры и противотанковые ловушки.",
+    "icon_name": "Icons_commander_cmdr_advanced_emplacements_at"
   },
   "tank_traps": {
     "name": "Противотанковые ловушки",
     "description": "Штурмовые саперы могут создавать противотанковые ловушки, бункеры и противопехотные мины ПМД-6.",
-    "extra": "Присутствует в базовом меню строительства штурмовых саперов."
+    "extra": "Присутствует в базовом меню строительства штурмовых саперов.",
+    "icon_name": "Icons_commander_cmdr_advanced_emplacements_ai"
   },
   "commissar_officer_squad": {
     "name": "Комиссарский отряд",
     "description": "Комиссар и его отряд отправлены на фронт, чтобы поддерживать и мотивировать бойцов.",
     "extra": "Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_soviet_officer",
     "cost": {
       "manpower": 260
     }
@@ -994,6 +1129,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Комиссары",
     "description": "Комиссар повышает наступательные и оборонительные характеристики соседних отрядов пехоты. В случае его гибели все пехотинцы, находящиеся поблизости, обращаются в бегство или залегают под обстрелом. Наличие нескольких комиссаров позволяет уменьшить этот эффект.",
     "extra": "Выберите мышью место прибытия.",
+    "icon_name": "Icons_units_unit_soviet_officer",
     "cost": {
       "manpower": 120
     }
@@ -1002,6 +1138,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "45-мм противотанковая пушка М42",
     "description": "Легкая 45-мм пушка М42 представляет собой компактное и мобильное противотанковое оружие, эффективное на ближних дистанциях.",
     "extra": "Вам доступна новая техника - 45-мм противотанковая пушка М42. Выберите мышью место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_m1942_at_gun",
     "cost": {
       "manpower": 240
     }
@@ -1009,12 +1146,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "sherman_soviet_dispatch": {
     "name": "M4C \"Шерман\"",
     "description": "Вызов танка \"Шерман\" с 76-мм орудием, предоставленного по ленд-лизу. Эта боевая машина очень эффективна против средних танков.",
-    "extra": "В штабе легкой техники доступна новая машина - M4C \"Шерман\"."
+    "extra": "В штабе легкой техники доступна новая машина - M4C \"Шерман\".",
+    "icon_name": "Icons_vehicles_vehicle_aef_m4a3_sherman_76mm"
   },
   "fieldcraft_trip_flare_mp": {
     "name": "Сигнальная мина",
     "description": "Поставьте небольшую противопехотную мину, которая при срабатывании выпускает сигнальную ракету, выдающую позиции врага.",
     "extra": "Щелкнуть по умению, затем по целевому району. Район откроется на 8 секунд.",
+    "icon_name": "Icons_abilities_ability_soviet_tripwireflare",
     "cost": {
       "munitions": 10
     }
@@ -1023,6 +1162,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Сигнальная мина",
     "description": "Поставьте небольшую противопехотную мину, которая при срабатывании выпускает сигнальную ракету, выдающую позиции врага.",
     "extra": "Щелкнуть по умению, затем по целевому району. Район откроется на 8 секунд.",
+    "icon_name": "Icons_abilities_ability_soviet_tripwireflare",
     "cost": {
       "munitions": 15
     }
@@ -1031,6 +1171,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Прикрывающий огонь",
     "description": "Мощный обстрел вынудит вражескую пехоту искать укрытие, что снизит точность ее стрельбы и замедлит передвижение.",
     "extra": "Щелкните мышью способность, затем щелкните нужный вражеский отряд пехоты. Замедляет цель и снижает точность ее стрельбы.",
+    "icon_name": "Icons_commander_debuff_fire_superiority",
     "cost": {
       "munitions": 20
     }
@@ -1039,6 +1180,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Противотанковая граната РПГ-43",
     "description": "Желая поразить этой мощной, несмотря на малый радиус разлета осколков, гранатой танк, советские бойцы надеются на личную храбрость и меткий бросок. Кумулятивный заряд помогает пробить броню танка.",
     "extra": "Щелкнуть по умению, затем по целевой вражеской технике. Применение: против любой техники.",
+    "icon_name": "Icons_abilities_ability_soviet_rpg_43_grenade",
     "cost": {
       "munitions": 15
     }
@@ -1047,6 +1189,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Противотанковая граната РПГ-43",
     "description": "Отряд партизан бросит в выбранную боевую машину противотанковую гранату, нанеся урон машине и с некоторой вероятностью повредив ее двигатель.",
     "extra": "Щелкнуть по умению, затем по целевой вражеской технике. Применение: против любой техники.",
+    "icon_name": "Icons_abilities_ability_soviet_rpg_43_grenade",
     "cost": {
       "munitions": 25
     }
@@ -1055,6 +1198,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Залп наступательными гранатами",
     "description": "Все бойцы отряда вынимают из гранат чеку, прежде чем одновременно бросить их.",
     "extra": "Щелкните сначала по способности, затем по цели. Большой радиус поражения.",
+    "icon_name": "Icons_abilities_ability_soviet_grenade_assault",
     "cost": {
       "munitions": 30
     }
@@ -1063,6 +1207,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бросить коктейль Молотова",
     "description": "Коктейли Молотова содержат легковоспламеняющуюся жидкость, которая способна долго гореть и наносить жестокие и часто смертельные ранения солдатам.",
     "extra": "Щелкнуть по умению, затем по целевому району. Применение: против пехоты.",
+    "icon_name": "Icons_abilities_ability_soviet_molotov_cocktail",
     "cost": {
       "munitions": 20
     }
@@ -1071,6 +1216,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Осколочная граната РГД-33",
     "description": "Боец отряда бросит противопехотную гранату РГД-33. Применение: против войск противника в укрытии.",
     "extra": "Щелкнуть по умению, затем по цели. Применение: против неподвижной пехоты.",
+    "icon_name": "Icons_abilities_ability_soviet_rgd_33_grenade",
     "cost": {
       "munitions": 30
     }
@@ -1079,6 +1225,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Коктейль Молотова",
     "description": "Самодельное зажигательное устройство, способное поджигать вражескую пехоту.",
     "extra": "Кликните мышью способность, затем кликните нужный район. Эффективно против неподвижных войск, войск в гарнизоне и войск в укрытии.",
+    "icon_name": "Icons_abilities_ability_soviet_molotov_cocktail",
     "cost": {
       "munitions": 15
     }
@@ -1087,6 +1234,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовая граната РГД-1",
     "description": "Дымовая граната РГД-1 выпускает густую завесу из серого дыма, заслоняющую обзор.",
     "extra": "Щелкнуть по умению, затем по цели. Дымовая завеса длится примерно 30 сек.",
+    "icon_name": "Icons_abilities_ability_soviet_rgd_1_smoke_grenade",
     "cost": {
       "munitions": 15
     }
@@ -1095,6 +1243,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Осколочная граната РГД-33",
     "description": "Боец отряда бросит противопехотную гранату РГД-33. Применение: против войск противника в укрытии.",
     "extra": "Щелкнуть по умению, затем по цели. Применение: против неподвижной пехоты.",
+    "icon_name": "Icons_abilities_ability_soviet_rgd_33_grenade",
     "cost": {
       "munitions": 35
     }
@@ -1103,6 +1252,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бросок тяжелого взрывпакета",
     "description": "Пытаясь вывести из строя указанную машину, штрафники забрасывают на нее тяжелый взрывпакет.",
     "extra": "Щелкните сначала по способности, затем по технике противника. Применение: против любой техники.",
+    "icon_name": "Icons_abilities_at_satchel",
     "cost": {
       "munitions": 45
     }
@@ -1111,6 +1261,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бросок взрывпакета",
     "description": "Взрывпакеты - это мощные взрывные устройства, способные наносить значительные повреждения постройкам, технике и любым другим целям в зоне поражения.",
     "extra": "Взрывное устройство с большим радиусом поражения, эффективное против большинства целей. Может использоваться для повреждения двигателей техники.",
+    "icon_name": "Icons_abilities_ability_soviet_satchel_charge",
     "cost": {
       "munitions": 45
     }
@@ -1119,6 +1270,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Медпомощь",
     "description": "У отряда имеются медикаменты, с помощью которых можно оказать помощь раненым.",
     "extra": "Щелкнуть по умению, затем по целевому отряду.",
+    "icon_name": "Icons_abilities_ability_german_medkit",
     "cost": {
       "munitions": 10
     }
@@ -1126,32 +1278,38 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "merge_ability_mp": {
     "name": "Слияние",
     "description": "Выбранный отряд будет укомплектован до полной численности новобранцами. Пополнять отряды снайперов-разведчиков нельзя.",
-    "extra": "Щелкнуть по целевому отряду. Новобранцы используют оружие целевого отряда."
+    "extra": "Щелкнуть по целевому отряду. Новобранцы используют оружие целевого отряда.",
+    "icon_name": "Icons_abilities_ability_soviet_merge"
   },
   "soviet_conscript_repair_ability_mp": {
     "name": "Починить",
     "description": "Новобранцы, демонстрируя редкую изобретательность, могут восстановить любую поврежденную технику, мосты или здания.",
-    "extra": "Щелкните поврежденный объект правой кнопкой мыши или выберите \"Починить\" и щелкните левой кнопкой мыши."
+    "extra": "Щелкните поврежденный объект правой кнопкой мыши или выберите \"Починить\" и щелкните левой кнопкой мыши.",
+    "icon_name": "Icons_abilities_repair"
   },
   "soviet_penal_repair_ability_mp": {
     "name": "Починить",
     "description": "Демонстрируя техническую смекалку, солдаты могут ремонтировать любые постройки, машины и мосты.",
-    "extra": "Щелкните поврежденный объект правой кнопкой мыши или выберите \"Починить\" и щелкните левой кнопкой мыши."
+    "extra": "Щелкните поврежденный объект правой кнопкой мыши или выберите \"Починить\" и щелкните левой кнопкой мыши.",
+    "icon_name": "Icons_abilities_repair"
   },
   "soviet_repair_ability_mp": {
     "name": "Починить",
     "description": "Демонстрируя техническую смекалку, солдаты могут ремонтировать любые постройки, машины и мосты.",
-    "extra": "Щелкните поврежденный объект правой кнопкой мыши или выберите \"Починить\" и щелкните левой кнопкой мыши."
+    "extra": "Щелкните поврежденный объект правой кнопкой мыши или выберите \"Починить\" и щелкните левой кнопкой мыши.",
+    "icon_name": "Icons_abilities_repair"
   },
   "hold_the_line": {
     "name": "Держать строй!",
     "description": "Наступательные и оборонительные характеристики всех советских войск заметно повышаются, однако при этом войска лишаются возможности перемещаться.",
-    "extra": "Повышение боевой эффективности всех видов войск с утратой возможности перемещаться. Длительность 30 сек."
+    "extra": "Повышение боевой эффективности всех видов войск с утратой возможности перемещаться. Длительность 30 сек.",
+    "icon_name": "Icons_commander_cmdr_soviet_for_mother_russia"
   },
   "rapid_conscription": {
     "name": "Ускоренный призыв",
     "description": "Командование кратковременно разрешает увеличить темпы производства и подкрепления. Прибудет резервный отряд новобранцев для восполнения боевых потерь.",
     "extra": "Временная способность. Ускоряет подготовку отрядов и подкрепление. При потере 6 моделей во время действия способности вы получите бесплатный отряд новобранцев.",
+    "icon_name": "Icons_commander_cmdr_soviet_rapid_conscription",
     "cost": {
       "munitions": 90
     }
@@ -1160,6 +1318,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Политика выжженной земли",
     "description": "Во время действия этой способности войска противника, дислоцированные на вашей территории, подвергаются обстрелу реактивными снарядами.",
     "extra": "Атакует войска противника, находящиеся на вашей территории. Длительность 45 сек.",
+    "icon_name": "Icons_abilities_ability_scorched_earth_generic",
     "cost": {
       "munitions": 300
     }
@@ -1168,6 +1327,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Агентурная сеть",
     "description": "Данные о дислокации всех войск противника, полученные благодаря подпольной агентурной сети, ненадолго отображаются на мини-карте.",
     "extra": "Время действия 30 сек. Войска и здания отображаются на мини-карте.",
+    "icon_name": "Icons_commander_cmdr_soviet_spy_network",
     "cost": {
       "munitions": 50
     }
@@ -1175,12 +1335,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "m5_m3a1_overdrive_mp": {
     "name": "Форсаж",
     "description": "Экипаж выжимает из машины все возможное, повышая ее маневренность и уменьшая вероятность поражения огнем противника.",
-    "extra": "Длительность 20 сек."
+    "extra": "Длительность 20 сек.",
+    "icon_name": "Icons_abilities_ability_soviet_steady_driving"
   },
   "sniper_hmg_sprint_mp": {
     "name": "Рывок",
     "description": "Отряд будет двигаться на максимальной скорости.",
     "extra": "Длительность 10 сек.",
+    "icon_name": "Icons_abilities_ability_soviet_sprint",
     "cost": {
       "munitions": 10
     }
@@ -1188,22 +1350,26 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "m3_vet_point_capture_ability_mp": {
     "name": "Захватить территорию",
     "description": "Экипаж M3 способен захватить территорию самостоятельно, без поддержки пехоты.",
-    "extra": "Позволяет M3 захватывать территорию."
+    "extra": "Позволяет M3 захватывать территорию.",
+    "icon_name": "Icons_abilities_ability_raid"
   },
   "sniper_hold_fire_mp": {
     "name": "Не стрелять",
     "description": "Не стрелять до прямого приказа.",
-    "extra": "Переключаемая способность."
+    "extra": "Переключаемая способность.",
+    "icon_name": "Icons_abilities_ability_soviet_sniper_hold_fire_off"
   },
   "tank_vet_point_capture_ability_mp": {
     "name": "Режим охраны",
     "description": "Переключить экипаж танка в режим охраны, в котором можно захватывать территорию, но нельзя вести огонь из орудий.",
-    "extra": "Переключаемая способность. Танк сможет захватывать точки, но не сможет стрелять из орудий."
+    "extra": "Переключаемая способность. Танк сможет захватывать точки, но не сможет стрелять из орудий.",
+    "icon_name": "Icons_abilities_ability_raid"
   },
   "vehicle_crew_repair_toggle_mp": {
     "name": "Ремонт силами экипажа",
     "description": "Выйдя из боя, экипажи ремонтируют собственную технику.",
     "extra": "Переключаемая способность. Машина не может перемещаться и вести огонь из орудий.",
+    "icon_name": "Icons_abilities_ability_soviet_crew_repair",
     "cost": {
       "munitions": 35
     }
@@ -1211,12 +1377,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "walking_stuka_rocket_barrage_creeping_mp": {
     "name": "Огневой вал 28-см реактивными снарядами",
     "description": "\"Пехотная \"Штука\"\" выпускает все шесть 28-см реактивных снарядов вдоль проведенной линии.",
-    "extra": "Залповый огонь. Щелкните сначала по способности, затем по начальной точке прицеливания. После этого ПЕРЕМЕСТИТЕ мышь и щелкните еще раз."
+    "extra": "Залповый огонь. Щелкните сначала по способности, затем по начальной точке прицеливания. После этого ПЕРЕМЕСТИТЕ мышь и щелкните еще раз.",
+    "icon_name": "Icons_abilities_ability_west_german_stuka_creeping_barrage"
   },
   "walking_stuka_rocket_barrage_napalm_mp": {
     "name": "Зажигательные реактивные снаряды",
     "description": "32-см зажигательные реактивные снаряды способны подавлять и поджигать пехоту в указанной области.",
     "extra": "Залповый огонь. Щелкните сначала по способности, затем по цели.",
+    "icon_name": "Icons_abilities_ability_west_german_napalm_rounds",
     "cost": {
       "munitions": 40
     }
@@ -1225,6 +1393,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Медикаменты",
     "description": "Сброс трех ящиков с медикаментами, которые может подобрать пехота.",
     "extra": "Щелкните сначала по способности, затем по нужной области. Отряд пехоты, подобравший медикаменты, вылечит своих раненых.",
+    "icon_name": "Icons_abilities_ability_west_german_medical_crates",
     "cost": {
       "munitions": 45
     }
@@ -1233,6 +1402,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Десантно-штурмовая операция",
     "description": "Самолет Ju.87 \"Штука\" выполнит обстрел указанной области из мощных 37-мм пушек. Во время действия способности фальширмъягеры могут восполнять потери в любых местах поля боя.",
     "extra": "Выбрано. Самолеты будут атаковать только технику.",
+    "icon_name": "Icons_commander_cmdr_west_german_airborne_assault",
     "cost": {
       "munitions": 200
     }
@@ -1241,6 +1411,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Обстрел из 105-мм гаубиц",
     "description": "Обстрел указанной области 105-мм артиллерийскими снарядами, количество которых зависит от имеющихся у вас боеприпасов.",
     "extra": "Выберите и укажите позицию. Выпускает три дополнительных снаряда, начиная с 225 ед. боеприпасов и через каждые 25 ед. боеприпасов впоследствии. Действует до 300 ед. боеприпасов.",
+    "icon_name": "Icons_abilities_ability_aef_106mm_barrage",
     "cost": {
       "munitions": 180
     }
@@ -1249,6 +1420,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Штурм секторов",
     "description": "Самолеты Ju.87 \"Штука\" проводят разведку указанной области и атакуют все замеченные войска противника.",
     "extra": "Щелкните по нужной позиции.",
+    "icon_name": "Icons_commander_cmdr_west_german_sector_assaultt",
     "cost": {
       "munitions": 275
     }
@@ -1256,37 +1428,44 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "heavy_fortifications": {
     "name": "(постоянно) Капитальные укрепления",
     "description": "Штурмовые саперы могут строить противотанковые ежи, минные поля, позиции для зенитных пушек и окопы. Фольксгренадеры могут строить бункеры и прокладывать колючую проволоку.",
-    "extra": "Штурмовые саперы и фольксгренадеры могут строить полевые укрепления."
+    "extra": "Штурмовые саперы и фольксгренадеры могут строить полевые укрепления.",
+    "icon_name": "Icons_commander_cmdr_heavy_fortifications"
   },
   "incendiary_munitions": {
     "name": "(постоянно) Зажигательные боеприпасы",
     "description": "Расчеты LeIG.18 получают зажигательные снаряды, позволяющие устраивать пожары в районе цели.",
-    "extra": "Расчеты LeIG.18 могут производить залпы зажигательными снарядами, эффективные против войск в укрытиях и зданиях."
+    "extra": "Расчеты LeIG.18 могут производить залпы зажигательными снарядами, эффективные против войск в укрытиях и зданиях.",
+    "icon_name": "Icons_abilities_incendiary_leig"
   },
   "infrared_stg44": {
     "name": "(постоянно) StG.44 c инфракрасным прицелом",
     "description": "Отряды обер-солдат можно вооружить StG.44 с инфракрасными прицелами. Это оружие эффективно на дальних дистанциях.",
-    "extra": "Доступно улучшение для обер-солдат"
+    "extra": "Доступно улучшение для обер-солдат",
+    "icon_name": "Icons_upgrades_icon_upgrade_west_german_smg_mp44_infrared"
   },
   "pyro_volks": {
     "name": "(постоянно) Штурмовые наборы",
     "description": "Штурмовым саперам можно выдать огнеметы FmW.35, а фольксгренадерам - пистолеты-пулеметы MP.40 и различные гранаты.",
-    "extra": "Доступно улучшение для штурмовых саперов и фольксгренадеров."
+    "extra": "Доступно улучшение для штурмовых саперов и фольксгренадеров.",
+    "icon_name": "Icons_commander_firestrm"
   },
   "tank_commander_unlock": {
     "name": "(постоянно) Танковые командиры",
     "description": "Опытные командиры танков получают возможность координировать огонь 7,5-см пехотных орудий leIG.18, развернутых неподалеку. Залп этих орудий способен дезорганизовать строй противника.",
-    "extra": "Щелкните по нужной позиции."
+    "extra": "Щелкните по нужной позиции.",
+    "icon_name": "Icons_commander_cmdr_west_german_panzer_commander"
   },
   "through_salvage": {
     "name": "(постоянно) Тщательный обыск",
     "description": "Добыча ресурсов приносит боеприпасы. Фольксгренадеров можно улучшать, давая им возможность производить простой ремонт.",
-    "extra": "Заменяет способность \"Добыча ресурсов\". Открывает у фольксгренадеров улучшение \"Ремкомплект\"."
+    "extra": "Заменяет способность \"Добыча ресурсов\". Открывает у фольксгренадеров улучшение \"Ремкомплект\".",
+    "icon_name": "Icons_commander_cmdr_west_german_thorough_salvage_new"
   },
   "radio_silence": {
     "name": "Радиомолчание",
     "description": "Во время действия этой способности все войска перестают отображаться на мини-карте противника. Пехота передвигается быстрее, пока не вступит в бой.",
     "extra": "Временная способность. Повышает скорость пехоты, находящейся не в бою, и скрывает ее на мини-карте.",
+    "icon_name": "Icons_commander_cmdr_west_german_radio_silence",
     "cost": {
       "munitions": 70
     }
@@ -1295,6 +1474,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовые бомбы",
     "description": "На поле боя сбрасываются большие дымовые шашки, дым от которых загораживает обзор.",
     "extra": "Укажите область.",
+    "icon_name": "Icons_commander_smoke_recon",
     "cost": {
       "munitions": 40
     }
@@ -1303,6 +1483,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Наведение артиллерии",
     "description": "Автоматический обстрел всех замеченных войск противника в указанной области. Чем дольше цель остается в поле зрения, тем выше темп стрельбы.",
     "extra": "Щелкните по нужной позиции.",
+    "icon_name": "Icons_commander_cmdr_west_german_zeroing_artillery",
     "cost": {
       "munitions": 250
     }
@@ -1310,12 +1491,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "scout_car_221_dispatch": {
     "name": "(Пассивн.) Бронеавтомобиль SdKfz.221",
     "description": "Бронеавтомобиль SdKfz.221 - быстрый разведывательный автомобиль с пулеметом для противодействия пехоте.",
-    "extra": "Доступна новая машина -  разведывательный бронеавтомобиль SdKfz.221. Доступно в штабе полка."
+    "extra": "Доступна новая машина -  разведывательный бронеавтомобиль SdKfz.221. Доступно в штабе полка.",
+    "icon_name": "Icons_vehicles_vehicle_west_german_scout_car_221"
   },
   "command_panther": {
     "name": "Командирская \"Пантера\"",
     "description": "На поле боя можно вызвать танк \"Пантера\" с элитным экипажем. Наступательные характеристики техники, находящейся рядом с этим танком, существенно возрастают.",
     "extra": "Доступна новая техника - командирский танк PzKpfw.V \"Пантера\". Укажите место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_west_german_panther_command_tank",
     "cost": {
       "manpower": 520,
       "fuel": 200
@@ -1325,6 +1508,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Разведотряд легкой егерской пехоты",
     "description": "Возможность вызвать на  поле боя разведотряд легкой егерской пехоты. Этот небольшой отряд идеально подходит для разведки и добычи ресурсов.",
     "extra": "Доступен новый вид войск - разведотряд легкой егерской пехоты. Он может выйти из гражданской постройки или из-за пределов карты. Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_west_german_jaegar",
     "cost": {
       "manpower": 280
     }
@@ -1333,6 +1517,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "САУ \"Ягдтигр\" модификации B",
     "description": "Возможность вызвать на поле боя истребитель танков \"Ягдтигр\" модификации B. Его 128-мм пушка PaK.44 обладает превосходной дальнобойностью и огневой мощью.",
     "extra": "Доступна новая техника - САУ \"Ягдтигр\" модификации B. Укажите место прибытия. Не более 1 на поле боя.",
+    "icon_name": "Icons_vehicles_vehicle_west_german_jagdtiger",
     "cost": {
       "manpower": 720,
       "fuel": 245
@@ -1341,12 +1526,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "ostwind_dispatch": {
     "name": "FlaKPz.IV \"Оствинд\"",
     "description": "Возможность вызвать на поле боя ЗСУ FlaKPz.IV \"Оствинд\". Применение: против пехоты и авиации.",
-    "extra": "Доступна новая техника - бронетранспортер FlaKPz.IV \"Оствинд\". Укажите место прибытия."
+    "extra": "Доступна новая техника - бронетранспортер FlaKPz.IV \"Оствинд\". Укажите место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_german_ostwind_flak_panzer"
   },
   "sturmtiger_dispatch": {
     "name": "САУ \"Штурмтигр\"",
     "description": "САУ \"Штурмтигр\" (официальное название Sturmmörserwagen 606/4 mit 38 cm RW 61) представляет собой самоходное штурмовое орудие, стреляющее 376-кг реактивными снарядами. Эти боеприпасы особенно эффективны против построек и крупных скоплений противника.",
     "extra": "Доступна новая техника - САУ \"Штурмтигр\". Укажите место прибытия. Не более 1 на поле боя.",
+    "icon_name": "Icons_vehicles_vehicle_west_german_sturmtiger",
     "cost": {
       "manpower": 570,
       "fuel": 185
@@ -1356,6 +1543,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Штурм-офицер",
     "description": "Вызов штурм-офицера с отрядом обер-солдат. Офицер повышает эффективность пехоты и обладает рядом способностей, позволяющих ослабить противника.",
     "extra": "Доступен новый вид войск - штурм-офицер. Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_west_german_terror_officer",
     "cost": {
       "manpower": 280
     }
@@ -1364,6 +1552,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Дымовая граната Model 24",
     "description": "Отряд бросит гранату с дымовым зарядом, чтобы скрыть указанную область.",
     "extra": "Щелкнуть по умению, затем по цели. Дымовая завеса длится примерно 30 сек.",
+    "icon_name": "Icons_abilities_ability_german_smoke_grenade",
     "cost": {
       "munitions": 15
     }
@@ -1372,6 +1561,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Светошумовая граната",
     "description": "Пехотинцы, застигнутые взрывом гранаты, будут контужены. Скорость их перемещения временно снизится.",
     "extra": "Щелкните сначала по способности, затем по цели. Применение: против пехоты.",
+    "icon_name": "Icons_abilities_ability_west_german_concussive_grenade",
     "cost": {
       "munitions": 30
     }
@@ -1379,17 +1569,20 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "volksgrenadier_rudimentary_repair_ability_mp": {
     "name": "Начальный ремонт",
     "description": "Фольксгренадеры могут выполнять простой ремонт, помогая восстановить поврежденную технику.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "west_german_repair_ability_mp": {
     "name": "Ремонт",
     "description": "Демонстрируя техническую смекалку, штурмовые саперы Главного командования \"Запад\" могут ремонтировать любые постройки, машины и мосты.",
-    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект."
+    "extra": "Щелкните на поврежденном объекте правой кнопкой мыши или выберите способность \"Ремонт\" и укажите объект.",
+    "icon_name": "Icons_abilities_repair"
   },
   "assault_artillery": {
     "name": "Штурмовая артиллерия",
     "description": "Обстрел указанного сектора противника фугасными снарядами с последующей постановкой дымовой завесы для прикрытия наступления.",
     "extra": "Щелкните мышью способность, затем щелкните нужный район. Обстреливает территорию артиллерией, затем бросает дымовую шашку.",
+    "icon_name": "Icons_commander_cmdr_west_german_breakthrough_artillery",
     "cost": {
       "munitions": 225
     }
@@ -1398,6 +1591,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Тактика прорыва",
     "description": "Пехотинцы учатся быстрее прорывать оборону противника. Это приводит к ускорению освобождения секторов.",
     "extra": "Щелкните для использования. Длительность 60 сек.",
+    "icon_name": "Icons_commander_cmdr_west_german_breakthrough_tactics",
     "cost": {
       "munitions": 35
     }
@@ -1405,12 +1599,14 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "early_warning_systems": {
     "name": "(ПАССИВН.) Система раннего оповещения",
     "description": "Доступны дополнительные системы в виде сигнальных шашек и приемников sWS. Доступны \"Голиафы\", подрывающие вражеские укрепления с безопасного расстояния.",
-    "extra": "- В каждой захватываемой точке ставятся сигнальные шашки.\\n- Бронетранспортеры sWS обнаруживают врагов в \"тумане войны\".\\n- Доступны \"Голиафы\"."
+    "extra": "- В каждой захватываемой точке ставятся сигнальные шашки.\\n- Бронетранспортеры sWS обнаруживают врагов в \"тумане войны\".\\n- Доступны \"Голиафы\".",
+    "icon_name": "Icons_commander_early_warning"
   },
   "heat_shells_ability_mp": {
     "name": "Кумулятивные снаряды",
     "description": "В боекомплект танков включаются кумулятивные снаряды, обладающие повышенной бронебойностью и дальностью поражения.",
     "extra": "Позволяет немецким танкам в течение ограниченного времени вести огонь кумулятивными снарядами.",
+    "icon_name": "Icons_abilities_ability_west_german_heat_rounds",
     "cost": {
       "munitions": 45
     }
@@ -1419,6 +1615,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Бесстрашная атака",
     "description": "Воодушевление пехотинцев, повышающее их боевые способности и дающее возможность выполнять рывок вне боя.",
     "extra": "Временная способность. Повышает эффективность пехоты в обороне и нападении. Пехота может выполнять рывок вне боя. Длительность 30 сек.",
+    "icon_name": "Icons_commander_cmdr_west_german_valiant_assault",
     "cost": {
       "munitions": 70
     }
@@ -1427,6 +1624,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Экстренный ремонт",
     "description": "Экипажи техники получают возможность устранять критические повреждения своих машин.",
     "extra": "Временная способность. После короткой задержки восстанавливает здоровье и убирает критические повреждения. На время ремонта машина становится неподвижной.",
+    "icon_name": "Icons_commander_cmdr_west_german_vehicle_crew_critical_repair_training",
     "cost": {
       "munitions": 35
     }
@@ -1435,6 +1633,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Экстренный ремонт",
     "description": "Экипажи техники получают возможность устранять критические повреждения своих машин.",
     "extra": "Временная способность. После короткой задержки восстанавливает здоровье и убирает критические повреждения. На время ремонта машина становится неподвижной.",
+    "icon_name": "Icons_commander_cmdr_west_german_vehicle_crew_critical_repair_training",
     "cost": {
       "munitions": 35
     }
@@ -1443,6 +1642,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Экстренный ремонт",
     "description": "Экипажи техники получают возможность устранять критические повреждения своих машин.",
     "extra": "Временная способность. После короткой задержки восстанавливает здоровье и убирает критические повреждения. На время ремонта машина становится неподвижной.",
+    "icon_name": "Icons_commander_cmdr_west_german_vehicle_crew_critical_repair_training",
     "cost": {
       "munitions": 35
     }
@@ -1451,6 +1651,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Экстренный ремонт",
     "description": "Экипажи техники получают возможность устранять критические повреждения своих машин.",
     "extra": "Временная способность. После короткой задержки восстанавливает здоровье и убирает критические повреждения. На время ремонта машина становится неподвижной.",
+    "icon_name": "Icons_commander_cmdr_west_german_vehicle_crew_critical_repair_training",
     "cost": {
       "munitions": 35
     }
@@ -1459,6 +1660,7 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
     "name": "Рывок",
     "description": "Отряд кратковременно получает очень высокую скорость передвижения. Вести огонь на ходу нельзя.",
     "extra": "Длительность 5 сек.",
+    "icon_name": "Icons_abilities_ability_west_german_jaeger_sprint",
     "cost": {
       "munitions": 15
     }
@@ -1466,328 +1668,399 @@ export const gameAbilityDetails: Record<string, AbilityDetail> = {
   "obers_suppressive_fire_mp": {
     "name": "Огонь на подавление",
     "description": "Меткая стрельба обер-солдат заставит пехоту противника залечь.",
-    "extra": "Щелкните сначала по способности, затем по отряду пехоты противника. Подавление отряда ценой временного уменьшения урона."
+    "extra": "Щелкните сначала по способности, затем по отряду пехоты противника. Подавление отряда ценой временного уменьшения урона.",
+    "icon_name": "Icons_abilities_ability_aef_volley_fire"
   },
   "minesweeper_deploy_mp": {
     "name": "Достать миноискатель",
     "description": "Миноискатель позволяет обнаруживать и обезвреживать мины, однако солдат, работающий с ним, не может вести огонь. Чтобы восстановить полную огневую мощь отряда, прикажите убрать миноискатель.",
-    "extra": "Переключаемая способность. Позволяет обнаруживать мины."
+    "extra": "Переключаемая способность. Позволяет обнаруживать мины.",
+    "icon_name": "Icons_abilities_ability_west_german_activate_minesweeper_off"
   },
   "minesweeper_put_away_mp": {
     "name": "Убрать миноискатель",
     "description": "Миноискатель позволяет обнаруживать и обезвреживать мины, однако солдат, работающий с ним, не может вести огонь. Чтобы восстановить полную огневую мощь отряда, прикажите убрать миноискатель.",
-    "extra": "Переключаемая способность. Позволяет обнаруживать мины."
+    "extra": "Переключаемая способность. Позволяет обнаруживать мины.",
+    "icon_name": "Icons_abilities_ability_west_german_activate_minesweeper_on"
   },
   "rakten_camouflage_mp": {
     "name": "Маскировка",
     "description": "Расчеты могут маскировать установки RW.43, скрывая их от глаз противника.",
-    "extra": "Замаскированная установка может быть обнаружена только на ближней дистанции или при открытии огня."
+    "extra": "Замаскированная установка может быть обнаружена только на ближней дистанции или при открытии огня.",
+    "icon_name": "Icons_abilities_ability_west_german_camouflage_at"
   },
   "m10_deploy_clone": {
     "name": "ПТ САУ M10 \"Wolverine\"",
-    "description": "Отправить на поле боя ПТ САУ M10. 3-дюймовое главное орудие \"Wolverine\" эффективно против любой техники, кроме самой тяжелобронированной. Применение: против танков и техники."
+    "description": "Отправить на поле боя ПТ САУ M10. 3-дюймовое главное орудие \"Wolverine\" эффективно против любой техники, кроме самой тяжелобронированной. Применение: против танков и техники.",
+    "icon_name": "Icons_vehicles_vehicle_aef_m10_tank_destroyer"
   },
   "paradrop_anti_tank_gun": {
     "name": "Выброска 57-мм противотанкового орудия M1",
-    "description": "На поле боя сбрасывается 57-мм противотанковое орудие M1, которое можно укомплектовать дружественной пехотой. Это орудие эффективно против бронетехники."
+    "description": "На поле боя сбрасывается 57-мм противотанковое орудие M1, которое можно укомплектовать дружественной пехотой. Это орудие эффективно против бронетехники.",
+    "icon_name": "Icons_vehicles_vehicle_aef_57mm_paradrop_at_gun"
   },
   "paradropped_support_drop": {
     "name": "Десантируемая боевая группа",
     "description": "Два отряда опытных десантников могут высадиться на поле боя вместе с противотанковым орудием. Десантники экипированы случайным набором снаряжения.",
-    "extra": "Укажите зону высадки щелчком мыши. Следите, чтобы в этой зоне не было крупных препятствий."
+    "extra": "Укажите зону высадки щелчком мыши. Следите, чтобы в этой зоне не было крупных препятствий.",
+    "icon_name": "Icons_commander_aidropped_group"
   },
   "paratroopers_mp": {
     "name": "Десантники",
     "description": "Элитные десантники, способные высаживаться в тылу противника для диверсий на ключевых объектах и другой подрывной деятельности.",
-    "extra": "Применение: против пехоты на средних дистанциях. Улучшение позволяет повысить огневую мощь на ближних или дальних дистанциях."
+    "extra": "Применение: против пехоты на средних дистанциях. Улучшение позволяет повысить огневую мощь на ближних или дальних дистанциях.",
+    "icon_name": "Icons_units_unit_aef_paratroopers"
   },
   "pathfinders": {
     "name": "Следопыты",
-    "description": "Возможность вызвать на поле боя \"Следопытов\". Бойцы этого разведывательного подразделения эффективно ведут огонь на дальних дистанциях и обеспечивают безопасное десантирование войск."
+    "description": "Возможность вызвать на поле боя \"Следопытов\". Бойцы этого разведывательного подразделения эффективно ведут огонь на дальних дистанциях и обеспечивают безопасное десантирование войск.",
+    "icon_name": "Icons_units_unit_aef_pathfinders"
   },
   "pathfinders_recon": {
     "name": "Разведгруппа \"Следопытов\"",
     "description": "Возможность вызвать на поле боя разведгруппу \"Следопытов\", которая уполномочена вызывать координированную артиллерийскую поддержку.",
-    "extra": "Доступен новый вид войск - \"Следопыты\". Укажите место прибытия."
+    "extra": "Доступен новый вид войск - \"Следопыты\". Укажите место прибытия.",
+    "icon_name": "Icons_units_unit_aef_pathfinders_i_and_r"
   },
   "sherman_modification": {
     "name": "\"Шерман\" M4A3 с 76-мм пушкой",
-    "description": "Могучий танк M4A3 \"Шерман\" с 76-мм орудием можно вызвать из батальонного КП."
+    "description": "Могучий танк M4A3 \"Шерман\" с 76-мм орудием можно вызвать из батальонного КП.",
+    "icon_name": "Icons_commander_cmdr_aef_reserve_armour"
   },
   "siege_240mm_artillery": {
     "name": "Обстрел из 240-мм гаубиц",
     "description": "Обстрел указанной области из 240-мм гаубиц.",
-    "extra": "Длительный обстрел."
+    "extra": "Длительный обстрел.",
+    "icon_name": "Icons_abilities_ability_aef_240mm_barrage"
   },
   "smoke_barrage": {
     "name": "Зажигательно-дымовые боеприпасы",
-    "description": "Обстрел указанной области зажигательно-дымовыми снарядами на основе белого фосфора. В зоне поражения возникает дымовая завеса, препятствующая обзору и наносящая урон пехоте."
+    "description": "Обстрел указанной области зажигательно-дымовыми снарядами на основе белого фосфора. В зоне поражения возникает дымовая завеса, препятствующая обзору и наносящая урон пехоте.",
+    "icon_name": "Icons_abilities_ability_aef_white_phospherous_artillery"
   },
   "riflemen_flamethrower_unlock": {
     "name": "Огнеметчики второго эшелона",
-    "description": "Отряды второго эшелона можно вооружить огнеметами."
+    "description": "Отряды второго эшелона можно вооружить огнеметами.",
+    "icon_name": "Icons_upgrades_flare_flamethrower"
   },
   "aerial_superiority_recon_plane": {
     "name": "Ju.87 \"Штука\": разведка",
     "description": "Доступные самолеты выполнят проход над указанной областью для разведки позиций противника.",
-    "extra": "Самолеты проведут разведку указанной области."
+    "extra": "Самолеты проведут разведку указанной области.",
+    "icon_name": "Icons_commander_cmdr_german_air_recon"
   },
   "aerial_superiority_stuka_close_air_support": {
     "name": "Ju.87 \"Штука\": противотанковый вылет",
     "description": "Самолет Ju.87 \"Штука\" выполнит проход над указанной областью, обстреливая обнаруженную технику противника из 37-мм пушек.",
-    "extra": "Щелкните сначала на способности, затем на нужной области. Самолет будет атаковать любые обнаруженные цели."
+    "extra": "Щелкните сначала на способности, затем на нужной области. Самолет будет атаковать любые обнаруженные цели.",
+    "icon_name": "Icons_commander_cmdr_german_stuka_close_air_support"
   },
   "aerial_superiority_stuka_strafe": {
     "name": "Ju.87D \"Штука\": противопехотный вылет",
     "description": "Самолет Ju.87D подавит пехоту противника, обстреляв ее из двух пулеметов MG-17.",
-    "extra": "Щелкните сначала на способности, затем на цели."
+    "extra": "Щелкните сначала на способности, затем на цели.",
+    "icon_name": "Icons_commander_cmdr_german_suppression_strafe"
   },
   "air_drop_medical_supplies": {
     "name": "Посылка с медикаментами",
-    "description": "Сбросить медикаменты в указанную точку. Если их подобрать, здоровье и боевой дух находящихся рядом отрядов повышается."
+    "description": "Сбросить медикаменты в указанную точку. Если их подобрать, здоровье и боевой дух находящихся рядом отрядов повышается.",
+    "icon_name": "Icons_commander_cmdr_german_air_dropped_medical_supplies"
   },
   "air_drop_resources": {
     "name": "Зона доставки припасов",
-    "description": "Транспортные самолеты пролетят над указанным топливным пунктом или точкой обеспечения боеприпасами и сбросят ресурсы, которые может подобрать пехота."
+    "description": "Транспортные самолеты пролетят над указанным топливным пунктом или точкой обеспечения боеприпасами и сбросят ресурсы, которые может подобрать пехота.",
+    "icon_name": "Icons_commander_cmdr_german_air_dropped_resources"
   },
   "light_artillery_support": {
     "name": "Обстрел легкой артиллерией",
     "description": "По указанной позиции проводят артобстрел 75-мм орудия le.IG 18, способные рассеять вражеские войска.",
-    "extra": "Дает 16 снарядов."
+    "extra": "Дает 16 снарядов.",
+    "icon_name": "Icons_commander_cmdr_german_light_artillery_support"
   },
   "munition_blitz": {
     "name": "Срочное снабжение",
-    "description": "Верховное командование немедленно предоставляет вам боеприпасы. Поступления людских резервов постепенно уменьшаются."
+    "description": "Верховное командование немедленно предоставляет вам боеприпасы. Поступления людских резервов постепенно уменьшаются.",
+    "icon_name": "Icons_commander_cmdr_german_munitions_blitz"
   },
   "railway_artillery_support": {
     "name": "Поддержка железнодорожной артиллерии",
     "description": "Тяжелое железнодорожное орудие из-за границ карты делает три залпа по указанному району.",
-    "extra": "Щелкнуть по целевому району. 30 сек. между залпами."
+    "extra": "Щелкнуть по целевому району. 30 сек. между залпами.",
+    "icon_name": "Icons_commander_cmdr_german_off_map_dora_support"
   },
   "recon_plane": {
     "name": "Разведка с воздуха",
     "description": "Доступный самолет проведет разведывательный полет, чтобы обнаружить вражеские войска.",
-    "extra": "Над указанным районом пролетит самолет и откроет его."
+    "extra": "Над указанным районом пролетит самолет и откроет его.",
+    "icon_name": "Icons_commander_cmdr_german_air_recon"
   },
   "stuka_bombing_run_upgrade": {
     "name": "\"Штука\", бомбовый удар",
     "description": "Бомбардировщик Ju.87D \"Штука\" пикирует и сбрасывает 50-кг бомбу точно в указанное место. При поражении таким ударом точки захвата ее принадлежность становится нейтральной.",
-    "extra": "Использовать на скоплениях войск противника, зданиях, бронетехнике или точках ресурсов."
+    "extra": "Использовать на скоплениях войск противника, зданиях, бронетехнике или точках ресурсов.",
+    "icon_name": "Icons_commander_cmdr_german_stuka_bomb_strike"
   },
   "stuka_flame_strike": {
     "name": "Зажигательные бомбы",
-    "description": "\"Штука\" сбрасывает зажигательные бомбы в указанном месте."
+    "description": "\"Штука\" сбрасывает зажигательные бомбы в указанном месте.",
+    "icon_name": "Icons_commander_cmdr_german_stuka_incendiary_bomb_strike"
   },
   "blinding_grenades": {
     "name": "Оглушающие гранаты Model 24",
-    "description": "Гренадеры, панцергренадеры и штурмовые отряды вооружаются гранатами Model 24, временно нейтрализующими пехотинцев противника."
+    "description": "Гренадеры, панцергренадеры и штурмовые отряды вооружаются гранатами Model 24, временно нейтрализующими пехотинцев противника.",
+    "icon_name": "Icons_abilities_ability_german_stun_grenade"
   },
   "halftrack_250_unlock": {
     "name": "Бронеавтомобиль SdKfz. Sd.Kfz. 250/1",
     "description": "Бронеавтомобиль Sd.Kfz. 250/1 можно вызывать из штаба для поддержки пехоты.",
-    "extra": "В штабе боевой группы доступна новая машина -  Sd.Kfz. 250/1."
+    "extra": "В штабе боевой группы доступна новая машина -  Sd.Kfz. 250/1.",
+    "icon_name": "Icons_commander_cmdr_german_pak_43_at_gun"
   },
   "howitzer_105mm_emplacement": {
     "name": "Гаубица leFH18",
     "description": "Эта легкая полевая гаубица калибра 105 мм уступает по мощности некоторым советским орудиям, но зато отличается хорошей скорострельностью и неплохим радиусом действия.",
-    "extra": "Беглый огонь. Применение: против неподвижных целей и тяжелых построек."
+    "extra": "Беглый огонь. Применение: против неподвижных целей и тяжелых построек.",
+    "icon_name": "Icons_vehicles_vehicle_german_howitzer"
   },
   "hull_down": {
     "name": "Укрытие техники",
     "description": "Экипажи могут",
-    "extra": "Щелкнуть по умению, затем по целевой технике."
+    "extra": "Щелкнуть по умению, затем по целевой технике.",
+    "icon_name": "Icons_commander_cmdr_german_hull_down"
   },
   "jaeger_light_infantry": {
     "name": "Улучшение \"Легкая егерская пехота\"",
     "description": "Это улучшение позволяет выдать отряду гренадеров, панцергренадеров или штурмовиков две винтовки G43 и обучить его бойцов технике допроса.",
-    "extra": "Отряду выдаются две винтовки Gewehr 43, что повышает его огневую мощь."
+    "extra": "Отряду выдаются две винтовки Gewehr 43, что повышает его огневую мощь.",
+    "icon_name": "Icons_commander_cmdr_german_jaeger_light_infantry"
   },
   "pak_43_emplacement": {
     "name": "Укрепление с Pak 43",
     "description": "Саперы могут возводить укрепления с мощными противотанковыми орудиями Pak 43 калибра 88 мм.",
-    "extra": "Орудия Pak 43 стационарны, но могут вращаться на месте."
+    "extra": "Орудия Pak 43 стационарны, но могут вращаться на месте.",
+    "icon_name": "Icons_commander_cmdr_german_pak_43_at_gun"
   },
   "panzer_tactician": {
     "name": "Бронетактика",
     "description": "Вся бронетехника подрывает установленные на ней дымовые шашки, чтобы скрыться от глаз противника.",
-    "extra": "Дым закрывает обзор. Им можно прикрыть свой отход или смену позиций."
+    "extra": "Дым закрывает обзор. Им можно прикрыть свой отход или смену позиций.",
+    "icon_name": "Icons_commander_cmdr_german_panzer_tactician"
   },
   "stationary_los_gain": {
     "name": "Перископ",
     "description": "Технику можно снабдить перископами, увеличивающими радиус обзора на стоящих машинах.",
-    "extra": "Доступно усовершенствование. При остановке машины радиус обзора автоматически увеличивается."
+    "extra": "Доступно усовершенствование. При остановке машины радиус обзора автоматически увеличивается.",
+    "icon_name": "Icons_commander_cmdr_german_stationary_loss_gain"
   },
   "stug_short_barrel": {
     "name": "САУ StuG.III Ausf. E",
-    "description": "Позволяет вызывать на поле боя САУ StuG.III Ausf. E."
+    "description": "Позволяет вызывать на поле боя САУ StuG.III Ausf. E.",
+    "icon_name": "Icons_vehicles_vehicle_german_stug_iii_e"
   },
   "trench": {
     "name": "Траншея",
-    "description": "Позволяет немецкой пехоте рыть траншеи для обороны."
+    "description": "Позволяет немецкой пехоте рыть траншеи для обороны.",
+    "icon_name": "Icons_buildings_building_german_slit_trench"
   },
   "urban_assault_panzer_grenadiers": {
     "name": "Штурмовые панцергренадеры",
-    "description": "Вызов отряда штурмовых панцергренадеров, вооруженных огнеметами и взрывпакетами для подрыва зданий."
+    "description": "Вызов отряда штурмовых панцергренадеров, вооруженных огнеметами и взрывпакетами для подрыва зданий.",
+    "icon_name": "Icons_units_unit_german_urban_assault_panzer_grenadier"
   },
   "fear_propaganda": {
     "name": "Агитационные снаряды",
     "description": "Пропагандистские листовки, которые заставляют солдат колебаться при выполнении приказа.",
-    "extra": "Применение: против пехоты. Может подавить врагов или вынудить их бежать."
+    "extra": "Применение: против пехоты. Может подавить врагов или вынудить их бежать.",
+    "icon_name": "Icons_commander_cmdr_soviet_fear_propaganda"
   },
   "for_mother_russia": {
     "name": "За Родину!",
     "description": "Повышение боевой эффективности всех видов пехоты и расчетов оружия, а также скорости бега пехотинцев.",
-    "extra": "Временная способность"
+    "extra": "Временная способность",
+    "icon_name": "Icons_abilities_ability_soviet_inspiring_charge"
   },
   "il-2_anti_tank_bomb": {
     "name": "Ил-2, противотанковая бомбардировка",
-    "description": "Сброс множества небольших противотанковых бомб в указанной области."
+    "description": "Сброс множества небольших противотанковых бомб в указанной области.",
+    "icon_name": "Icons_commander_cmdr_soviet_at_bombing_run"
   },
   "il-2_bomb_strike": {
     "name": "Точный бомбовый удар Ил-2",
     "description": "Ил-2 пролетает на скорости над заданным районом, сбрасывая четыре 50-кг бомбы ФАБ-50.",
-    "extra": "Щелкнуть по умению, затем по целевой области."
+    "extra": "Щелкнуть по умению, затем по целевой области.",
+    "icon_name": "Icons_commander_cmdr_soviet_il2_bombing_run"
   },
   "il-2_sturmovik_rocket_run": {
     "name": "Ракетная атака Ил-2",
-    "description": "Ил-2 обстреляет указанный район ракетами, эффективно поражающими технику."
+    "description": "Ил-2 обстреляет указанный район ракетами, эффективно поражающими технику.",
+    "icon_name": "Icons_abilities_il_2m_rocket_strike_new"
   },
   "rally_point": {
     "name": "Передовой штаб",
-    "description": "Возможность переоборудовать гражданскую постройку в передовой штаб. Он позволяет пополнять, лечить и воодушевлять пехотные подразделения, сражающиеся неподалеку."
+    "description": "Возможность переоборудовать гражданскую постройку в передовой штаб. Он позволяет пополнять, лечить и воодушевлять пехотные подразделения, сражающиеся неподалеку.",
+    "icon_name": "Icons_commander_rally_point"
   },
   "anti_tank_gun_ambush_tactics": {
     "name": "Тактика противотанковых засад",
     "description": "Все расчеты мобильных противотанковых орудий могут маскировать их и самих себя.",
-    "extra": "Маскировка пропадает при стрельбе из противотанкового орудия."
+    "extra": "Маскировка пропадает при стрельбе из противотанкового орудия.",
+    "icon_name": "Icons_abilities_ability_soviet_at_ambush_tactics_on"
   },
   "conscript_assault_package": {
     "name": "Штурмовой набор новобранца",
     "description": "Дает доступ к улучшению новобранцев. Четверо новобранцев получают вместо винтовок автоматы ППШ-41, более эффективные в ближнем бою. Также новобранцы получают способность \"Ложись!\", улучшающую тактику боя.",
-    "extra": "Требует усовершенствования новобранцев. Повышает эффективность против пехоты на малой дистанции."
+    "extra": "Требует усовершенствования новобранцев. Повышает эффективность против пехоты на малой дистанции.",
+    "icon_name": "Icons_commander_cmdr_soviet_conscript_assault_package"
   },
   "conscript_ptrs": {
     "name": "(постоянно) Противотанковый набор новобранца",
     "description": "Новобранцам можно выдать противотанковые наборы, повышающие их эффективность против бронетехники противника.",
-    "extra": "Новобранцы получают противотанковые ружья ПТРС, а также проходят курс обучения маскировке и обнаружению бронетехники."
+    "extra": "Новобранцы получают противотанковые ружья ПТРС, а также проходят курс обучения маскировке и обнаружению бронетехники.",
+    "icon_name": "Icons_upgrades_icon_upgrade_soviet_ptrs_41"
   },
   "conscript_repair_kit": {
     "name": "Ремкомплект новобранца",
     "description": "Новобранцы и штрафные батальоны, демонстрируя редкую изобретательность, могут восстановить любую поврежденную технику, мосты или здания.",
-    "extra": "Щелкните поврежденный объект правой кнопкой мыши или используйте способность \"Починить\"."
+    "extra": "Щелкните поврежденный объект правой кнопкой мыши или используйте способность \"Починить\".",
+    "icon_name": "Icons_commander_cmdr_soviet_conscript_repair_kit"
   },
   "dshk_machinegun": {
     "name": "Крупнокалиберный пулемет ДШК-38",
-    "description": "На поле боя можно разместить крупнокалиберный пулемет ДШК. Выберите мышью место прибытия."
+    "description": "На поле боя можно разместить крупнокалиберный пулемет ДШК. Выберите мышью место прибытия.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_dshk_38_50_cal_hmg"
   },
   "dshk_machinegun_paradrop": {
     "name": "Выброска ДШК",
     "description": "На поле боя выбрасывается крупнокалиберный пулемет ДШК, которым можно вооружить пехоту. Это оружие эффективно против скоплений пехоты при установке в оборонительную позицию.",
-    "extra": "На поле боя выбрасывается крупнокалиберный пулемет ДШК, которым можно вооружить пехоту. Это оружие эффективно против скоплений пехоты при установке в оборонительную позицию."
+    "extra": "На поле боя выбрасывается крупнокалиберный пулемет ДШК, которым можно вооружить пехоту. Это оружие эффективно против скоплений пехоты при установке в оборонительную позицию.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_dshk_38_50_cal_hmg"
   },
   "guard_troops": {
     "name": "Гвардейский отряд",
     "description": "На поле боя можно отправить войска спецназначения. Выберите мышью место прибытия.",
-    "extra": "Войска спецназначения"
+    "extra": "Войска спецназначения",
+    "icon_name": "Icons_commander_cmdr_soviet_guard_troops"
   },
   "hm120_mortar_unlock": {
     "name": "Расчет 120-мм миномета ПМ-38",
-    "description": "На поле боя можно отправить расчет 120-мм тяжелого миномета ПМ-38. Применение: против неподвижных целей и пехоты."
+    "description": "На поле боя можно отправить расчет 120-мм тяжелого миномета ПМ-38. Применение: против неподвижных целей и пехоты.",
+    "icon_name": "Icons_commander_cmdr_german_120mm_mortar_unlock"
   },
   "howtizer_203mm": {
     "name": "203-мм гаубица Б-4",
-    "description": "203-мм гаубицу Б-4 могут построить саперы. Гаубица ведет огонь крупнокалиберными снарядами, накрывающими большую область. Из нее можно поражать технику прямой наводкой."
+    "description": "203-мм гаубицу Б-4 могут построить саперы. Гаубица ведет огонь крупнокалиберными снарядами, накрывающими большую область. Из нее можно поражать технику прямой наводкой.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_b4_artillery_gun"
   },
   "is-2_support": {
     "name": "Тяжелый танк ИС-2",
     "description": "Возможность вызвать на поле боя тяжелый танк ИС-2.",
-    "extra": "Применение: против большинства целей."
+    "extra": "Применение: против большинства целей.",
+    "icon_name": "Icons_commander_cmdr_soviet_is2_unlock"
   },
   "isu152_unlock": {
     "name": "Тяжелая САУ ИСУ-152",
     "description": "Возможность вызвать на поле боя тяжелую штурмовую САУ ИСУ-152.",
-    "extra": "Применение: против любых неподвижных целей."
+    "extra": "Применение: против любых неподвижных целей.",
+    "icon_name": "Icons_commander_cmdr_soviet_isu152_unlock"
   },
   "kv-8_unlock": {
     "name": "Огнеметный танк КВ-8",
     "description": "Новая техника - огнеметный танк КВ-8 Доступно в штабе легкой техники",
-    "extra": "Применение: против пехоты и легкой техники."
+    "extra": "Применение: против пехоты и легкой техники.",
+    "icon_name": "Icons_commander_cmdr_soviet_kv8_unlock"
   },
   "kv1_unlock": {
     "name": "Тяжелый танк КВ-1",
-    "description": "Возможность вызвать на поле боя тяжелый танк КВ-1."
+    "description": "Возможность вызвать на поле боя тяжелый танк КВ-1.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_kv1_heavy_tank"
   },
   "kv2_unlock": {
     "name": "Тяжелый штурмовой танк КВ-2",
-    "description": "Возможность вызвать на поле боя тяжелый штурмовой танк КВ-2."
+    "description": "Возможность вызвать на поле боя тяжелый штурмовой танк КВ-2.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_kv2_heavy_tank"
   },
   "ml_20_howitzer_unlock": {
     "name": "152-мм гаубица-пушка МЛ-20",
     "description": "Мощную 152-мм гаубицу МЛ-20 могут построить саперы. Ее снаряды способны наносить урон по большой области.",
-    "extra": "Применение: против неподвижных целей и зданий. Нуждается в защите."
+    "extra": "Применение: против неподвижных целей и зданий. Нуждается в защите.",
+    "icon_name": "Icons_vehicles_vehicle_soviet_ml20_artillery_gun"
   },
   "order227": {
     "name": "Не отступать и не сдаваться!",
-    "description": "Командование использует все доступные средства для предоставления вам дополнительных ресурсов, однако отступление становится невозможным."
+    "description": "Командование использует все доступные средства для предоставления вам дополнительных ресурсов, однако отступление становится невозможным.",
+    "icon_name": "Icons_abilities_order_227"
   },
   "partisan_commander_troops": {
     "name": "Партизанские отряды",
-    "description": "Партизаны - это бойцы нерегулярных частей, специализирующиеся на диверсиях в тылу противника."
+    "description": "Партизаны - это бойцы нерегулярных частей, специализирующиеся на диверсиях в тылу противника.",
+    "icon_name": "Icons_units_unit_soviet_partisan_anti_infantry"
   },
   "radio_intercept": {
     "name": "Радиоперехват",
     "description": "Перехватывает радиосообщения противника, предоставляя ценную информацию о его действиях.",
-    "extra": "Всегда включено. Действия противника записываются в журнал."
+    "extra": "Всегда включено. Действия противника записываются в журнал.",
+    "icon_name": "Icons_commander_cmdr_soviet_radio_intercept"
   },
   "repair_bunker": {
     "name": "Ремонтная мастерская",
-    "description": "Саперы получают возможность строить стационарные мастерские для ремонта техники, находящейся поблизости."
+    "description": "Саперы получают возможность строить стационарные мастерские для ремонта техники, находящейся поблизости.",
+    "icon_name": "Icons_buildings_building_common_support_bay"
   },
   "shock_troops": {
     "name": "Штурмовая пехота",
     "description": "На поле боя можно отправлять штурмовую пехоту. Эти тяжело вооруженные пехотинцы превосходны в ближнем бою.",
-    "extra": "Войска спецназначения"
+    "extra": "Войска спецназначения",
+    "icon_name": "Icons_commander_cmdr_soviet_shock_troops"
   },
   "t34_85_unlock": {
     "name": "Средний танк Т-34-85",
     "description": "Вы можете заказывать постройку танков Т-34-85 с мощными 85-мм орудиями.",
-    "extra": "Доступна новая техника - танк T-34-85. Произведите улучшение в механизированной роте."
+    "extra": "Доступна новая техника - танк T-34-85. Произведите улучшение в механизированной роте.",
+    "icon_name": "Icons_commander_cmdr_soviet_t34_85"
   },
   "tank_detection": {
     "name": "Выявление бронетехники",
     "description": "Пехота обучена обнаружению вражеской техники в \"тумане войны\". Экипаж техники может отслеживать подбитые им машины.",
-    "extra": "Длительность 30 сек. На мини-карте появляется техника."
+    "extra": "Длительность 30 сек. На мини-карте появляется техника.",
+    "icon_name": "Icons_commander_cmdr_soviet_tank_awareness"
   },
   "vehicle_self_repair_training": {
     "name": "Обучение ремонту силами экипажа",
     "description": "Экипажи учатся ремонтировать собственную технику в полевых условиях, временно выходя из боя.",
-    "extra": "Длительность 30 сек. Техника обездвиживается, орудия выводятся из строя."
+    "extra": "Длительность 30 сек. Техника обездвиживается, орудия выводятся из строя.",
+    "icon_name": "Icons_commander_cmdr_soviet_self_repair"
   },
   "fallschrimjager_dispatch": {
     "name": "Фальширмъягер",
-    "description": "Возможность вызвать на поле боя фальширмъягеров. Эти элитные десантники эффективны против пехоты на любых дистанциях."
+    "description": "Возможность вызвать на поле боя фальширмъягеров. Эти элитные десантники эффективны против пехоты на любых дистанциях.",
+    "icon_name": "Icons_units_unit_west_german_fallschirmjager"
   },
   "heat_shells": {
     "name": "Кумулятивные снаряды",
     "description": "Открывает способность \"Кумулятивный снаряд\" для немецкой бронетехники.",
-    "extra": "Позволяет немецким танкам в течение ограниченного времени вести огонь кумулятивными снарядами."
+    "extra": "Позволяет немецким танкам в течение ограниченного времени вести огонь кумулятивными снарядами.",
+    "icon_name": "Icons_abilities_ability_west_german_heat_rounds"
   },
   "panzerfusiler_dispatch": {
     "name": "Панцерфузилеры",
-    "description": "На поле боя можно отправить панцерфузилеры. Эти универсальные пехотинцы могут выполнять разнообразные роли на поле боя при помощи улучшений."
+    "description": "На поле боя можно отправить панцерфузилеры. Эти универсальные пехотинцы могут выполнять разнообразные роли на поле боя при помощи улучшений.",
+    "icon_name": "Icons_units_unit_west_german_panzerfusilier"
   },
   "howitzer_105mm_emplacement_okw": {
     "name": "Гаубица leFH18",
     "description": "Эта легкая полевая гаубица калибра 105 мм уступает по мощности некоторым советским орудиям, но зато отличается хорошей скорострельностью и неплохим радиусом действия.",
-    "extra": "Беглый огонь. Применение: против неподвижных целей и тяжелых построек."
+    "extra": "Беглый огонь. Применение: против неподвижных целей и тяжелых построек.",
+    "icon_name": "Icons_vehicles_vehicle_german_howitzer"
   },
   "infiltration_tactics": {
     "name": "Тактика проникновения",
-    "description": "Отряд пехоты, достаточно долго находившийся в небоевой обстановке, получает возможность осуществить внезапную атаку гранатами."
+    "description": "Отряд пехоты, достаточно долго находившийся в небоевой обстановке, получает возможность осуществить внезапную атаку гранатами.",
+    "icon_name": "Icons_commander_cmdr_west_german_infiltration_tactics"
   },
   "vehicle_critical_repair": {
     "name": "Экстренный ремонт",
     "description": "Экипажи техники получают возможность устранять критические повреждения своих машин.",
-    "extra": "Длительность 15 сек. Машина неподвижна, применение оружия невозможно."
+    "extra": "Длительность 15 сек. Машина неподвижна, применение оружия невозможно.",
+    "icon_name": "Icons_commander_cmdr_west_german_vehicle_crew_critical_repair_training"
   }
 };

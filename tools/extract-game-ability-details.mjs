@@ -57,6 +57,7 @@ function extract(path) {
     name: ucsText(ui.screen_name),
     description: ucsText(ui.help_text),
     extra: ucsText(ui.extra_text),
+    icon_name: typeof ui.icon_name === 'string' && ui.icon_name ? ui.icon_name : undefined,
   };
   const costSource = bag.cost ?? {};
   const cost = {};
@@ -107,6 +108,6 @@ for (const id of Object.keys(details)) {
 const count = Object.keys(details).length;
 writeFileSync(
   OUT,
-  `// Generated from CoH2 ability/upgrade RGD data and the Russian game locale.\nimport type { DoctrineAbility } from '../types';\n\nexport type AbilityDetail = Partial<Pick<DoctrineAbility, 'description' | 'cost'>> & { name?: string; extra?: string };\n\nexport const gameAbilityDetails: Record<string, AbilityDetail> = ${JSON.stringify(details, null, 2)};\n`,
+  `// Generated from CoH2 ability/upgrade RGD data and the Russian game locale.\nimport type { DoctrineAbility } from '../types';\n\nexport type AbilityDetail = Partial<Pick<DoctrineAbility, 'description' | 'cost'>> & { name?: string; extra?: string; icon_name?: string };\n\nexport const gameAbilityDetails: Record<string, AbilityDetail> = ${JSON.stringify(details, null, 2)};\n`,
 );
 console.log(`Extracted details for ${count} ids from ${parsed} RGD files.`);
