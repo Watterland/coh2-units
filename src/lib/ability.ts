@@ -52,7 +52,7 @@ export function abilityBySlug(slug: string): AbilityDetail | undefined {
       const unit = unitsLite.find((candidate) => candidate.index === index);
       return unit ? [{ index, name: unitRussianName(index) ?? unit.name }] : [];
     }),
-    doctrines: [...new Set(matchingDoctrines.map(({ doctrine }) => doctrine.name))],
+    doctrines: [...new Set(matchingDoctrines.map(({ doctrine }) => doctrine.nameRu ?? doctrine.name))],
   };
 }
 

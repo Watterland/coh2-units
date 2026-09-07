@@ -165,6 +165,7 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
       return {
         ...source,
         name: canonical.name,
+        nameRu: canonical.nameRu,
         abilities: source.abilities
           .filter((ability) => !isInternalDoctrineAbility(ability.name))
           .map((ability) => {

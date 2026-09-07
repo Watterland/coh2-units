@@ -114,6 +114,7 @@ export interface DoctrineAbility {
 export interface Doctrine {
   faction: Faction;
   name: string;
+  nameRu?: string;
   description: string;
   abilities: DoctrineAbility[];
 }

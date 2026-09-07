@@ -35,7 +35,10 @@ export default function Doctrines() {
               key={d.name}
               className="rounded-xl border border-white/10 bg-panel p-5 transition hover:border-white/25 hover:bg-panel-hover"
             >
-              <h2 className="font-display text-lg font-semibold text-zinc-100">{d.name}</h2>
+              <h2 className="font-display text-lg font-semibold text-zinc-100">{d.nameRu ?? d.name}</h2>
+              {d.nameRu && d.nameRu !== d.name && (
+                <p className="text-xs text-zinc-500">{d.name}</p>
+              )}
               {d.description && <p className="mt-1 text-sm text-zinc-400">{d.description}</p>}
               {d.abilities.length > 0 && (
                 <ul className="mt-3 space-y-2">

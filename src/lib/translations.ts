@@ -143,8 +143,49 @@ const TANKS =
 export function tUnit(name: string): string {
   return name === 'M4C Sherman' ? 'M4C Sherman' : name;
 }
+const ROLE_RU: [RegExp, string][] = [
+  [/heavy tank/i, 'Тяжёлый танк'],
+  [/elite heavy tank/i, 'Элитный тяжёлый танк'],
+  [/medium tank/i, 'Средний танк'],
+  [/light tank/i, 'Лёгкий танк'],
+  [/cruiser tank/i, 'Крейсерский танк'],
+  [/tank destroyer/i, 'Истребитель танков'],
+  [/anti-tank gun/i, 'Противотанковое орудие'],
+  [/anti-tank/i, 'Противотанковый'],
+  [/assault gun/i, 'Штурмовое орудие'],
+  [/artillery/i, 'Артиллерия'],
+  [/rocket launcher/i, 'Реактивная артиллерия'],
+  [/anti-aircraft/i, 'Зенитная установка'],
+  [/infantry transport/i, 'Бронетранспортёр'],
+  [/half-track/i, 'Полугусеничник'],
+  [/scout vehicle/i, 'Разведывательная машина'],
+  [/support vehicle/i, 'Машина поддержки'],
+  [/elite infantry/i, 'Элитная пехота'],
+  [/elite heavy infantry/i, 'Элитная тяжёлая пехота'],
+  [/support infantry/i, 'Поддерживающая пехота'],
+  [/core infantry/i, 'Основная пехота'],
+  [/multi-purpose/i, 'Универсальная пехота'],
+  [/builder unit/i, 'Строительный отряд'],
+  [/repair and construction/i, 'Инженерно-строительный отряд'],
+  [/raid infantry/i, 'Рейдовая пехота'],
+  [/mechanized infantry/i, 'Мотопехота'],
+  [/infiltration/i, 'Диверсионная пехота'],
+  [/mortar/i, 'Миномётный расчёт'],
+  [/command officer/i, 'Командующий офицер'],
+  [/infantry officer/i, 'Офицер пехоты'],
+  [/anti-infantry/i, 'Противопехотный'],
+  [/anti-vehicle/i, 'Противотехнический'],
+  [/interception/i, 'Перехватчик'],
+  [/crew/i, 'Расчёт'],
+];
+
 export function tRole(role?: string): string | undefined {
-  return role;
+  if (!role) return undefined;
+  const clean = role.replace(/<br>/g, ' · ');
+  for (const [pattern, ru] of ROLE_RU) {
+    if (pattern.test(clean)) return ru;
+  }
+  return clean;
 }
 export function tCategory(category: Category): string {
   return category === 'Infantry'

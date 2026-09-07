@@ -5,7 +5,7 @@ describe('ability pages', () => {
   it('resolves a doctrine-only ability', () => {
     const ability = abilityBySlug(abilitySlug('T34 85 Unlock'));
     expect(ability?.name).toBe('T34 85 Unlock');
-    expect(ability?.doctrines).toContain('Advanced Warfare Tactics');
+    expect(ability?.doctrines).toContain('Тактика передовой войны');
     expect(ability?.description).toContain('Т-34-85');
   });
 
