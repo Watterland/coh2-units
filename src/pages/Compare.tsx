@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import { loadFactionUnits, unitLiteByIndex, unitsLite } from '../data';
+import { loadFactionUnits, unitLiteByIndex, unitsLite, unitRussianName } from '../data';
 import { factionInfo } from '../lib/factions';
 import { classifyUnit, tUnit } from '../lib/translations';
 import { round } from '../lib/units';
@@ -44,7 +44,7 @@ export default function Compare() {
     <div className="flex flex-col gap-6">
       <div>
         <Link to={`/units/${firstIndex}`} className="text-sm text-zinc-400 hover:text-accent">
-          ← {tUnit(firstLite.name)}
+          ← {unitRussianName(firstLite.index) ?? tUnit(firstLite.name)}
         </Link>
         <h1 className="mt-2 font-display text-3xl font-bold text-zinc-100">Сравнение юнитов</h1>
         <p className="mt-1 text-sm text-zinc-500">
@@ -62,7 +62,7 @@ export default function Compare() {
         <option value="">Выберите второго юнита</option>
         {options.map((unit) => (
           <option key={unit.index} value={unit.index}>
-            {tUnit(unit.name)} · {factionInfo(unit.faction).short}
+            {unitRussianName(unit.index) ?? tUnit(unit.name)} · {factionInfo(unit.faction).short}
           </option>
         ))}
       </select>
@@ -108,7 +108,7 @@ function UnitColumn({ unit, placeholder = false }: { unit: Unit | null; placehol
           <span className="text-xs font-semibold" style={{ color: info.color }}>
             {info.name}
           </span>
-          <h2 className="mt-1 font-display text-xl font-bold text-zinc-100">{tUnit(unit.name)}</h2>
+          <h2 className="mt-1 font-display text-xl font-bold text-zinc-100">{unitRussianName(unit.index) ?? tUnit(unit.name)}</h2>
           <p className="mt-1 text-sm text-zinc-500">{classifyUnit(unit)}</p>
           <Link
             to={`/units/${unit.index}`}

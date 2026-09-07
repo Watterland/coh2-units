@@ -88,6 +88,7 @@ export interface Ability {
   description: string;
   icon?: string;
   type?: 'active' | 'passive';
+  availableIn?: string[];
   cost?: {
     manpower?: number;
     munitions?: number;

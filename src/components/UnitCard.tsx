@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import type { Unit } from '../types';
 import { factionInfo } from '../lib/factions';
 import { round } from '../lib/units';
-import { abilitiesForUnit } from '../data';
+import { abilitiesForUnit, unitRussianName } from '../data';
 import { tRole, tUnit } from '../lib/translations';
 import { assetUrl } from '../lib/assets';
 
@@ -15,6 +15,7 @@ export default function UnitCard({ unit }: { unit: Unit }) {
   const base = unit.vetStats[0];
   const isVeh = unit.category === 'Vehicles';
   const abilityCount = abilitiesForUnit(unit.index).length;
+  const displayName = unitRussianName(unit.index) ?? tUnit(unit.name);
 
   return (
     <Link
@@ -24,7 +25,7 @@ export default function UnitCard({ unit }: { unit: Unit }) {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-panel-light">
         <img
           src={src}
-          alt={tUnit(unit.name)}
+          alt={displayName}
           loading="lazy"
           onError={() => setSrc(NO_IMAGE)}
           className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-105"
@@ -39,7 +40,7 @@ export default function UnitCard({ unit }: { unit: Unit }) {
       <div className="flex flex-1 flex-col gap-2 p-3">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-display text-sm font-semibold leading-tight text-zinc-100">
-            {tUnit(unit.name)}
+            {displayName}
           </h3>
           {abilityCount > 0 && (
             <span

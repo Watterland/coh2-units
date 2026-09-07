@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Unit } from '../types';
 import { factionInfo } from '../lib/factions';
 import { round } from '../lib/units';
-import { abilitiesForUnit } from '../data';
+import { abilitiesForUnit, unitRussianName } from '../data';
 import StatTable from './StatTable';
 import WeaponPanel from './WeaponPanel';
 import VetPanel from './VetPanel';
@@ -25,7 +25,7 @@ export default function UnitDetail({ unit }: { unit: Unit }) {
           <div className="relative aspect-[4/3] w-full bg-panel-light">
             <img
               src={src}
-              alt={tUnit(unit.name)}
+              alt={unitRussianName(unit.index) ?? tUnit(unit.name)}
               onError={() => setSrc(NO_IMAGE)}
               className="h-full w-full object-cover"
             />
@@ -38,7 +38,7 @@ export default function UnitDetail({ unit }: { unit: Unit }) {
             >
               {info.name}
             </div>
-            <h1 className="font-display text-2xl font-bold text-zinc-100">{tUnit(unit.name)}</h1>
+            <h1 className="font-display text-2xl font-bold text-zinc-100">{unitRussianName(unit.index) ?? tUnit(unit.name)}</h1>
             <div className="mt-1 text-sm text-zinc-400">
               {tRole(unit.build?.role) ?? tCategory(unit.category)}
             </div>

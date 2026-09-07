@@ -13,6 +13,13 @@ import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
 import { doctrineAbilityTexts, unitAbilityTexts } from './doctrine-ability-texts';
 import { gameAbilityDetails } from './game-ability-details';
+import { gameUnitNames } from './game-unit-names';
+import {
+  DOCTRINE_ONLY_UNIT_INDEXES,
+  doctrineNamesForAbilityName,
+  doctrineNamesForBranchId,
+  unitDoctrinesList,
+} from './doctrine-units';
 import {
   doctrineCrewIconIds,
   doctrineUnitAbilityIconIds,
@@ -68,7 +75,23 @@ export function unitLiteByIndex(index: number): UnitLite | undefined {
   return unitsLite.find((unit) => unit.index === index);
 }
 
+export function unitRussianName(index: number): string | undefined {
+  return gameUnitNames[index];
+}
+
+export type UnitAvailability =
+  | { kind: 'nation'; doctrines: [] }
+  | { kind: 'doctrine'; doctrines: string[] };
+
+export function unitAvailability(index: number): UnitAvailability {
+  if (DOCTRINE_ONLY_UNIT_INDEXES.has(index)) {
+    return { kind: 'doctrine', doctrines: unitDoctrinesList(index) };
+  }
+  return { kind: 'nation', doctrines: [] };
+}
+
 export function abilitiesForUnit(unitIndex: number): Ability[] {
+  const lite = unitLiteByIndex(unitIndex);
   const wiki = abilities.filter((a) => a.unitIndex === unitIndex);
   const seen = new Set(wiki.map((ability) => normalizeAbilityName(ability.name)));
   const game = (gameAbilityIds[unitIndex] ?? [])
@@ -79,6 +102,13 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       const gameIcon =
         (detail?.icon_name ? gameAbilityIcons[detail.icon_name] : undefined) ??
         doctrineUnitAbilityIconIds[name];
+      const availableIn = [
+        ...new Set([
+          ...doctrineNamesForBranchId(id),
+          ...doctrineNamesForBranchId(key),
+          ...doctrineNamesForAbilityName(name),
+        ]),
+      ];
       return {
         unitIndex,
         name,
@@ -86,6 +116,7 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
         cost: detail?.cost,
         icon: (gameIcon ? assetUrl(gameIcon) : undefined) ?? findAbilityIcon(name),
         type: 'active' as const,
+        ...(availableIn.length ? { availableIn } : {}),
       };
     })
     .filter((ability) => {
@@ -95,12 +126,17 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       return true;
     });
   return [...wiki, ...game].map((ability) =>
-    ability.description && ability.icon
+    ability.description && ability.icon && ability.availableIn
       ? ability
       : {
           ...ability,
           description: ability.description || unitAbilityTexts[ability.name] || '',
           icon: ability.icon ?? resolveUnitAbilityIcon(ability.name),
+          availableIn:
+            ability.availableIn ??
+            (doctrineNamesForAbilityName(ability.name, lite?.faction).length
+              ? doctrineNamesForAbilityName(ability.name, lite?.faction)
+              : undefined),
         },
     );
 }

@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import UnitDetail from '../components/UnitDetail';
 import NotFound from './NotFound';
-import { loadFactionUnits, unitLiteByIndex } from '../data';
+import { loadFactionUnits, unitLiteByIndex, unitAvailability, unitRussianName } from '../data';
 import { unitByIndex } from '../lib/units';
 import { factionInfo } from '../lib/factions';
 import { useEffect, useState } from 'react';
@@ -21,6 +21,8 @@ export default function UnitPage() {
   if (!unit)
     return <div className="py-16 text-center text-zinc-500">Загружаем характеристики юнита...</div>;
   const info = factionInfo(unit.faction);
+  const availability = unitAvailability(unit.index);
+  const displayName = unitRussianName(unit.index) ?? tUnit(unit.name);
 
   return (
     <div className="flex flex-col gap-5">
@@ -29,7 +31,19 @@ export default function UnitPage() {
           {info.name}
         </Link>
         <span className="text-zinc-600">/</span>
-        <span className="text-zinc-200">{tUnit(unit.name)}</span>
+        <span className="text-zinc-200">{displayName}</span>
+      </div>
+      <div className="flex flex-wrap items-center gap-3">
+        {availability.kind === 'nation' ? (
+          <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">
+            Юнит нации
+          </span>
+        ) : (
+          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-400">
+            Доктринный юнит
+            {availability.doctrines.length > 0 && `: ${availability.doctrines.join(', ')}`}
+          </span>
+        )}
       </div>
       <Link
         to={`/compare/${unit.index}`}

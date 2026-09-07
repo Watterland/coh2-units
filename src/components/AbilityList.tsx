@@ -49,6 +49,12 @@ export default function AbilityList({ abilities, color }: Props) {
                 </span>
               )}
             </div>
+            {a.availableIn && a.availableIn.length > 0 && (
+              <p className="mt-1 text-xs text-amber-400/80">
+                Доступно только в доктрине{a.availableIn.length > 1 ? 'х' : ''}:{' '}
+                {a.availableIn.join(', ')}
+              </p>
+            )}
             {a.description && <p className="mt-1 text-sm text-zinc-400">{a.description}</p>}
           </li>
         ))}
