@@ -11,9 +11,11 @@ import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
+import { doctrineAbilityTexts, unitAbilityTexts } from './doctrine-ability-texts';
 import { gameAbilityDetails } from './game-ability-details';
 import {
   doctrineCrewIconIds,
+  doctrineUnitAbilityIconIds,
   doctrineUnitIconIndexes,
   doctrineVehicleIconIds,
 } from './doctrine-unit-icons';
@@ -71,14 +73,18 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
   const seen = new Set(wiki.map((ability) => normalizeAbilityName(ability.name)));
   const game = (gameAbilityIds[unitIndex] ?? [])
     .map((id) => {
-      const detail = gameAbilityDetails[id] ?? gameAbilityDetails[id.replace(/_mp$/i, '')];
+      const key = id.replace(/_(mp|sp|tow)$/i, '');
+      const detail = gameAbilityDetails[id] ?? gameAbilityDetails[key];
       const name = readableAbilityName(id);
+      const gameIcon =
+        (detail?.icon_name ? gameAbilityIcons[detail.icon_name] : undefined) ??
+        doctrineUnitAbilityIconIds[name];
       return {
         unitIndex,
         name,
         description: detail?.description ?? '',
         cost: detail?.cost,
-        icon: findAbilityIcon(name),
+        icon: (gameIcon ? assetUrl(gameIcon) : undefined) ?? findAbilityIcon(name),
         type: 'active' as const,
       };
     })
@@ -88,7 +94,21 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       seen.add(key);
       return true;
     });
-  return [...wiki, ...game];
+  return [...wiki, ...game].map((ability) =>
+    ability.description && ability.icon
+      ? ability
+      : {
+          ...ability,
+          description: ability.description || unitAbilityTexts[ability.name] || '',
+          icon: ability.icon ?? resolveUnitAbilityIcon(ability.name),
+        },
+    );
+}
+
+function resolveUnitAbilityIcon(name: string): string | undefined {
+  const mapped = doctrineUnitAbilityIconIds[name];
+  if (mapped && gameAbilityIcons[mapped]) return assetUrl(gameAbilityIcons[mapped]);
+  return findAbilityIcon(name);
 }
 
 export function doctrinesForFaction(faction: Faction): Doctrine[] {
@@ -115,8 +135,9 @@ export function doctrinesForFaction(faction: Faction): Doctrine[] {
             const detail = gameAbilityDetails[id] ?? gameAbilityDetails[`${id}_mp`];
             return {
               ...ability,
-              description: ability.description || detail?.description || '',
-              extra: ability.extra ?? detail?.extra,
+              description:
+                ability.description || detail?.description || doctrineAbilityTexts[id]?.description || '',
+              extra: ability.extra ?? detail?.extra ?? doctrineAbilityTexts[id]?.extra,
               cost: ability.cost ?? detail?.cost,
               icon: findDoctrineAbilityIcon(ability.name, id) ?? ability.icon ?? findAbilityIcon(ability.name),
             };
