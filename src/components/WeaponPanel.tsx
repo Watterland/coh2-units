@@ -2,6 +2,9 @@ import type { Unit, Weapon } from '../types';
 import { fmtNearMidFar, weaponDps } from '../lib/units';
 import { useState } from 'react';
 import { tWeapon } from '../lib/translations';
+import { gameWeaponMeta } from '../data/game-weapon-meta';
+import { gameAbilityIcons } from '../data/game-ability-icons';
+import { assetUrl } from '../lib/assets';
 
 const WEAPON_ROWS: { label: string; get: (w: Weapon) => string }[] = [
   { label: 'Урон', get: (w) => fmtNearMidFar(w.damage) },
@@ -18,6 +21,9 @@ function displayWeapons(weapons: Weapon[]): Weapon[] {
     const name = weapon.name ?? '';
     if (/dummy|damage_engine_shot|shell_shock_shot|aimed_shot|critical_shot/i.test(name))
       return false;
+    // Weapons with no hardpoint and no count are ability-delivered (grenades,
+    // flares, smoke) and already appear in the ability list.
+    if (weapon.hardpoint === -1 && weapon.count === -1) return false;
     const key = `${tWeapon(name)}-${JSON.stringify(weapon.damage)}-${JSON.stringify(weapon.range)}`;
     if (seen.has(key)) return false;
     seen.add(key);
@@ -29,6 +35,18 @@ export default function WeaponPanel({ unit }: { unit: Unit }) {
   const weapons = displayWeapons(unit.weapons);
   if (weapons.length === 0) return null;
 
+  const mainName = unit.weapons[unit.mainWeaponIndex ?? -1]?.name;
+  // Base loadout comes first, issued/upgraded weapons after. The "issued"
+  // label applies to infantry only: for vehicles and crews the extra slots
+  // are turret/hull guns and alternate fire modes.
+  const isInfantry = unit.category === 'Infantry';
+  const sorted = [...weapons].sort((a, b) => {
+    const issuedA = isInfantry && isIssued(a, mainName);
+    const issuedB = isInfantry && isIssued(b, mainName);
+    if (issuedA !== issuedB) return issuedA ? 1 : -1;
+    return (b.count ?? 0) - (a.count ?? 0);
+  });
+
   const [expanded, setExpanded] = useState<number | null>(null);
   return (
     <section className="rounded-xl border border-white/10 bg-panel p-5">
@@ -36,42 +54,105 @@ export default function WeaponPanel({ unit }: { unit: Unit }) {
         Вооружение
       </h2>
       <div className="flex flex-col gap-4">
-        {weapons.map((w, i) => (
-          <div key={i} className="rounded-lg border border-white/5 bg-white/[0.02] p-3">
-            <button
-              onClick={() => setExpanded(expanded === i ? null : i)}
-              className="flex w-full items-center justify-between text-left"
-            >
-              <h3 className="font-medium text-zinc-100">
-                {tWeapon(w.name)}
-                {w.name === unit.weapons[unit.mainWeaponIndex ?? -1]?.name && (
-                  <span className="ml-2 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-accent">
-                    Основное
-                  </span>
-                )}
-              </h3>
-              <span className="text-xs text-zinc-500">
-                {w.count != null && w.count > 0 ? `×${w.count} ` : ''}
-                {expanded === i ? '−' : '+'}
-              </span>
-            </button>
-            <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-1.5 sm:grid-cols-3 lg:grid-cols-6">
-              {WEAPON_ROWS.map((r) => (
-                <div key={r.label} className="text-xs">
-                  <div className="text-zinc-500">{r.label}</div>
-                  <div className="font-medium text-zinc-300">{r.get(w)}</div>
-                </div>
-              ))}
-            </div>
-            {expanded === i && <WeaponDetails weapon={w} />}
-          </div>
+        {sorted.map((w, i) => (
+          <WeaponRow
+            key={i}
+            weapon={w}
+            isMain={w.name === mainName}
+            issued={isInfantry && isIssued(w, mainName)}
+            expanded={expanded === i}
+            onToggle={() => setExpanded(expanded === i ? null : i)}
+          />
         ))}
       </div>
       <p className="mt-4 text-[11px] text-zinc-600">
-        * УВС: приблизительный урон в секунду по среднему времени перезарядки, в порядке ближняя /
-        средняя / дальняя дистанция. Не учитывает очередь, точность и броню цели.
+        Оружие с отметкой «выдаётся» ставится на отряд улучшением, а не входит в базовый
+        состав. * УВС: приблизительный урон в секунду по среднему времени перезарядки, в
+        порядке ближняя / средняя / дальняя дистанция. Не учитывает очередь, точность и
+        броню цели.
       </p>
     </section>
+  );
+}
+
+function isIssued(weapon: Weapon, mainName: string | null | undefined): boolean {
+  if (weapon.name === mainName) return false;
+  // Slot weapons carried by exactly one soldier are usually upgrade choices.
+  return Number(weapon.hardpoint ?? 0) >= 1 && (weapon.count ?? 0) <= 1;
+}
+
+function weaponIcon(name: string | null): string | undefined {
+  if (!name) return undefined;
+  const symbol = gameWeaponMeta[name]?.icon_name;
+  const path = symbol ? gameAbilityIcons[symbol] : undefined;
+  return path ? assetUrl(path) : undefined;
+}
+
+function WeaponRow({
+  weapon: w,
+  isMain,
+  issued,
+  expanded,
+  onToggle,
+}: {
+  weapon: Weapon;
+  isMain: boolean;
+  issued: boolean;
+  expanded: boolean;
+  onToggle: () => void;
+}) {
+  const type = w.name ? gameWeaponMeta[w.name]?.type : undefined;
+  const icon = weaponIcon(w.name);
+  return (
+    <div className="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+      <button onClick={onToggle} className="flex w-full items-center justify-between text-left">
+        <div className="flex min-w-0 items-center gap-2">
+          {icon ? (
+            <img
+              src={icon}
+              alt=""
+              onError={(event) => {
+                event.currentTarget.style.display = 'none';
+              }}
+              className="h-8 w-12 shrink-0 rounded border border-white/10 object-contain"
+            />
+          ) : (
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-white/10 bg-white/5 text-sm text-zinc-500">
+              ⌖
+            </span>
+          )}
+          <div className="min-w-0">
+            <h3 className="truncate font-medium text-zinc-100">
+              {tWeapon(w.name)}
+              {isMain && (
+                <span className="ml-2 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-accent">
+                  Основное
+                </span>
+              )}
+              {issued && (
+                <span className="ml-2 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-400">
+                  Выдаётся
+                </span>
+              )}
+            </h3>
+            {type && <p className="text-[11px] text-zinc-500">{type}</p>}
+          </div>
+        </div>
+        <span className="shrink-0 text-xs text-zinc-500">
+          {w.count != null && w.count > 0 ? `×${w.count} ` : ''}
+          {expanded ? '−' : '+'}
+        </span>
+      </button>
+      <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-1.5 sm:grid-cols-3 lg:grid-cols-6">
+        {WEAPON_ROWS.map((r) => (
+          <div key={r.label} className="text-xs">
+            <div className="text-zinc-500">{r.label}</div>
+            <div className="font-medium text-zinc-300">{r.get(w)}</div>
+          </div>
+        ))}
+      </div>
+      {expanded && <WeaponDetails weapon={w} />}
+    </div>
   );
 }
 

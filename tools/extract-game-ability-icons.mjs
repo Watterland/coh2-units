@@ -84,7 +84,7 @@ const ids = new Map(
     .flatMap((line) => {
       const [id, rawName] = line.trim().split(';');
       const name = rawName?.replace(/^"|"$/g, '');
-      return /^(Icons_abilities_|Icons_commander_(?!portrait)|Icons_vehicles_|Icons_units_unit_)/.test(name)
+      return /^(Icons_abilities_|Icons_commander_(?!portrait)|Icons_vehicles_|Icons_units_unit_|Icons_upgrades_|Icons_weapons_)/.test(name)
         ? [[name, Number(id)]]
         : [];
     }),
