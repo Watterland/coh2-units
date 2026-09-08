@@ -19,6 +19,7 @@ import {
   doctrineNamesForAbilityName,
   doctrineNamesForBranchId,
   unitDoctrinesList,
+  weaponDoctrineNames,
 } from './doctrine-units';
 import {
   doctrineCrewIconIds,
@@ -92,6 +93,10 @@ export function unitAvailability(index: number): UnitAvailability {
   return { kind: 'nation', doctrines: [] };
 }
 
+export function weaponAvailableIn(faction: Faction, weaponId: string): string[] {
+  return weaponDoctrineNames(faction, weaponId);
+}
+
 function normalizeWikiAbilityName(name: string): string {
   return name.replace(/\[\[File:[^\]]*\]\]/g, '').trim();
 }
@@ -132,7 +137,7 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       seen.add(key);
       return true;
     });
-  return [...wiki, ...game].map((ability) => {
+  const merged = [...wiki, ...game].map((ability) => {
     const cleanName = normalizeWikiAbilityName(ability.name);
     const nameRu = ability.nameRu ?? abilityNameRu[cleanName] ?? abilityNameRu[ability.name];
     if (ability.description && ability.icon && nameRu === ability.name && ability.availableIn) {
@@ -151,6 +156,37 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
           : undefined),
     };
   });
+  return dedupeByDisplayName(merged);
+}
+
+// Translated ability names collide across sources (e.g. wiki 'Repair' and game
+// 'Aef Repair Critical' both render as «Ремонт»). Merge by display name and
+// keep the richest entry so squads never list the same ability twice.
+function dedupeByDisplayName(abilities: Ability[]): Ability[] {
+  const byDisplay = new Map<string, Ability>();
+  const order: string[] = [];
+  for (const ability of abilities) {
+    const display = (ability.nameRu ?? ability.name).toLowerCase();
+    const existing = byDisplay.get(display);
+    if (!existing) {
+      byDisplay.set(display, ability);
+      order.push(display);
+      continue;
+    }
+    const mergedAvailableIn = [
+      ...new Set([...(existing.availableIn ?? []), ...(ability.availableIn ?? [])]),
+    ];
+    const richer: Ability = {
+      ...existing,
+      description: existing.description || ability.description,
+      icon: existing.icon ?? ability.icon,
+      cost: existing.cost ?? ability.cost,
+      nameRu: existing.nameRu ?? ability.nameRu,
+      ...(mergedAvailableIn.length ? { availableIn: mergedAvailableIn } : {}),
+    };
+    byDisplay.set(display, richer);
+  }
+  return order.map((key) => byDisplay.get(key)!);
 }
 
 function resolveUnitAbilityIcon(name: string): string | undefined {

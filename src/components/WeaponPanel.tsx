@@ -5,6 +5,7 @@ import { tWeapon } from '../lib/translations';
 import { gameWeaponMeta } from '../data/game-weapon-meta';
 import { gameAbilityIcons } from '../data/game-ability-icons';
 import { assetUrl } from '../lib/assets';
+import { weaponAvailableIn } from '../data';
 
 const WEAPON_ROWS: { label: string; get: (w: Weapon) => string }[] = [
   { label: 'Урон', get: (w) => fmtNearMidFar(w.damage) },
@@ -60,6 +61,7 @@ export default function WeaponPanel({ unit }: { unit: Unit }) {
             weapon={w}
             isMain={w.name === mainName}
             issued={isInfantry && isIssued(w, mainName)}
+            doctrines={isInfantry ? weaponAvailableIn(unit.faction, w.name ?? '') : []}
             expanded={expanded === i}
             onToggle={() => setExpanded(expanded === i ? null : i)}
           />
@@ -92,12 +94,14 @@ function WeaponRow({
   weapon: w,
   isMain,
   issued,
+  doctrines,
   expanded,
   onToggle,
 }: {
   weapon: Weapon;
   isMain: boolean;
   issued: boolean;
+  doctrines: string[];
   expanded: boolean;
   onToggle: () => void;
 }) {
@@ -129,10 +133,19 @@ function WeaponRow({
                   Основное
                 </span>
               )}
-              {issued && (
-                <span className="ml-2 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-400">
-                  Выдаётся
+              {doctrines.length > 0 ? (
+                <span
+                  className="ml-2 rounded bg-orange-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-orange-400"
+                  title={`Выдаётся доктриной${doctrines.length > 1 ? 'ами' : ''}: ${doctrines.join(', ')}`}
+                >
+                  Доктрина: {doctrines.join(', ')}
                 </span>
+              ) : (
+                issued && (
+                  <span className="ml-2 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-400">
+                    Выдаётся
+                  </span>
+                )
               )}
             </h3>
             {type && <p className="text-[11px] text-zinc-500">{type}</p>}

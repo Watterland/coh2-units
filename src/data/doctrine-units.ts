@@ -89,7 +89,9 @@ for (const canonical of doctrineCatalog) {
 }
 
 export function doctrineNamesForBranchId(id: string): string[] {
-  return branchIdToDoctrines.get(id) ?? branchIdToDoctrines.get(id.replace(/_(mp|sp|tow)$/i, '')) ?? [];
+  const names =
+    branchIdToDoctrines.get(id) ?? branchIdToDoctrines.get(id.replace(/_(mp|sp|tow)$/i, '')) ?? [];
+  return doctrineDisplay(names);
 }
 
 // Doctrine abilities matched by display name catch squad-level grants whose
@@ -111,11 +113,55 @@ for (const canonical of doctrineCatalog) {
   }
 }
 
+function doctrineDisplay(names: string[]): string[] {
+  return toRussian(names);
+}
+
 export function doctrineNamesForAbilityName(name: string, faction?: Faction): string[] {
   const key = name.toLowerCase().replace(/[^a-z0-9]/g, '');
   const entries = abilityNameToDoctrines.get(key) ?? [];
   const filtered = faction ? entries.filter((entry) => entry.faction === faction) : entries;
-  return [...new Set(filtered.map((entry) => entry.doctrine))];
+  return doctrineDisplay([...new Set(filtered.map((entry) => entry.doctrine))]);
+}
+
+// Doctrine weapon grants whose upgrade chain is not name-linked to any
+// commander ability, verified against the game attrib files. Values are
+// canonical English doctrine names from doctrine-catalog.
+const weaponDoctrineOverrides: Record<string, string[]> = {
+  grenadier_mg42lmg_mp: ['German Infantry Doctrine'],
+  jaeger_g43_rifle_mp: ['German Infantry Doctrine'],
+  grenadier_mp44_smg_mp: ['German Infantry Doctrine'],
+  grenadier_kar_98k_rifle_grenade_mp: ['German Infantry Doctrine'],
+  stielgranate_grenade_mp: ['German Infantry Doctrine'],
+  model_24_smoke_grenade_panzergrenadiers: ['German Infantry Doctrine'],
+  panzer_grenadier_bundled_grenade: ['Elite Troops Doctrine'],
+  waffen_bundled_assault_stielgranate: ['Elite Troops Doctrine'],
+  conscipt_ptrs_41_mp: ['Tank Hunter Tactics'],
+  riflemen_30cal_lmg_mp: ['Infantry Company', 'Tactical Support Company'],
+};
+
+const canonicalNameRu = new Map<string, string>();
+for (const canonical of doctrineCatalog) {
+  if (canonical.nameRu) canonicalNameRu.set(canonical.name, canonical.nameRu);
+}
+
+function toRussian(names: string[]): string[] {
+  return names.map((name) => canonicalNameRu.get(name) ?? name);
+}
+
+const weaponReadableCache = new Map<string, string[]>();
+
+export function weaponDoctrineNames(faction: Faction, weaponId: string): string[] {
+  const override = weaponDoctrineOverrides[weaponId];
+  if (override) return toRussian(override);
+  if (!weaponReadableCache.has(weaponId)) {
+    const readable = weaponId
+      .replace(/_(mp|sp|tow)$/i, '')
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, (letter) => letter.toUpperCase());
+    weaponReadableCache.set(weaponId, doctrineNamesForAbilityName(readable, faction));
+  }
+  return weaponReadableCache.get(weaponId) ?? [];
 }
 
 export function unitDoctrinesList(index: number): string[] {
