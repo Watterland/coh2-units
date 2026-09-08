@@ -85,6 +85,18 @@ const RU_OVERRIDES = {
   161: '81-мм миномёт M1',
 };
 
+// Curated Russian lore for units localized nowhere in attrib.
+const RU_DESCRIPTION_OVERRIDES = {
+  144:
+    '«Хетцер» — истребитель танков на чешском шасси Pz.38(t) с мощной 75-мм пушкой в низком бронекорпусе. Огнемётная версия «Фаммпанцер» превращала эту машину в грозу гарнизонов: струя огнесмеси выкуривала защитников из зданий и окопов.',
+  163:
+    'PzKpfw VI «Тигр» «Осткомандования» — тяжёлый танк с 88-мм пушкой KwK 36 и мощной бронёй, гроза любой союзной бронетехники на больших дистанциях.',
+  160:
+    '«Ахиллес» — британская версия американского истребителя танков M10 с перевооружением на мощную 17-фунтовую противотанковую пушку. Открытая башня делала экипаж уязвимым, однако новое орудие позволяло уверенно бороться даже с «Тиграми» и «Пантерами».',
+  161:
+    'Британский 81-мм миномёт M1 — польская поддержка пехоты на поле боя. Навесной огонь миномёта накрывал окопы, дома и огневые точки там, где настильный огонь пушек был бессилен.',
+};
+
 function findUiField(data, field) {
   let value;
   const queue = [data?.squad_ui_ext];
@@ -120,9 +132,9 @@ for (const unit of units) {
     // Display name and lore text sit inside squad_ui_ext under unnamed hashed
     // wrapper tables; find the first bag that actually carries each field.
     const screenName = findUiField(data, 'screen_name');
-    const helpText = findUiField(data, 'help_text');
+    let helpText = findUiField(data, 'help_text');
     const ru = typeof screenName === 'number' ? ucs.get(screenName)?.trim() : undefined;
-    const ruDesc = typeof helpText === 'number' ? ucs.get(helpText)?.trim() : undefined;
+    let ruDesc = typeof helpText === 'number' ? ucs.get(helpText)?.trim() : undefined;
     const ebpsFile = EBPS_OVERRIDES[unit.index]
       ? join(ATTRIB, 'ebps/races', EBPS_OVERRIDES[unit.index])
       : undefined;
@@ -134,10 +146,18 @@ for (const unit of units) {
         const ebpsScreen =
           typeof ui === 'number' ? ui : typeof ui?.screen_name === 'number' ? ui.screen_name : undefined;
         if (ebpsScreen !== undefined) finalRu = ucs.get(ebpsScreen)?.trim() ?? undefined;
+        // ebps help_text on these wrecks describes abandoned-vehicle crewing,
+        // so only trust it when it does not mention abandoning.
+        if (typeof ui?.help_text === 'number' && !ruDesc) {
+          const text = ucs.get(ui.help_text)?.trim() ?? '';
+          if (text && !/Брошен/i.test(text)) ruDesc = text;
+        }
       } catch {
         // keep undefined
       }
     }
+    if (!ruDesc) ruDesc = RU_DESCRIPTION_OVERRIDES[unit.index];
+    if (finalRu === undefined && RU_OVERRIDES[unit.index]) finalRu = RU_OVERRIDES[unit.index];
     if (process.env.DEBUG_NAMES) console.log('unit', unit.index, unit.id, 'file', file, 'sn', screenName, 'ru', ru);
     if (finalRu) {
       names[unit.index] = finalRu;

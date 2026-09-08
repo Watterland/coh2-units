@@ -194,6 +194,39 @@ export function tCategory(category: Category): string {
       ? 'Расчёты орудий и пулемётов'
       : 'Техника';
 }
+const ENTITY_RU: [RegExp, string][] = [
+  [/medic/i, 'Медик'],
+  [/radioman/i, 'Радист'],
+  [/officer|captain|lieutenant|major/i, 'Офицер'],
+  [/commander/i, 'Командир'],
+  [/sniper/i, 'Снайпер'],
+  [/pioneer|engineer|sapper/i, 'Сапёр'],
+  [/mg(_|\b)|machine_gun/i, 'Пулемётчик'],
+  [/loader/i, 'Заряжающий'],
+  [/gunner/i, 'Наводчик'],
+  [/flame/i, 'Огнемётчик'],
+  [/at_gun|anti_tank/i, 'Расчёт ПТО'],
+  [/mortar/i, 'Миномётчик'],
+  [/paratrooper|para\b/i, 'Десантник'],
+  [/ranger/i, 'Рейнджер'],
+  [/commando/i, 'Коммандос'],
+  [/guard/i, 'Гвардеец'],
+  [/partisan/i, 'Партизан'],
+  [/penal/i, 'Штрафник'],
+  [/scout/i, 'Разведчик'],
+  [/conscript/i, 'Новобранец'],
+  [/soldier|troop|rifleman|infantry/i, 'Стрелок'],
+  [/crew/i, 'Экипаж'],
+];
+
+export function tEntity(name: string, ruName?: string): string {
+  if (ruName) return ruName;
+  for (const [pattern, ru] of ENTITY_RU) {
+    if (pattern.test(name)) return ru;
+  }
+  return name;
+}
+
 export function tWeapon(name: string | null): string {
   if (!name) return 'Неизвестное вооружение';
   const englishNames: Record<string, string> = {

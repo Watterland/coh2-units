@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import type { VetStats, Category } from '../types';
 import { round } from '../lib/units';
+import { gameEntityNames } from '../data/game-entity-names';
+import { tEntity } from '../lib/translations';
 
 interface Props {
   vet: VetStats | null;
@@ -66,7 +68,7 @@ export default function StatTable({ vet, category, entityNames }: Props) {
           <div className="flex flex-wrap gap-1.5">
             {entityNames.map((n, i) => (
               <span key={i} className="rounded bg-white/5 px-2 py-0.5 text-xs text-zinc-300">
-                {n}
+                {tEntity(n, gameEntityNames[n])}
               </span>
             ))}
           </div>
