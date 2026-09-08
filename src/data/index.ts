@@ -11,7 +11,7 @@ import { gameAbilityIds } from './game-abilities';
 import { gameDoctrines } from './game-doctrines';
 import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
-import { doctrineAbilityTexts, unitAbilityTexts } from './doctrine-ability-texts';
+import { doctrineAbilityTexts, abilityNameRu, unitAbilityTexts } from './doctrine-ability-texts';
 import { gameAbilityDetails } from './game-ability-details';
 import { gameUnitDescriptions, gameUnitNames } from './game-unit-names';
 import {
@@ -92,6 +92,10 @@ export function unitAvailability(index: number): UnitAvailability {
   return { kind: 'nation', doctrines: [] };
 }
 
+function normalizeWikiAbilityName(name: string): string {
+  return name.replace(/\[\[File:[^\]]*\]\]/g, '').trim();
+}
+
 export function abilitiesForUnit(unitIndex: number): Ability[] {
   const lite = unitLiteByIndex(unitIndex);
   const wiki = abilities.filter((a) => a.unitIndex === unitIndex);
@@ -128,20 +132,25 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       seen.add(key);
       return true;
     });
-  return [...wiki, ...game].map((ability) =>
-    ability.description && ability.icon && ability.availableIn
-      ? ability
-      : {
-          ...ability,
-          description: ability.description || unitAbilityTexts[ability.name] || '',
-          icon: ability.icon ?? resolveUnitAbilityIcon(ability.name),
-          availableIn:
-            ability.availableIn ??
-            (doctrineNamesForAbilityName(ability.name, lite?.faction).length
-              ? doctrineNamesForAbilityName(ability.name, lite?.faction)
-              : undefined),
-        },
-    );
+  return [...wiki, ...game].map((ability) => {
+    const cleanName = normalizeWikiAbilityName(ability.name);
+    const nameRu = ability.nameRu ?? abilityNameRu[cleanName] ?? abilityNameRu[ability.name];
+    if (ability.description && ability.icon && nameRu === ability.name && ability.availableIn) {
+      return ability;
+    }
+    return {
+      ...ability,
+      name: cleanName,
+      description: ability.description || unitAbilityTexts[cleanName] || '',
+      nameRu,
+      icon: ability.icon ?? resolveUnitAbilityIcon(cleanName),
+      availableIn:
+        ability.availableIn ??
+        (doctrineNamesForAbilityName(cleanName, lite?.faction).length
+          ? doctrineNamesForAbilityName(cleanName, lite?.faction)
+          : undefined),
+    };
+  });
 }
 
 function resolveUnitAbilityIcon(name: string): string | undefined {
