@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import type { Unit } from '../types';
 import { factionInfo } from '../lib/factions';
 import { round } from '../lib/units';
@@ -11,6 +11,7 @@ const NO_IMAGE = assetUrl('/units/no-image.svg');
 
 export default function UnitCard({ unit }: { unit: Unit }) {
   const [src, setSrc] = useState(unit.imageUrl ?? NO_IMAGE);
+  const navigate = useNavigate();
   const info = factionInfo(unit.faction);
   const base = unit.vetStats[0];
   const isVeh = unit.category === 'Vehicles';
@@ -36,6 +37,18 @@ export default function UnitCard({ unit }: { unit: Unit }) {
         >
           {info.short}
         </span>
+        <button
+          type="button"
+          title="Сравнить с другим юнитом"
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            navigate(`/compare/${unit.index}`);
+          }}
+          className="absolute right-2 top-2 z-10 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-medium text-zinc-200 backdrop-blur transition hover:bg-accent hover:text-zinc-950"
+        >
+          ⇄ Сравнить
+        </button>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-3">
         <div className="flex items-start justify-between gap-2">

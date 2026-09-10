@@ -66,6 +66,18 @@ export default function Layout() {
             )}
           </div>
           <nav className="hidden items-center gap-1 md:flex">
+            <NavLink
+              to="/compare"
+              className={({ isActive }) =>
+                `rounded-md px-3 py-1.5 text-sm font-medium transition ${
+                  isActive
+                    ? 'bg-white/10 text-accent'
+                    : 'text-zinc-400 hover:bg-white/5 hover:text-zinc-100'
+                }`
+              }
+            >
+              Сравнение
+            </NavLink>
             {FACTIONS.map((f) => (
               <NavLink
                 key={f.id}
@@ -94,6 +106,13 @@ export default function Layout() {
         {menuOpen && (
           <div className="border-t border-white/10 bg-[#0e0f12] px-4 py-3 md:hidden">
             <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2">
+              <NavLink
+                onClick={() => setMenuOpen(false)}
+                to="/compare"
+                className="col-span-2 rounded-md bg-white/5 px-3 py-2 text-center text-sm text-zinc-300 hover:bg-white/10"
+              >
+                ⇄ Сравнение юнитов
+              </NavLink>
               {FACTIONS.map((f) => (
                 <NavLink
                   key={f.id}
