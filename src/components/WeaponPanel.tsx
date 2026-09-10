@@ -6,6 +6,7 @@ import { gameWeaponMeta } from '../data/game-weapon-meta';
 import { gameAbilityIcons } from '../data/game-ability-icons';
 import { assetUrl } from '../lib/assets';
 import { weaponAvailableIn } from '../data';
+import { groupWeapons, isCrewSmallArm, type WeaponGroup } from '../lib/weaponModes';
 
 const WEAPON_ROWS: { label: string; get: (w: Weapon) => string }[] = [
   { label: 'Урон', get: (w) => fmtNearMidFar(w.damage) },
@@ -16,62 +17,105 @@ const WEAPON_ROWS: { label: string; get: (w: Weapon) => string }[] = [
   { label: 'УВС*', get: (w) => weaponDps(w) },
 ];
 
-function displayWeapons(weapons: Weapon[]): Weapon[] {
-  const seen = new Set<string>();
-  return weapons.filter((weapon) => {
-    const name = weapon.name ?? '';
-    if (/dummy|damage_engine_shot|shell_shock_shot|aimed_shot|critical_shot/i.test(name))
-      return false;
-    // Weapons with no hardpoint and no count are ability-delivered (grenades,
-    // flares, smoke) and already appear in the ability list.
-    if (weapon.hardpoint === -1 && weapon.count === -1) return false;
-    const key = `${tWeapon(name)}-${JSON.stringify(weapon.damage)}-${JSON.stringify(weapon.range)}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+// Ability barrels (grenades, flares, smoke) come with no hardpoint and no count.
+function visibleGroups(groups: WeaponGroup[]): WeaponGroup[] {
+  return groups.filter(
+    (g) => !(g.base.hardpoint === -1 && g.base.count === -1) && !isCrewSmallArm(g.base.name),
+  );
 }
 
 export default function WeaponPanel({ unit }: { unit: Unit }) {
-  const weapons = displayWeapons(unit.weapons);
-  if (weapons.length === 0) return null;
+  const [expanded, setExpanded] = useState<number | null>(null);
+  const [expandedMode, setExpandedMode] = useState<string | null>(null);
 
   const mainName = unit.weapons[unit.mainWeaponIndex ?? -1]?.name;
-  // Base loadout comes first, issued/upgraded weapons after. The "issued"
-  // label applies to infantry only: for vehicles and crews the extra slots
-  // are turret/hull guns and alternate fire modes.
+  // The "issued" label applies to infantry only: for vehicles and crews the
+  // extra slots are turret/hull guns and alternate fire modes.
   const isInfantry = unit.category === 'Infantry';
-  const sorted = [...weapons].sort((a, b) => {
-    const issuedA = isInfantry && isIssued(a, mainName);
-    const issuedB = isInfantry && isIssued(b, mainName);
-    if (issuedA !== issuedB) return issuedA ? 1 : -1;
-    return (b.count ?? 0) - (a.count ?? 0);
-  });
+  const groups = visibleGroups(groupWeapons(unit.weapons, unit.mainWeaponIndex));
+  if (groups.length === 0) return null;
 
-  const [expanded, setExpanded] = useState<number | null>(null);
   return (
     <section className="rounded-xl border border-white/10 bg-panel p-5">
       <h2 className="mb-3 font-display text-sm font-semibold uppercase tracking-wide text-zinc-400">
         Вооружение
       </h2>
       <div className="flex flex-col gap-4">
-        {sorted.map((w, i) => (
-          <WeaponRow
-            key={i}
-            weapon={w}
-            isMain={w.name === mainName}
-            issued={isInfantry && isIssued(w, mainName)}
-            doctrines={isInfantry ? weaponAvailableIn(unit.faction, w.name ?? '') : []}
-            expanded={expanded === i}
-            onToggle={() => setExpanded(expanded === i ? null : i)}
-          />
+        {groups.map((group, gi) => (
+          <div key={gi}>
+            <WeaponRow
+              weapon={group.base}
+              isMain={group.base.name === mainName}
+              issued={isInfantry && isIssued(group.base, mainName)}
+              doctrines={isInfantry ? weaponAvailableIn(unit.faction, group.base.name ?? '') : []}
+              modeLabel={group.baseMode?.label}
+              expanded={expanded === gi}
+              onToggle={() => setExpanded(expanded === gi ? null : gi)}
+            />
+            {group.modes.length > 0 && (
+              <div className="mt-2 border-l border-white/5 pl-3">
+                <h3 className="mb-2 font-display text-[11px] font-semibold uppercase tracking-wide text-zinc-500">
+                  Режимы огня
+                </h3>
+                <div className="flex flex-col gap-1.5">
+                  {group.modes.map((entry, mi) => {
+                    const modeKey = `${gi}-${mi}`;
+                    const open = expandedMode === modeKey;
+                    return (
+                      <div
+                        key={modeKey}
+                        className="rounded-lg border border-white/5 bg-white/[0.02]"
+                      >
+                        <button
+                          onClick={() => setExpandedMode(open ? null : modeKey)}
+                          title={entry.mode.hint}
+                          className="flex w-full flex-wrap items-center gap-2 px-3 py-2 text-left"
+                        >
+                          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-zinc-300">
+                            {entry.mode.label}
+                          </span>
+                          <span className="ml-auto flex shrink-0 flex-wrap items-center justify-end gap-x-3 gap-y-1 text-xs">
+                            <span className="text-zinc-500">
+                              Дальность{' '}
+                              <span className="font-medium text-zinc-300">
+                                {fmtNearMidFar(entry.weapon.range)}
+                              </span>
+                            </span>
+                            <span className="text-zinc-500">
+                              Урон{' '}
+                              <span className="font-medium text-zinc-300">
+                                {fmtNearMidFar(entry.weapon.damage)}
+                              </span>
+                            </span>
+                            <span className="text-zinc-500">
+                              УВС{' '}
+                              <span className="font-medium text-zinc-300">
+                                {weaponDps(entry.weapon)}
+                              </span>
+                            </span>
+                            <span className="text-zinc-500">{open ? '−' : '+'}</span>
+                          </span>
+                        </button>
+                        {open && (
+                          <div className="px-3 pb-3">
+                            {entry.mode.hint && (
+                              <p className="mb-2 text-[11px] text-zinc-500">{entry.mode.hint}</p>
+                            )}
+                            <WeaponDetails weapon={entry.weapon} />
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
       <p className="mt-4 text-[11px] text-zinc-600">
-        Оружие с отметкой «выдаётся» ставится на отряд улучшением, а не входит в базовый
-        состав. * УВС: приблизительный урон в секунду по среднему времени перезарядки, в
-        порядке ближняя / средняя / дальняя дистанция. Не учитывает очередь, точность и
-        броню цели.
+        * УВС: приблизительный урон в секунду по среднему времени перезарядки, в порядке
+        ближняя / средняя / дальняя дистанция. Не учитывает очередь, точность и броню цели.
       </p>
     </section>
   );
@@ -95,6 +139,7 @@ function WeaponRow({
   isMain,
   issued,
   doctrines,
+  modeLabel,
   expanded,
   onToggle,
 }: {
@@ -102,6 +147,7 @@ function WeaponRow({
   isMain: boolean;
   issued: boolean;
   doctrines: string[];
+  modeLabel?: string;
   expanded: boolean;
   onToggle: () => void;
 }) {
@@ -131,6 +177,11 @@ function WeaponRow({
               {isMain && (
                 <span className="ml-2 rounded bg-accent/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-accent">
                   Основное
+                </span>
+              )}
+              {modeLabel && (
+                <span className="ml-2 rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-zinc-300">
+                  {modeLabel}
                 </span>
               )}
               {doctrines.length > 0 ? (

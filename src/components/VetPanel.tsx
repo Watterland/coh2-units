@@ -1,11 +1,13 @@
 import type { Unit } from '../types';
 import { round, vetBonuses } from '../lib/units';
 import { veterancyEffects } from '../data/veterancy';
+import { veteranWeaponBonuses } from '../lib/weaponModes';
 
 export default function VetPanel({ unit }: { unit: Unit }) {
   const maxLevel = unit.faction === 'OKW' ? 5 : 3;
   const levels = unit.vetStats.slice(0, maxLevel + 1).filter((v) => v !== null);
   if (levels.length === 0) return null;
+  const weaponBonuses = veteranWeaponBonuses(unit);
 
   const isVeh = unit.category === 'Vehicles';
 
@@ -71,7 +73,10 @@ export default function VetPanel({ unit }: { unit: Unit }) {
       <div className="mt-4 grid gap-2 sm:grid-cols-3">
         {Array.from({ length: maxLevel }, (_, index) => index + 1).map((level) => {
           const effects = veterancyEffects[unit.index]?.[level];
-          const bonuses = effects?.length ? effects : vetBonuses(unit, level);
+          const bonuses = [
+            ...(effects?.length ? effects : vetBonuses(unit, level)),
+            ...(weaponBonuses[level] ?? []),
+          ];
           return (
             <div key={level} className="rounded-lg border border-white/5 bg-white/[0.02] p-3">
               <div className="font-display text-sm font-semibold text-accent">Vet {level}</div>
