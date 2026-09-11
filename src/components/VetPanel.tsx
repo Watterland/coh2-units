@@ -2,7 +2,7 @@ import type { Unit } from '../types';
 import { round, vetBonuses } from '../lib/units';
 import { veterancyEffects, veterancyXp } from '../data/veterancy';
 import { veteranWeaponBonuses } from '../lib/weaponModes';
-import { unitHasVeterancy, unitVetLevels, veteranAbilityUnlocks } from '../lib/veterancy';
+import { estimatedVetStats, unitHasVeterancy, unitVetLevels, veteranAbilityUnlocks } from '../lib/veterancy';
 
 // Легаси-строка «имя · цель ×» не содержит числа — показываем только имя.
 function splitEffect(line: string): { label: string; num?: string } {
@@ -17,6 +17,7 @@ export default function VetPanel({ unit }: { unit: Unit }) {
   const abilityUnlocks = veteranAbilityUnlocks(unit);
   const levels = unitVetLevels(unit);
   const hasVet = unitHasVeterancy(unit);
+  const estimates = estimatedVetStats(unit);
 
   if (levels === 0 || !hasVet) {
     return (
@@ -71,34 +72,54 @@ export default function VetPanel({ unit }: { unit: Unit }) {
           <tbody>
             {Array.from({ length: levels + 1 }, (_, i) => i).map((i) => {
               const v = unit.vetStats[i];
-              if (!v) return null;
+              const est = estimates[i];
+              if (!v && !est) return null;
               return (
                 <tr key={i} className="border-b border-white/5">
                   <td className="py-2 pr-3 font-display font-semibold text-accent">
                     {i === 0 ? 'Базовый' : `Vet ${i}`}
                   </td>
-                  {columns.map((c) => (
-                    <td key={c.key} className="px-3 py-2 text-zinc-300">
-                      <span>{round(v[c.key])}</span>
-                      {i > 0 &&
-                        unit.vetStats[i - 1]?.[c.key] != null &&
-                        v[c.key] != null &&
-                        v[c.key] !== unit.vetStats[i - 1]?.[c.key] && (
-                          <span className="ml-1 text-[10px] text-emerald-400">
-                            {Number(v[c.key]) - Number(unit.vetStats[i - 1]?.[c.key]) > 0
-                              ? '+'
-                              : ''}
-                            {round(Number(v[c.key]) - Number(unit.vetStats[i - 1]?.[c.key]))}
+                  {columns.map((c) => {
+                    const real = v?.[c.key];
+                    const value = real ?? est?.[c.key];
+                    const estimated = real == null && value != null;
+                    const prev = unit.vetStats[i - 1]?.[c.key] ?? estimates[i - 1]?.[c.key];
+                    const delta =
+                      value != null && prev != null ? Number(value) - Number(prev) : null;
+                    return (
+                      <td
+                        key={c.key}
+                        className={
+                          estimated ? 'px-3 py-2 italic text-zinc-400' : 'px-3 py-2 text-zinc-300'
+                        }
+                      >
+                        <span>
+                          {estimated && '≈'}
+                          {round(value)}
+                        </span>
+                        {i > 0 && delta != null && delta !== 0 && (
+                          <span
+                            className={
+                              estimated ? 'ml-1 text-[10px]' : 'ml-1 text-[10px] text-emerald-400'
+                            }
+                          >
+                            {delta > 0 ? '+' : ''}
+                            {round(delta)}
                           </span>
                         )}
-                    </td>
-                  ))}
+                      </td>
+                    );
+                  })}
                 </tr>
               );
             })}
           </tbody>
         </table>
       </div>
+      <p className="mt-2 text-[10px] text-zinc-600">
+        ≈ — значение вычислено из модификаторов ветеранства; абсолютные статы уровня из источника
+        отсутствуют.
+      </p>
       <div className="mt-4 grid gap-2 sm:grid-cols-3">
         {Array.from({ length: levels }, (_, i) => i + 1).map((level) => {
           const effects = veterancyEffects[unit.index]?.[level] ?? [];

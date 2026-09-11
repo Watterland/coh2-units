@@ -1,4 +1,4 @@
-import type { Unit } from '../types';
+import type { Unit, VetStats } from '../types';
 import { veterancyEffects } from '../data/veterancy';
 import { veteranWeaponBonuses } from './weaponModes';
 import { abilitiesForUnit } from '../data';
@@ -28,6 +28,69 @@ export function unitVetLevels(unit: Unit): number {
 // Есть ли ветеранство вообще.
 export function unitHasVeterancy(unit: Unit): boolean {
   return unitVetLevels(unit) > 0;
+}
+
+export type VetStatsEstimate = Partial<Record<keyof VetStats | 'rear_armor', number>>;
+
+// «метка ×N» / «метка +N»; легаси-строки «имя · цель ×» (без числа) не матчатся,
+// как и слагаемые с разделителем «-» (полей для них в таблице статов нет).
+const EFFECT_RE = /^(.+?)\s*([×+])\s*(-?[\d.]+)$/;
+
+// Метки эффектов, маппящиеся на поля статов (остальные метки — точность,
+// перезарядка, уворот, дальность и т.п. — в таблицу статов не попадают).
+const LABEL_FIELDS: Record<string, (keyof VetStats)[]> = {
+  'максимальная скорость': ['speed'],
+  'скорость поворота': ['rotate'],
+  'обзор': ['sight'],
+  'здоровье': ['health'],
+  'броня': ['front_armor', 'rear_armor'],
+  'стоимость отряда (людские ресурсы)': ['population'],
+};
+
+export interface ParsedVetEffect {
+  fields: (keyof VetStats)[];
+  op: '×' | '+';
+  value: number;
+}
+
+export function parseVetEffect(line: string): ParsedVetEffect | null {
+  const match = line.match(EFFECT_RE);
+  if (!match) return null;
+  const fields = LABEL_FIELDS[match[1].trim()];
+  if (!fields) return null;
+  const value = Number(match[3]);
+  if (!Number.isFinite(value) || value < 0) return null;
+  return { fields, op: match[2] as '×' | '+', value };
+}
+
+// Оценка абсолютных статов уровня, вычисленная из модификаторов ветеранства
+// (мультипликаторы/сложения накапливаются от предыдущего уровня).
+export function computeEstimatedVetStats(
+  vetStats: (VetStats | null)[],
+  effects: Record<number, string[]> | undefined,
+): (VetStatsEstimate | null)[] {
+  const estimates: (VetStatsEstimate | null)[] = [null];
+  for (let level = 1; level <= MAX_VET_LEVEL; level++) {
+    const lines = effects?.[level] ?? [];
+    const estimate: VetStatsEstimate = {};
+    for (const line of lines) {
+      const parsed = parseVetEffect(line);
+      if (!parsed) continue;
+      for (const field of parsed.fields) {
+        // Цепочка от предыдущего уровня: реальный стат → оценка → база.
+        const previous =
+          vetStats[level - 1]?.[field] ?? estimates[level - 1]?.[field] ?? vetStats[0]?.[field];
+        if (previous == null) continue;
+        estimate[field] = parsed.op === '×' ? previous * parsed.value : previous + parsed.value;
+      }
+    }
+    estimates.push(Object.keys(estimate).length ? estimate : null);
+  }
+  return estimates;
+}
+
+export function estimatedVetStats(unit: Unit): (VetStatsEstimate | null)[] {
+  return computeEstimatedVetStats(unit.vetStats, veterancyEffects[unit.index]);
 }
 
 const VET_RE = /veteran|ветеран/i;

@@ -8,6 +8,7 @@ import {
   unitsLite,
 } from '../data';
 import { abilitySlug } from '../lib/ability';
+import { unitVetLevels } from '../lib/veterancy';
 import { FACTIONS, factionInfo } from '../lib/factions';
 import { fmtNearMidFar, round, vetBonuses, weaponDps } from '../lib/units';
 import { classifyUnit, tUnit } from '../lib/translations';
@@ -96,7 +97,7 @@ const METRICS: MetricDef[] = [
     label: 'Ветеранство',
     better: 'high',
     get: (u) => {
-      const levels = u.vetStats.slice(1).filter(Boolean).length;
+      const levels = unitVetLevels(u);
       return { text: String(levels), num: levels };
     },
   },
