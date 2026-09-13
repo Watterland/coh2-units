@@ -1,0 +1,346 @@
+# Справка: юниты, стволы и текущие способности (сгенерировано шагом 1)
+
+## Soviet — 34 юнитов, пехоты 11
+
+### Пехота (для weapon-issue; стволы кроме основного)
+- **combat_engineer_squad_mp** (index 96) — 7: flamethrower_roks3_mp, fake_minesweeper_weapon, penal_troops_svt_rifle_mp, flamethrower_roks3_mp, fake_minesweeper_weapon, mosin_nagant_rifle_combat_engineer_mp, penal_troops_svt_rifle_mp
+- **conscript_squad_mp** (index 97) — 11: molotov_cocktail_weapon_mp, conscript_rpg_40_anti_tank_grenade_assault_mp, rpg_43_anti_tank_grenade_mp, molotov_cocktail_weapon_vet_mp, conscript_ppsh-41_sub_machine_gun_mp, conscipt_ptrs_41_mp, rpg_43_anti_tank_grenade_mp, molotov_cocktail_weapon_vet_mp, conscript_ppsh-41_sub_machine_gun_mp, conscipt_ptrs_41_mp, mosin_nagant_rifle_conscript_mp
+- **partisans_panzerschreck_mp** (index 102) — 3: rpg_43_anti_tank_grenade_mp, rpg_43_anti_tank_grenade_mp, partisan_kar_98k_rifle_mp
+- **partisans_squad_mp** (index 103) — 11: guard_troop_rgd_33_sleeved_mp, molotov_cocktail_weapon_vet_mp, rpg_43_anti_tank_grenade_mp, panzerschreck_atw_mp, partisan_ppsh-41_sub_machine_gun_mp, guard_troop_rgd_33_sleeved_mp, molotov_cocktail_weapon_vet_mp, rpg_43_anti_tank_grenade_mp, panzerschreck_atw_mp, partisan_squad_kar_98k_rifle_mp, partisan_ppsh-41_sub_machine_gun_mp
+- **sniper_team_mp** (index 104) — 2: flare_mp, mosin_nagant_sniper_rifle_mp
+- **guards_troops_assault_mp** (index 105) — 6: guard_troop_rgd_33_sleeved_mp, paratrooper_m1_thompson_mp, m9_bazooka_paratrooper_mp, paratrooper_m1_thompson_mp, m9_bazooka_paratrooper_mp, penal_troops_svt_rifle_mp
+- **guards_troops_mp** (index 106) — 6: guard_troop_rgd_33_sleeved_mp, guard_troop_ptrs_41_mp, guard_troop_dp-28_light_machine_gun_mp, guard_troop_ptrs_41_mp, guard_troop_dp-28_light_machine_gun_mp, guards_troops_mosin_nagant_rifle_mp
+- **penal_battalion_mp** (index 107) — 11: shock troops_ppsh-41_sub_machine_gun_mp, penal_troop_satchel_charge_at_skillshot_mp, penal_troop_satchel_charge_at_mp, penal_ptrs_41_mp, shock troops_ppsh-41_sub_machine_gun_mp, shock troops_ppsh-41_sub_machine_gun_mp, penal_troop_satchel_charge_at_skillshot_mp, penal_troop_satchel_charge_at_mp, penal_ptrs_41_mp, penal_troops_svt_rifle_mp, shock troops_ppsh-41_sub_machine_gun_mp
+- **shock_troops_mp** (index 108) — 3: rg_42_mp, rgd_1_smoke_mp, shock troops_ppsh-41_sub_machine_gun_mp
+- **commissar_commander_squad_mp** (index 165) — 8: guard_troop_rgd_33_sleeved_mp, guard_troop_rgd_33_sleeved_mp, guard_troop_rgd_33_sleeved_mp, penal_troops_svt_rifle_mp, penal_troops_svt_rifle_mp, nagant_m1895_revolver_mp, penal_troops_svt_rifle_mp, penal_troops_svt_rifle_mp
+- **guards_airbourne_mp** (index 166) — 11: shock troops_ppsh-41_sub_machine_gun_mp, rgd_1_smoke_mp, guard_troop_rgd_33_sleeved_mp, guard_troop_dp-28_light_machine_gun_moving_mp, shock troops_ppsh-41_sub_machine_gun_mp, shock troops_ppsh-41_sub_machine_gun_mp, rgd_1_smoke_mp, guard_troop_rgd_33_sleeved_mp, guard_troop_dp-28_light_machine_gun_moving_mp, penal_troops_svt_rifle_mp, shock troops_ppsh-41_sub_machine_gun_mp
+
+### Все юниты (для способностей; game = id из game-abilities.ts)
+- combat_engineer_squad_mp (index 96) [Infantry]: game=2, wiki=0
+  - ids: soviet_repair_ability_mp, fieldcraft_trip_flare_engineers_mp
+- conscript_squad_mp (index 97) [Infantry]: game=7, wiki=0
+  - ids: merge_ability_mp, soviet_conscript_repair_ability_mp, fieldcraft_trip_flare_mp, anti_tank_grenade_mp, conscript_molotov_cocktail_vet_mp, conscript_in_cover_stationary_camouflage_mp, ambush_camo_hold_fire_mp
+- dshk_38_hmg_squad_mp (index 98) [Team weapons]: game=2, wiki=0
+  - ids: sniper_hmg_sprint_mp, ambush_camo_hold_fire_mg_mp
+- m1910_maxim_heavy_machine_gun_squad_mp (index 99) [Team weapons]: game=1, wiki=0
+  - ids: ambush_camo_hold_fire_mg_mp
+- 120_38_mortar_squad_mp (index 100) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- 82_41_mortar_squad_mp (index 101) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- partisans_panzerschreck_mp (index 102) [Infantry]: game=3, wiki=0
+  - ids: sniper_delayed_cover_auto_camouflage_mp, sniper_hold_fire_mp, anti_tank_grenade_mp
+- partisans_squad_mp (index 103) [Infantry]: game=6, wiki=0
+  - ids: partisan_delayed_cover_auto_camouflage_mp, sniper_hold_fire_mp, rgd_33_partisan_squad_grenade_mp, partisan_squad_molotov_cocktail_mp, anti_tank_grenade_partisan_mp, infantry_medkits_partisans_mp
+- sniper_team_mp (index 104) [Infantry]: game=2, wiki=0
+  - ids: sniper_hold_fire_mp, sniper_delayed_cover_auto_camouflage_mp
+- guards_troops_assault_mp (index 105) [Infantry]: game=1, wiki=0
+  - ids: assault_guards_grenade_mp
+- guards_troops_mp (index 106) [Infantry]: game=0, wiki=0
+- penal_battalion_mp (index 107) [Infantry]: game=3, wiki=0
+  - ids: satchel_charge_throw_ability_mp, satchel_charge_throw_ability_homing_mp, soviet_penal_repair_ability_mp
+- shock_troops_mp (index 108) [Infantry]: game=0, wiki=0
+- 2_mp (index 109) [Vehicles]: game=0, wiki=0
+- 152_mp (index 110) [Vehicles]: game=0, wiki=0
+- 13n_squad_mp (index 111) [Vehicles]: game=3, wiki=0
+  - ids: kaytusha_rocket_truck_barrage_mp, kaytusha_rocket_truck_barrage_vet3_mp, vehicle_crew_repair_toggle_mp
+- 1_commander_mp (index 112) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_crew_repair_toggle_mp
+- 2_mp (index 113) [Vehicles]: game=0, wiki=0
+- 8_mp (index 114) [Vehicles]: game=0, wiki=0
+- 4_howitzer_artillery_commander_mp (index 115) [Team weapons]: game=0, wiki=0
+- m1937_152mm_ml_20_artillery_mp (index 116) [Team weapons]: game=0, wiki=0
+- m3a1_scout_car_squad_mp (index 117) [Vehicles]: game=3, wiki=0
+  - ids: m5_m3a1_overdrive_mp, vehicle_crew_repair_toggle_mp, m3_vet_point_capture_ability_mp
+- m5_halftrack_squad_mp (index 118) [Vehicles]: game=2, wiki=0
+  - ids: m5_m3a1_overdrive_mp, vehicle_crew_repair_toggle_mp
+- m5_halftrack__assault_squad_mp (index 119) [Vehicles]: game=2, wiki=0
+  - ids: m5_m3a1_overdrive_mp, vehicle_crew_repair_toggle_mp
+- soviet_76mm_sherman_mp (index 120) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_crew_repair_toggle_mp
+- k_45mm_at_gun_squad_mp (index 121) [Team weapons]: game=0, wiki=0
+- 3_76mm_at_gun_squad_mp (index 122) [Team weapons]: game=0, wiki=0
+- 76m_mp (index 123) [Vehicles]: game=0, wiki=0
+- 85_mp (index 124) [Vehicles]: game=0, wiki=0
+- 70m_mp (index 125) [Vehicles]: game=0, wiki=0
+- t_34_76_squad_mp (index 126) [Vehicles]: game=2, wiki=0
+  - ids: tank_vet_point_capture_ability_mp, vehicle_crew_repair_toggle_mp
+- t_34_85_squad_mp (index 127) [Vehicles]: game=2, wiki=0
+  - ids: tank_vet_point_capture_ability_mp, vehicle_crew_repair_toggle_mp
+- commissar_commander_squad_mp (index 165) [Infantry]: game=0, wiki=0
+- guards_airbourne_mp (index 166) [Infantry]: game=4, wiki=0
+  - ids: rgd_1_smoke_grenade_airbourne_mp, fire_superiority_airbourne_mp, guards_airborne_throw_defensive_grenade_mp, guards_camouflage_mp
+
+## Ostheer — 34 юнитов, пехоты 12
+
+### Пехота (для weapon-issue; стволы кроме основного)
+- **assault_grenadier_squad_mp** (index 63) — 6: bk_2h_frangible_blinding_grenade, grenadier_kar_98k_antitank_rifle_grenade_mp, assault_grenadier_squad_stielgranate_mp, assault_grenadier_squad_stielgranate_mp, assault_grenadier_squad_stielgranate_mp, assault_grenadier_mp40
+- **grenadier_squad_mg42lmg_mp** (index 64) — 8: panzerfaust_atw_mp, bk_2h_frangible_blinding_grenade, grenadier_kar_98k_antitank_rifle_grenade_mp, grenadier_kar_98k_rifle_grenade_mp, stielgranate_grenade_mp, grenadier_kar_98k_rifle_grenade_mp, stielgranate_grenade_mp, grenadier_kar_98k_rifle_mp
+- **grenadier_squad_mp** (index 65) — 14: panzerfaust_atw_mp, bk_2h_frangible_blinding_grenade, grenadier_kar_98k_antitank_rifle_grenade_mp, grenadier_kar_98k_rifle_grenade_mp, stielgranate_grenade_mp, grenadier_mg42lmg_mp, jaeger_g43_rifle_mp, grenadier_mp44_smg_mp, grenadier_kar_98k_rifle_grenade_mp, stielgranate_grenade_mp, grenadier_mg42lmg_mp, jaeger_g43_rifle_mp, grenadier_mp44_smg_mp, grenadier_kar_98k_rifle_mp
+- **assault_officer_squad_mp** (index 68) — 4: assault_grenadier_mp40, luger_p08_victor_target_flare_pistol_mp, luger_p08_9mm_pistol_mp, assault_grenadier_mp40
+- **jaeger_officer_squad_mp** (index 69) — 10: panzerfaust_atw_mp, bk_2h_frangible_blinding_grenade, grenadier_kar_98k_rifle_grenade_mp, model_24_smoke_mp, panzerfusilier_flare_mp, luger_p08_victor_target_flare_pistol_mp, grenadier_kar_98k_rifle_grenade_mp, model_24_smoke_mp, panzerfusilier_flare_mp, grenadier_kar_98k_rifle_mp
+- **ostruppen_squad_mp** (index 70) — 5: panzerfaust_atw_mp, grenadier_mg42lmg_mp, panzerfaust_atw_mp, grenadier_mg42lmg_mp, ostruppen_kar_98k_rifle_mp
+- **ostruppen_squad_reserves_mp** (index 71) — 5: panzerfaust_atw_mp, grenadier_mg42lmg_mp, panzerfaust_atw_mp, grenadier_mg42lmg_mp, ostruppen_kar_98k_rifle_mp
+- **panzer_grenadier_squad_mp** (index 72) — 12: bk_2h_frangible_blinding_grenade, panzer_grenadier_bundled_stielgranate_mp, model_24_smoke_mp, jaeger_panzergren_g43_rifle_mp, panzerbusche_39_mp, panzerschreck_atw_mp, panzer_grenadier_bundled_stielgranate_mp, model_24_smoke_mp, jaeger_panzergren_g43_rifle_mp, panzerbusche_39_mp, panzerschreck_atw_mp, panzer_grenadier_mp44_smg_mp
+- **pioneer_squad_mp** (index 73) — 7: penal_troop_satchel_charge_at_skillshot_mp, fake_minesweeper_weapon, pioneer_flamethrower_mp, penal_troop_satchel_charge_at_skillshot_mp, fake_minesweeper_weapon, pioneer_flamethrower_mp, eg_pioneer_mp40_smg_mp
+- **sniper_squad_mp** (index 74) — 4: g43_sniper_incendiary_mp, g43_sniper_incendiary_mp, g43_sniper_incendiary_mp, g43_sniper_sniper_mp
+- **stormtrooper_squad_mp** (index 75) — 12: model_24_smoke_mp, bk_2h_frangible_blinding_grenade, fire_grenade_stormtrooper_weapon_mp, panzerschreck_atw_mp, jaeger_panzergren_g43_rifle_mp, stormtrooper_mp40_smg_mp, bk_2h_frangible_blinding_grenade, fire_grenade_stormtrooper_weapon_mp, panzerschreck_atw_mp, jaeger_panzergren_g43_rifle_mp, grenadier_kar_98k_rifle_mp, stormtrooper_mp40_smg_mp
+- **assault_officer_squad_luftwaffe_variant_mp** (index 168) — 4: assault_grenadier_mp40, luger_p08_victor_target_flare_pistol_mp, luger_p08_9mm_pistol_mp, assault_grenadier_mp40
+
+### Все юниты (для способностей; game = id из game-abilities.ts)
+- assault_grenadier_squad_mp (index 63) [Infantry]: game=2, wiki=0
+  - ids: ambush_camo_hold_fire_mp, assault_grenadier_sprint_mp
+- grenadier_squad_mg42lmg_mp (index 64) [Infantry]: game=5, wiki=0
+  - ids: ambush_camo_hold_fire_mp, infantry_medkits_mp, german_infantry_sprint_mp, grenadier_rifle_grenade_ability_mp, grenadier_model_24_grenade_mp
+- grenadier_squad_mp (index 65) [Infantry]: game=5, wiki=0
+  - ids: ambush_camo_hold_fire_mp, infantry_medkits_mp, stormtrooper_sprint_mp, grenadier_rifle_grenade_ability_mp, grenadier_model_24_grenade_mp
+- mg42_heavy_machine_gun_squad_mp (index 66) [Team weapons]: game=1, wiki=0
+  - ids: ambush_camo_hold_fire_mg_mp
+- mortar_team_81mm_mp (index 67) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- assault_officer_squad_mp (index 68) [Infantry]: game=1, wiki=0
+  - ids: stormtrooper_sprint_mp
+- jaeger_officer_squad_mp (index 69) [Infantry]: game=5, wiki=0
+  - ids: ambush_camo_hold_fire_mp, stormtrooper_sprint_mp, grenadier_rifle_grenade_ability_mp, model_24_smoke_grenade_command_squad_mp, jaeger_flare_mp
+- ostruppen_squad_mp (index 70) [Infantry]: game=3, wiki=0
+  - ids: osttruppen_panzerfaust_mp, infantry_medkits_mp, stormtrooper_sprint_mp
+- ostruppen_squad_reserves_mp (index 71) [Infantry]: game=3, wiki=0
+  - ids: osttruppen_panzerfaust_mp, infantry_medkits_mp, stormtrooper_sprint_mp
+- panzer_grenadier_squad_mp (index 72) [Infantry]: game=5, wiki=0
+  - ids: ambush_camo_hold_fire_mp, stormtrooper_sprint_mp, panzer_grenadier_bundled_grenade_mp, panzer_grenadier_rudimentary_repair_ability_mp, model_24_smoke_grenade_panzergrenadiers_mp
+- pioneer_squad_mp (index 73) [Infantry]: game=4, wiki=0
+  - ids: soviet_repair_ability_mp, stormtrooper_sprint_mp, pioneer_satchel_charge_throw_ability_mp, infantry_medkits_mp
+- sniper_squad_mp (index 74) [Infantry]: game=2, wiki=0
+  - ids: sniper_hold_fire_mp, axis_sniper_delayed_cover_auto_camouflage_mp
+- stormtrooper_squad_mp (index 75) [Infantry]: game=4, wiki=0
+  - ids: stormtrooper_sprint_mp, stormtrooper_in_cover_auto_camouflage_mp, sniper_hold_fire_mp, stormtrooper_fire_grenade_mp
+- pak40_75mm_at_gun_squad_mp (index 76) [Team weapons]: game=0, wiki=0
+- pak43_88mm_at_gun_squad_mp (index 77) [Team weapons]: game=0, wiki=0
+- brummbar_squad_mp (index 78) [Vehicles]: game=0, wiki=0
+- elefant_tank_destroyer_squad_mp (index 79) [Vehicles]: game=0, wiki=0
+- mechanized_250_halftrack_mp (index 81) [Vehicles]: game=0, wiki=0
+- mortar_250_halftrack_squad_mp (index 82) [Vehicles]: game=1, wiki=0
+  - ids: usf_hold_fire_mp
+- sdkfz_251_halftrack_squad_mp (index 83) [Vehicles]: game=0, wiki=0
+- howitzer_105mm_le_fh18_artillery_mp (index 84) [Team weapons]: game=0, wiki=0
+- ostwind_squad_mp (index 85) [Vehicles]: game=0, wiki=0
+- panther_squad_mp (index 86) [Vehicles]: game=0, wiki=0
+- panzerwerfer_squad_mp (index 87) [Vehicles]: game=0, wiki=0
+- panzer_iv_command_squad_mp (index 88) [Vehicles]: game=0, wiki=0
+- panzer_iv_squad_mp (index 89) [Vehicles]: game=0, wiki=0
+- puma_east_german_mp (index 90) [Vehicles]: game=0, wiki=0
+- scoutcar_sdkfz222_mp (index 91) [Vehicles]: game=0, wiki=0
+- stug_iii_e_commander_squad_mp (index 92) [Vehicles]: game=0, wiki=0
+- stug_iii_squad_mp (index 93) [Vehicles]: game=0, wiki=0
+- tiger_ace_squad_mp (index 94) [Vehicles]: game=0, wiki=0
+- tiger_squad_mp (index 95) [Vehicles]: game=0, wiki=0
+- panzer_iv_ausf_j_ostheer_mp (index 164) [Vehicles]: game=2, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp, heat_shells_ability_mp
+- assault_officer_squad_luftwaffe_variant_mp (index 168) [Infantry]: game=2, wiki=0
+  - ids: stormtrooper_sprint_mp, stuka_smoke_bomb_officer_mp
+
+## OKW — 32 юнитов, пехоты 7
+
+### Пехота (для weapon-issue; стволы кроме основного)
+- **assault_pioneer_squad_mp** (index 128) — 9: eihandgranate_grenade_mp, fake_minesweeper_weapon, pioneer_flamethrower_mp, panzerschreck_atw_mp, eihandgranate_grenade_mp, fake_minesweeper_weapon, pioneer_flamethrower_mp, panzerschreck_atw_mp, assault_pioneer_mp44_smg_mp
+- **fallschirmjager_squad_mp** (index 129) — 6: blendkorper_2h_smoke_grenade_mp, fallschirmjager_gewehr_42_mp, panzer_grenadier_bundled_stielgranate_mp, fallschirmjager_gewehr_42_mp, panzer_grenadier_bundled_stielgranate_mp, grenadier_kar_98k_rifle_mp
+- **terror_officer_squad_mp** (index 130) — 9: model_24_smoke_mp, assault_grenadier_stielgranate_mp, panzer_grenadier_mp44_smg_mp, waffen_wlite_kar_98k_rifle_mp, model_24_smoke_mp, assault_grenadier_stielgranate_mp, luger_p08_9mm_pistol_mp, panzer_grenadier_mp44_smg_mp, waffen_wlite_kar_98k_rifle_mp
+- **jaeger_light_infantry_recon_squad_mp** (index 131) — 7: assault_grenadier_stielgranate_mp, jaeger_g43_rifle_mp, jaeger_light_recon_g43, assault_grenadier_stielgranate_mp, jaeger_g43_rifle_mp, jaeger_light_recon_g43, grenadier_kar_98k_rifle_mp
+- **obersoldaten_squad_mp** (index 132) — 9: blendkorper_2h_smoke_grenade_mp, waffen_bundled_assault_stielgranate, waffen_mp44_infrared, assault_grenadier_stielgranate_mp, obersoldaten_mg34_lmg_moving_no_prone_mp, waffen_mp44_infrared, assault_grenadier_stielgranate_mp, obersoldaten_mg34_lmg_moving_no_prone_mp, waffen_wlite_kar_98k_rifle_mp
+- **panzerfusilier_squad_mp** (index 133) — 10: panzerfusilier_at_rifle_grenade, panzerfusilier_flare_mp, panzerfusilier_grenade, panzerfusilier_at_rifle_grenade, panzerfusilier_g43, panzerschreck_atw_mp, panzerfusilier_at_rifle_grenade, panzerfusilier_g43, panzerschreck_atw_mp, panzerfusilier_kar_98k_rifle_mp
+- **volksgrenadier_squad_mp** (index 134) — 11: fire_grenade_weapon_mp, volksgrenadier_panzerfaust_atw_mp, model_24_smoke_mp, stielgranate_grenade_mp, assault_grenadier_stielgranate_mp, volksgrenadier_mp44_smg_mp, assault_grenadier_mp40, assault_grenadier_stielgranate_mp, volksgrenadier_mp44_smg_mp, assault_grenadier_mp40, volksgrenadier_kar_98k_rifle_mp
+
+### Все юниты (для способностей; game = id из game-abilities.ts)
+- assault_pioneer_squad_mp (index 128) [Infantry]: game=5, wiki=0
+  - ids: west_german_repair_ability_mp, pioneer_stun_grenade_mp, assault_pioneer_drop_medpack_ability_mp, minesweeper_deploy_mp, minesweeper_put_away_mp
+- fallschirmjager_squad_mp (index 129) [Infantry]: game=2, wiki=0
+  - ids: sniper_hold_fire_mp, falls_stationary_camouflage_mp
+- terror_officer_squad_mp (index 130) [Infantry]: game=1, wiki=0
+  - ids: model_24_smoke_grenade_terror_officer_mp
+- jaeger_light_infantry_recon_squad_mp (index 131) [Infantry]: game=3, wiki=0
+  - ids: infantry_medkits_mp, jeager_light_sprint_mp, sniper_hold_fire_mp
+- obersoldaten_squad_mp (index 132) [Infantry]: game=1, wiki=0
+  - ids: obers_suppressive_fire_mp
+- panzerfusilier_squad_mp (index 133) [Infantry]: game=1, wiki=0
+  - ids: panzerfusillier_sprint_mp
+- volksgrenadier_squad_mp (index 134) [Infantry]: game=1, wiki=0
+  - ids: volksgrenadier_rudimentary_repair_ability_mp
+- raketenwerfer43_88mm_puppchen_antitank_gun_squad_mp (index 135) [Team weapons]: game=1, wiki=0
+  - ids: rakten_camouflage_mp
+- flak_emplacement (index 136) [Team weapons]: game=0, wiki=0
+- flak_emplacement_base (index 137) [Team weapons]: game=0, wiki=0
+- le_ig_18_inf_support_gun_squad_mp (index 138) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- mg34_heavy_machine_gun_squad_mp (index 139) [Team weapons]: game=1, wiki=0
+  - ids: ambush_camo_hold_fire_mg_mp
+- pak43_88mm_at_gun_squad_westgerman_mp (index 140) [Team weapons]: game=0, wiki=0
+- sdkfz_251_17_flak_halftrack_squad_mp (index 141) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- sdkfz_251_20_ir_searchlight_halftrack_squad_mp (index 142) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- sdkfz_251_wurfrahmen_40_halftrack_squad_mp (index 143) [Vehicles]: game=3, wiki=0
+  - ids: walking_stuka_rocket_barrage_creeping_mp, walking_stuka_rocket_barrage_napalm_mp, vehicle_emergency_repair_ability_mp
+- hetzer_squad_mp (index 144) [Vehicles]: game=3, wiki=0
+  - ids: heat_shells_ability_mp, vehicle_emergency_repair_ability_mp, usf_hold_fire_mp
+- okw_howitzer_105mm_le_fh18_artillery_mp (index 145) [Team weapons]: game=0, wiki=0
+- jagdpanzer_tank_destroyer_squad_mp (index 146) [Vehicles]: game=2, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp, heat_shells_ability_mp
+- jagdtiger_td_squad_mp (index 147) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- king_tiger_squad_mp (index 148) [Vehicles]: game=2, wiki=0
+  - ids: heat_shells_ability_mp, vehicle_emergency_repair_ability_mp
+- kubelwagen_squad_mp (index 149) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- ostwind_squad_westgerman_mp (index 150) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- panther_ausf_g_squad_mp (index 151) [Vehicles]: game=2, wiki=0
+  - ids: heat_shells_ability_mp, vehicle_emergency_repair_ability_mp
+- panther_commander_squad_mp (index 152) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- panzer_ii_luchs_squad_mp (index 153) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp
+- panzer_iv_ausf_j_battle_group_mp (index 154) [Vehicles]: game=2, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp, heat_shells_ability_mp
+- armored_car_sdkfz_234_squad_mp (index 155) [Vehicles]: game=2, wiki=0
+  - ids: vehicle_emergency_repair_ability_mp, heat_shells_ability_mp
+- sturmtiger_squad_mp (index 156) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_sturmtiger_mp
+- sws_halftrack_squad_mp (index 157) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_sws_mp
+- scout_car_sdkfz221_mp (index 162) [Vehicles]: game=1, wiki=0
+  - ids: vehicle_emergency_repair_ability_221_mp
+- west_german_tiger_squad_mp (index 163) [Vehicles]: game=0, wiki=0
+
+## USF — 36 юнитов, пехоты 14
+
+### Пехота (для weapon-issue; стволы кроме основного)
+- **assault_engineer_squad_mp** (index 0) — 3: assault_engineer_flamethrower, assault_engineer_flamethrower, engineer_m3_grease_gun_mp
+- **captain_squad_mp** (index 1) — 9: m23_smoke_at_mp, m23_smoke_at_mp, riflemen_bar_30_06_light_machine_gun_mp, m1_garand_rifle_rifleman_mp, captain_m1_thompson_mp, riflemen_bar_30_06_light_machine_gun_mp, m1_garand_rifle_rifleman_mp, m1_garand_rifle_rifleman_mp, captain_m1_thompson_mp
+- **lieutenant_squad_mp** (index 2) — 7: mk2_mp, m23_smoke_at_mp, m9_bazooka_mp, captain_m1_thompson_mp, m9_bazooka_mp, m1_garand_rifle_rifleman_mp, captain_m1_thompson_mp
+- **major_squad_mp** (index 3) — 4: m23_smoke_at_mp, m1_carbine_rear_echelon_mp, m1911_45cal_pistol_mp, m1_carbine_rear_echelon_mp
+- **paratrooper_squad_mp** (index 4) — 11: m9_bazooka_paratrooper_mp, riflemen_bar_30_06_light_machine_gun_mp, mk2_paratrooper_mp, paratrooper_m1_thompson_mp, paratrooper_m1919a6_lmg_moving_mp, m9_bazooka_paratrooper_mp, riflemen_bar_30_06_light_machine_gun_mp, mk2_paratrooper_mp, paratrooper_m1_thompson_mp, paratrooper_m1919a6_lmg_moving_mp, m1a1_carbine_paratrooper_mp
+- **paratrooper_squad_support_mp** (index 5) — 11: m9_bazooka_paratrooper_mp, riflemen_bar_30_06_light_machine_gun_mp, mk2_paratrooper_mp, paratrooper_m1919a6_lmg_moving_mp, paratrooper_m1_thompson_mp, m9_bazooka_paratrooper_mp, riflemen_bar_30_06_light_machine_gun_mp, mk2_paratrooper_mp, paratrooper_m1919a6_lmg_moving_mp, paratrooper_m1_thompson_mp, m1a1_carbine_paratrooper_mp
+- **pathfinder_squad_mp** (index 6) — 2: m1a1_carbine_snipe_pathfinder_mp, m1a1_carbine_pathfinder_mp
+- **pathfinder_squad_recon_mp** (index 7) — 1: m1a1_carbine_pathfinder_mp
+- **ranger_squad_commander_mp** (index 8) — 8: mk2_paratrooper_mp, m9_bazooka_paratrooper_mp, riflemen_bar_30_06_light_machine_gun_mp, paratrooper_m1_thompson_mp, m9_bazooka_paratrooper_mp, riflemen_bar_30_06_light_machine_gun_mp, paratrooper_m1_thompson_mp, m1_garand_ranger_mp
+- **rear_echelon_squad_mp** (index 9) — 8: m23_smoke_at_mp, fake_minesweeper_weapon, assault_engineer_flamethrower, rear_echelon_m17_rifle_grenade_commander_mp, fake_minesweeper_weapon, assault_engineer_flamethrower, rear_echelon_m17_rifle_grenade_commander_mp, m1_carbine_rear_echelon_mp
+- **riflemen_squad_mp** (index 10) — 11: mk2_mp, rifleman_at_rifle_grenade, riflemen_flare, riflemen_molotov_weapon_mp, m9_bazooka_mp, riflemen_30cal_lmg_mp, riflemen_bar_30_06_light_machine_gun_mp, m9_bazooka_mp, riflemen_30cal_lmg_mp, riflemen_bar_30_06_light_machine_gun_mp, m1_garand_rifle_rifleman_mp
+- **usf_medic_squad_mp** (index 11) — 0: —
+- **vehicle_crew_squad_mp** (index 13) — 0: —
+- **riflemen_cavalry_squad_mp** (index 158) — 3: m23_smoke_at_mp, penal_troop_satchel_charge_at_mp, engineer_m3_grease_gun_mp
+
+### Все юниты (для способностей; game = id из game-abilities.ts)
+- assault_engineer_squad_mp (index 0) [Infantry]: game=2, wiki=0
+  - ids: aef_repair_critical_mp, soviet_repair_ability_mp
+- captain_squad_mp (index 1) [Infantry]: game=0, wiki=0
+- lieutenant_squad_mp (index 2) [Infantry]: game=0, wiki=0
+- major_squad_mp (index 3) [Infantry]: game=0, wiki=0
+- paratrooper_squad_mp (index 4) [Infantry]: game=4, wiki=0
+  - ids: paratrooper_mk2_fragmentation_grenade_mp, paratrooper_suppressing_fire_ability_mp, sniper_hold_fire_mp, paratrooper_stationary_camouflage_mp
+- paratrooper_squad_support_mp (index 5) [Infantry]: game=4, wiki=0
+  - ids: paratrooper_mk2_fragmentation_grenade_mp, paratrooper_suppressing_fire_ability_mp, paratrooper_stationary_camouflage_mp, sniper_hold_fire_mp
+- pathfinder_squad_mp (index 6) [Infantry]: game=3, wiki=0
+  - ids: pathfinder_in_cover_stationary_camouflage_mp, sniper_hold_fire_mp, pathfinder_in_cover_stationary_camouflage_improved_mp
+- pathfinder_squad_recon_mp (index 7) [Infantry]: game=3, wiki=0
+  - ids: pathfinder_in_cover_stationary_camouflage_mp, sniper_hold_fire_mp, pathfinder_in_cover_stationary_camouflage_improved_mp
+- ranger_squad_commander_mp (index 8) [Infantry]: game=0, wiki=0
+- rear_echelon_squad_mp (index 9) [Infantry]: game=2, wiki=0
+  - ids: aef_repair_ability_rear_echelon_mp, rear_echelon_volley_fire_ability_mp
+- riflemen_squad_mp (index 10) [Infantry]: game=1, wiki=0
+  - ids: rifleman_fire_up_mp
+- usf_medic_squad_mp (index 11) [Infantry]: game=0, wiki=0
+- vehicle_crew_squad_mp (index 13) [Infantry]: game=2, wiki=0
+  - ids: aef_repair_ability_vehicle_crew_mp, aef_repair_critical_mp
+- m1_57mm_at_gun_squad_mp (index 14) [Team weapons]: game=0, wiki=0
+- m1_75mm_pack_howitzer_squad_mp (index 15) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- m1_81mm_mortar_squad_mp (index 16) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- m2hb_50cal_hmg_squad_mp (index 17) [Team weapons]: game=1, wiki=0
+  - ids: ambush_camo_hold_fire_mg_mp
+- dodge_wc51_50cal_squad_mp (index 18) [Vehicles]: game=0, wiki=0
+- m10_tank_destroyer_squad_mp (index 19) [Vehicles]: game=0, wiki=0
+- m20_utility_car_squad_mp (index 20) [Vehicles]: game=0, wiki=0
+- m26_pershing_mp (index 21) [Vehicles]: game=0, wiki=0
+- m36_tank_destroyer_squad_mp (index 22) [Vehicles]: game=0, wiki=0
+- m15a1_aa_halftrack_squad_mp (index 23) [Vehicles]: game=0, wiki=0
+- m21_mortar_halftrack_squad_mp (index 24) [Vehicles]: game=1, wiki=0
+  - ids: usf_hold_fire_mp
+- m3_halftrack_squad_assault_mp (index 25) [Vehicles]: game=1, wiki=0
+  - ids: armored_rifle_command_mp
+- m4a3e8_sherman_easy_8_squad_mp (index 26) [Vehicles]: game=0, wiki=0
+- m4a3_76mm_sherman_bulldozer_squad_mp (index 27) [Vehicles]: game=0, wiki=0
+- m4a3_76mm_sherman_squad_commander_mp (index 28) [Vehicles]: game=0, wiki=0
+- m4a3_sherman_squad_mp (index 29) [Vehicles]: game=0, wiki=0
+- m5a1_stuart_squad_mp (index 30) [Vehicles]: game=0, wiki=0
+- aef_halftrack_squad_mp (index 31) [Vehicles]: game=2, wiki=0
+  - ids: m5_m3a1_overdrive_mp, vehicle_crew_repair_toggle_mp
+- m7b1_priest_squad_mp (index 32) [Vehicles]: game=0, wiki=0
+- m8a1_hmc_squad_mp (index 33) [Vehicles]: game=0, wiki=0
+- m8_greyhound_squad_mp (index 34) [Vehicles]: game=0, wiki=0
+- t34_calliope_squad_mp (index 35) [Vehicles]: game=0, wiki=0
+- riflemen_cavalry_squad_mp (index 158) [Infantry]: game=2, wiki=0
+  - ids: rifleman_fire_up_mp, riflemen_cavalry_covering_fire_mp
+
+## British — 31 юнитов, пехоты 11
+
+### Пехота (для weapon-issue; стволы кроме основного)
+- **brit_medic_squad_mp** (index 36) — 0: —
+- **air_support_officer_squad_mp** (index 37) — 15: tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, tommy_gammon_bomb_medium, infantry_vickers_k_machine_gun_mp, tommy_9mm_sten_gun_bodyguard_mp, tommy_9mm_sten_gun_mp, tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, tommy_gammon_bomb_medium, infantry_vickers_k_machine_gun_mp, tommy_9mm_sten_gun_bodyguard_mp, tommy_9mm_sten_gun_bodyguard_mp, tommy_9mm_sten_gun_mp
+- **commando_squad_mp** (index 38) — 9: commando_bren_lmg_moving_mp, piat_launcher_mp, tommy_gammon_bomb_medium, smoke_cover_grenade, commando_bren_lmg_moving_mp, piat_launcher_mp, tommy_gammon_bomb_medium, smoke_cover_grenade, commando_sten_mk_vi_silenced_smg_mp
+- **infiltration_commando_squad_mp** (index 39) — 9: commando_bren_lmg_moving_mp, piat_launcher_mp, tommy_gammon_bomb_medium, smoke_cover_grenade, commando_bren_lmg_moving_mp, piat_launcher_mp, tommy_gammon_bomb_medium, smoke_cover_grenade, commando_sten_mk_vi_silenced_smg_mp
+- **sapper_squad_mp** (index 40) — 6: tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, heat_grenade, fake_minesweeper_weapon, infantry_vickers_k_machine_gun_mp
+- **sapper_squad_recovery_mp** (index 41) — 7: tommy_bren_light_machine_gun_mp, piat_launcher_mp, rgd_1_smoke_mp, heat_grenade, infantry_vickers_k_machine_gun_mp, fake_minesweeper_weapon, assault_engineer_flamethrower
+- **sniper_british_squad_mp** (index 42) — 4: boys_at_rifle_sniper_critical_shot_mp, sniper_smoke_marker_grenade, sniper_smoke_marker_grenade, boys_at_rifle_sniper_mp
+- **tommy_squad_mp** (index 43) — 15: tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, tommy_mills_bomb, tommy_officer_smoke_marker_grenade, tommy_gammon_bomb_heavy, tommy_9mm_sten_gun_mp, tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, tommy_mills_bomb, tommy_officer_smoke_marker_grenade, tommy_gammon_bomb_heavy, tommy_lee_enfield_rifle_mp, tommy_9mm_sten_gun_mp
+- **tommy_squad_tank_hunter_mp** (index 44) — 13: tommy_mills_bomb, tommy_officer_smoke_marker_grenade, tommy_gammon_bomb_heavy, heat_grenade, boys_at_rifle_mp, tommy_9mm_sten_gun_mp, tommy_mills_bomb, tommy_officer_smoke_marker_grenade, tommy_gammon_bomb_heavy, heat_grenade, boys_at_rifle_mp, tommy_lee_enfield_rifle_mp, tommy_9mm_sten_gun_mp
+- **tommy_squad_assault_mp** (index 159) — 9: tommy_mills_bomb, tommy_gammon_bomb_heavy, no77_wp_grenade_mp, rgd_1_smoke_mp, tommy_mills_bomb, tommy_gammon_bomb_heavy, no77_wp_grenade_mp, rgd_1_smoke_mp, tommy_9mm_sten_gun_mp
+- **tommy_squad_raid_mp** (index 167) — 13: tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, riflemen_molotov_weapon_mp, infantry_vickers_k_machine_gun_mp, tommy_9mm_sten_gun_mp, tommy_bren_light_machine_gun_mp, sapper_vickers_k_machine_gun_mp, piat_launcher_mp, riflemen_molotov_weapon_mp, infantry_vickers_k_machine_gun_mp, raid_section_lee_enfield_rifle_mp, tommy_9mm_sten_gun_mp
+
+### Все юниты (для способностей; game = id из game-abilities.ts)
+- brit_medic_squad_mp (index 36) [Infantry]: game=0, wiki=0
+- air_support_officer_squad_mp (index 37) [Infantry]: game=4, wiki=0
+  - ids: heroic_charge_mp, ambush_camo_hold_fire_mp, qf_25lb_coordinated_fire_order_officer_no_smoke_mp, smoke_barrage_tommy_flare_officer_mp
+- commando_squad_mp (index 38) [Infantry]: game=2, wiki=0
+  - ids: commando_infiltration_camouflage_mp, sniper_hold_fire_mp
+- infiltration_commando_squad_mp (index 39) [Infantry]: game=2, wiki=0
+  - ids: commando_infiltration_camouflage_mp, sniper_hold_fire_mp
+- sapper_squad_mp (index 40) [Infantry]: game=4, wiki=0
+  - ids: brit_repair_ews_ability_sappers_mp, brit_repair_ability_sappers_mp, ambush_camo_hold_fire_mp, sapper_heat_grenade_mp
+- sapper_squad_recovery_mp (index 41) [Infantry]: game=4, wiki=0
+  - ids: ambush_camo_hold_fire_mp, brit_repair_ability_recovery_sappers_mp, brit_repair_ews_ability_recovery_sappers_mp, sapper_heat_grenade_mp
+- sniper_british_squad_mp (index 42) [Infantry]: game=3, wiki=0
+  - ids: brit_sniper_delayed_cover_auto_camouflage_mp, sniper_hold_fire_mp, qf_25lb_coordinated_fire_order_sniper_mp
+- tommy_squad_mp (index 43) [Infantry]: game=3, wiki=0
+  - ids: qf_25lb_coordinated_fire_order_officer_mp, ambush_camo_hold_fire_mp, smoke_barrage_tommy_flare_mp
+- tommy_squad_tank_hunter_mp (index 44) [Infantry]: game=3, wiki=0
+  - ids: qf_25lb_coordinated_fire_order_officer_mp, tommy_heat_grenade_mp, ambush_camo_hold_fire_mp
+- brit_17_pounder_at_gun_squad_commander_mp (index 45) [Team weapons]: game=0, wiki=0
+- brit_6_pounder_at_gun_squad_mp (index 46) [Team weapons]: game=0, wiki=0
+- brit_bofors_40mm_autocannon_squad_commander_mp (index 47) [Team weapons]: game=0, wiki=0
+- british_machine_gun_squad_mp (index 48) [Team weapons]: game=1, wiki=0
+  - ids: ambush_camo_hold_fire_mg_mp
+- brit_land_mattress_launcher_squad_mp (index 49) [Team weapons]: game=0, wiki=0
+- brit_3_inch_mortar_team_commander_mp (index 50) [Team weapons]: game=1, wiki=0
+  - ids: british_mortar_hold_fire_mp
+- aec_armoured_car_squad_mp (index 51) [Vehicles]: game=0, wiki=0
+- centaur_aa_mk2_squad_mp (index 52) [Vehicles]: game=0, wiki=0
+- churchill_avre_squad_mp (index 53) [Vehicles]: game=0, wiki=0
+- churchill_crocodile_mp (index 54) [Vehicles]: game=0, wiki=0
+- churchill_default_squad_mp (index 55) [Vehicles]: game=0, wiki=0
+- comet_tank_squad_mp (index 56) [Vehicles]: game=0, wiki=0
+- cromwell_mk4_75mm_squad_mp (index 57) [Vehicles]: game=0, wiki=0
+- m3_halftrack_squad__resupply_mp (index 58) [Vehicles]: game=0, wiki=0
+- sexton_spg_squad_mp (index 59) [Vehicles]: game=0, wiki=0
+- sherman_firefly_squad_mp (index 60) [Vehicles]: game=0, wiki=0
+- universal_carrier_squad_mp (index 61) [Vehicles]: game=0, wiki=0
+- valentine_observation_mp (index 62) [Vehicles]: game=1, wiki=0
+  - ids: valentine_artillery_sexton_victor_target_concentration_barrage_mp
+- tommy_squad_assault_mp (index 159) [Infantry]: game=2, wiki=0
+  - ids: ambush_camo_hold_fire_mp, british_smoke_grenade_mp
+- m10_tank_destroyer_squad_british_mp (index 160) [Vehicles]: game=0, wiki=0
+- m1_81mm_mortar_british_squad_mp (index 161) [Team weapons]: game=1, wiki=0
+  - ids: german_mortar_hold_fire_mp
+- tommy_squad_raid_mp (index 167) [Infantry]: game=4, wiki=0
+  - ids: ambush_camo_hold_fire_mp, tommy_molotov_grenade_mp, tommy_sprint_mp, raid_section_general_mine_mp
+

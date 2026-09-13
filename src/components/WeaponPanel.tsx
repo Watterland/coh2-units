@@ -5,8 +5,8 @@ import { tWeapon } from '../lib/translations';
 import { gameWeaponMeta } from '../data/game-weapon-meta';
 import { gameAbilityIcons } from '../data/game-ability-icons';
 import { assetUrl } from '../lib/assets';
-import { weaponAvailableIn } from '../data';
 import { groupWeapons, isCrewSmallArm, type WeaponGroup } from '../lib/weaponModes';
+import { weaponIssueFor, type WeaponIssueEntry } from '../data/weapon-issue';
 
 const WEAPON_ROWS: { label: string; get: (w: Weapon) => string }[] = [
   { label: 'Урон', get: (w) => fmtNearMidFar(w.damage) },
@@ -46,8 +46,11 @@ export default function WeaponPanel({ unit }: { unit: Unit }) {
             <WeaponRow
               weapon={group.base}
               isMain={group.base.name === mainName}
-              issued={isInfantry && isIssued(group.base, mainName)}
-              doctrines={isInfantry ? weaponAvailableIn(unit.faction, group.base.name ?? '') : []}
+              issue={
+                isInfantry && group.base.name !== mainName
+                  ? weaponIssueFor({ faction: unit.faction, id: unit.id ?? undefined }, group.base.name ?? '')
+                  : undefined
+              }
               modeLabel={group.baseMode?.label}
               expanded={expanded === gi}
               onToggle={() => setExpanded(expanded === gi ? null : gi)}
@@ -121,12 +124,6 @@ export default function WeaponPanel({ unit }: { unit: Unit }) {
   );
 }
 
-function isIssued(weapon: Weapon, mainName: string | null | undefined): boolean {
-  if (weapon.name === mainName) return false;
-  // Slot weapons carried by exactly one soldier are usually upgrade choices.
-  return Number(weapon.hardpoint ?? 0) >= 1 && (weapon.count ?? 0) <= 1;
-}
-
 function weaponIcon(name: string | null): string | undefined {
   if (!name) return undefined;
   const symbol = gameWeaponMeta[name]?.icon_name;
@@ -137,22 +134,22 @@ function weaponIcon(name: string | null): string | undefined {
 function WeaponRow({
   weapon: w,
   isMain,
-  issued,
-  doctrines,
+  issue,
   modeLabel,
   expanded,
   onToggle,
 }: {
   weapon: Weapon;
   isMain: boolean;
-  issued: boolean;
-  doctrines: string[];
+  issue?: WeaponIssueEntry;
   modeLabel?: string;
   expanded: boolean;
   onToggle: () => void;
 }) {
   const type = w.name ? gameWeaponMeta[w.name]?.type : undefined;
   const icon = weaponIcon(w.name);
+  const issueName = typeof issue === 'string' ? issue : issue?.issue;
+  const doctrines = typeof issue === 'object' ? issue.doctrines ?? [] : [];
   return (
     <div className="rounded-lg border border-white/5 bg-white/[0.02] p-3">
       <button onClick={onToggle} className="flex w-full items-center justify-between text-left">
@@ -184,20 +181,22 @@ function WeaponRow({
                   {modeLabel}
                 </span>
               )}
-              {doctrines.length > 0 ? (
+              {issueName === 'doctrine' ? (
                 <span
                   className="ml-2 rounded bg-orange-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-orange-400"
                   title={`Выдаётся доктриной${doctrines.length > 1 ? 'ами' : ''}: ${doctrines.join(', ')}`}
                 >
-                  Доктрина: {doctrines.join(', ')}
+                  Доктрина{doctrines.length ? `: ${doctrines.join(', ')}` : ''}
                 </span>
-              ) : (
-                issued && (
-                  <span className="ml-2 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-400">
-                    Выдаётся
-                  </span>
-                )
-              )}
+              ) : issueName === 'base' ? (
+                <span className="ml-2 rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-emerald-400">
+                  Штатное
+                </span>
+              ) : issueName === 'upgrade' ? (
+                <span className="ml-2 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-400">
+                  Улучшение
+                </span>
+              ) : null}
             </h3>
             {type && <p className="text-[11px] text-zinc-500">{type}</p>}
           </div>

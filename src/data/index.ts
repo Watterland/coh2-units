@@ -28,6 +28,16 @@ import {
   doctrineVehicleIconIds,
 } from './doctrine-unit-icons';
 import { assetUrl } from '../lib/assets';
+import { abilityExclusionsBritish } from './ability-exclusions-british';
+import { abilityExclusionsOkw } from './ability-exclusions-okw';
+import { abilityExclusionsOstheer } from './ability-exclusions-ostheer';
+import { abilityExclusionsSoviet } from './ability-exclusions-soviet';
+import { abilityExclusionsUsf } from './ability-exclusions-usf';
+import { abilityRuBritish } from './ability-ru-british';
+import { abilityRuOkw } from './ability-ru-okw';
+import { abilityRuOstheer } from './ability-ru-ostheer';
+import { abilityRuSoviet } from './ability-ru-soviet';
+import { abilityRuUsf } from './ability-ru-usf';
 
 export const meta = {
   source: 'https://coh2.serealia.ca/',
@@ -36,6 +46,23 @@ export const meta = {
 };
 export const factions: Faction[] = ['British', 'OKW', 'Ostheer', 'Soviet', 'USF'];
 export const unitsLite = unitsLiteRaw as UnitLite[];
+const abilityExclusionsByFaction: Record<Faction, Record<string, string[]>> = {
+  British: abilityExclusionsBritish,
+  OKW: abilityExclusionsOkw,
+  Ostheer: abilityExclusionsOstheer,
+  Soviet: abilityExclusionsSoviet,
+  USF: abilityExclusionsUsf,
+};
+const abilityRuByFaction: Record<
+  Faction,
+  Record<string, { nameRu: string; descriptionRu?: string }>
+> = {
+  British: abilityRuBritish,
+  OKW: abilityRuOkw,
+  Ostheer: abilityRuOstheer,
+  Soviet: abilityRuSoviet,
+  USF: abilityRuUsf,
+};
 export const abilities: Ability[] = wikiAbilities.map((ability) => ({
   ...ability,
   icon: ability.icon ? assetUrl(ability.icon) : undefined,
@@ -103,13 +130,18 @@ function normalizeWikiAbilityName(name: string): string {
 
 export function abilitiesForUnit(unitIndex: number): Ability[] {
   const lite = unitLiteByIndex(unitIndex);
-  const wiki = abilities.filter((a) => a.unitIndex === unitIndex);
+  const exclusions = abilityExclusionsByFaction[lite?.faction ?? 'Soviet'][lite?.id ?? ''] ?? [];
+  const isExcluded = (name: string) => exclusions.includes(normalizeAbilityName(name));
+  const translation = (id: string) =>
+    abilityRuByFaction[lite?.faction ?? 'Soviet'][id.replace(/_(mp|sp|tow)$/i, '').toLowerCase()];
+  const wiki = abilities.filter((a) => a.unitIndex === unitIndex && !isExcluded(a.name));
   const seen = new Set(wiki.map((ability) => normalizeAbilityName(ability.name)));
   const game = (gameAbilityIds[unitIndex] ?? [])
     .map((id) => {
       const key = id.replace(/_(mp|sp|tow)$/i, '');
       const detail = gameAbilityDetails[id] ?? gameAbilityDetails[key];
       const name = readableAbilityName(id);
+      const translated = translation(id);
       const gameIcon =
         (detail?.icon_name ? gameAbilityIcons[detail.icon_name] : undefined) ??
         doctrineUnitAbilityIconIds[name];
@@ -123,8 +155,8 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       return {
         unitIndex,
         name,
-        nameRu: detail?.name,
-        description: detail?.description ?? '',
+        nameRu: translated?.nameRu ?? detail?.name,
+        description: translated?.descriptionRu ?? detail?.description ?? '',
         cost: detail?.cost,
         icon: (gameIcon ? assetUrl(gameIcon) : undefined) ?? findAbilityIcon(name),
         type: 'active' as const,
@@ -132,6 +164,7 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       };
     })
     .filter((ability) => {
+      if (isExcluded(ability.name)) return false;
       const key = normalizeAbilityName(ability.name);
       if (seen.has(key)) return false;
       seen.add(key);
