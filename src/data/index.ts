@@ -13,6 +13,7 @@ import { gameAbilityIcons } from './game-ability-icons';
 import { doctrineCatalog } from './doctrine-catalog';
 import { doctrineAbilityTexts, abilityNameRu, unitAbilityTexts } from './doctrine-ability-texts';
 import { gameAbilityDetails } from './game-ability-details';
+import { gameAbilityTexts } from './game-ability-texts';
 import { gameUnitDescriptions, gameUnitNames } from './game-unit-names';
 import {
   DOCTRINE_ONLY_UNIT_INDEXES,
@@ -128,20 +129,30 @@ function normalizeWikiAbilityName(name: string): string {
   return name.replace(/\[\[File:[^\]]*\]\]/g, '').trim();
 }
 
+function hasCyrillic(text: string | undefined): boolean {
+  return !!text && /[а-яё]/i.test(text);
+}
+
 export function abilitiesForUnit(unitIndex: number): Ability[] {
   const lite = unitLiteByIndex(unitIndex);
   const exclusions = abilityExclusionsByFaction[lite?.faction ?? 'Soviet'][lite?.id ?? ''] ?? [];
   const isExcluded = (name: string) => exclusions.includes(normalizeAbilityName(name));
-  const translation = (id: string) =>
-    abilityRuByFaction[lite?.faction ?? 'Soviet'][id.replace(/_(mp|sp|tow)$/i, '').toLowerCase()];
-  const wiki = abilities.filter((a) => a.unitIndex === unitIndex && !isExcluded(a.name));
-  const seen = new Set(wiki.map((ability) => normalizeAbilityName(ability.name)));
+  const manual = (...keys: (string | undefined)[]) => {
+    const map = abilityRuByFaction[lite?.faction ?? 'Soviet'];
+    for (const key of keys) {
+      const hit = key && map[key.toLowerCase()];
+      if (hit) return hit;
+    }
+    return undefined;
+  };
+  // Игровые данные (RGD + UCS) — источник истины для имён и описаний.
   const game = (gameAbilityIds[unitIndex] ?? [])
     .map((id) => {
       const key = id.replace(/_(mp|sp|tow)$/i, '');
       const detail = gameAbilityDetails[id] ?? gameAbilityDetails[key];
       const name = readableAbilityName(id);
-      const translated = translation(id);
+      const ucs = gameAbilityTexts[normalizeAbilityName(name)];
+      const translated = manual(key.toLowerCase(), normalizeAbilityName(name));
       const gameIcon =
         (detail?.icon_name ? gameAbilityIcons[detail.icon_name] : undefined) ??
         doctrineUnitAbilityIconIds[name];
@@ -155,41 +166,65 @@ export function abilitiesForUnit(unitIndex: number): Ability[] {
       return {
         unitIndex,
         name,
-        nameRu: translated?.nameRu ?? detail?.name,
-        description: translated?.descriptionRu ?? detail?.description ?? '',
+        nameRu:
+          translated?.nameRu ??
+          detail?.name ??
+          ucs?.nameRu ??
+          abilityNameRu[name],
+        description:
+          translated?.descriptionRu ?? detail?.description ?? ucs?.descriptionRu ?? '',
         cost: detail?.cost,
         icon: (gameIcon ? assetUrl(gameIcon) : undefined) ?? findAbilityIcon(name),
         type: 'active' as const,
         ...(availableIn.length ? { availableIn } : {}),
       };
     })
-    .filter((ability) => {
-      if (isExcluded(ability.name)) return false;
-      const key = normalizeAbilityName(ability.name);
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  const merged = [...wiki, ...game].map((ability) => {
-    const cleanName = normalizeWikiAbilityName(ability.name);
-    const nameRu = ability.nameRu ?? abilityNameRu[cleanName] ?? abilityNameRu[ability.name];
-    if (ability.description && ability.icon && nameRu === ability.name && ability.availableIn) {
-      return ability;
-    }
-    return {
-      ...ability,
-      name: cleanName,
-      description: ability.description || unitAbilityTexts[cleanName] || '',
-      nameRu,
-      icon: ability.icon ?? resolveUnitAbilityIcon(cleanName),
-      availableIn:
-        ability.availableIn ??
-        (doctrineNamesForAbilityName(cleanName, lite?.faction).length
-          ? doctrineNamesForAbilityName(cleanName, lite?.faction)
-          : undefined),
-    };
-  });
-  return dedupeByDisplayName(merged);
+    .filter((ability) => !isExcluded(ability.name));
+
+  // Wiki-записи, дублирующие игровые (по англ. или рус. имени), выбрасываются:
+  // игровой вариант уже переведён и точнее.
+  const gameKeys = new Set(
+    game
+      .flatMap((ability) => [
+        normalizeAbilityName(ability.name),
+        normalizeAbilityName(ability.nameRu ?? ''),
+      ])
+      .filter(Boolean),
+  );
+  const wiki = abilities
+    .filter((a) => a.unitIndex === unitIndex && !isExcluded(a.name))
+    .filter((a) => !gameKeys.has(normalizeAbilityName(a.name)))
+    .map((ability) => {
+      const cleanName = normalizeWikiAbilityName(ability.name);
+      const norm = normalizeAbilityName(cleanName);
+      const ucs = gameAbilityTexts[norm];
+      const translated = manual(norm);
+      const nameRu =
+        (hasCyrillic(ability.nameRu) ? ability.nameRu : undefined) ??
+        translated?.nameRu ??
+        (hasCyrillic(ucs?.nameRu) ? ucs.nameRu : undefined) ??
+        abilityNameRu[cleanName] ??
+        abilityNameRu[ability.name];
+      const ruDescription =
+        translated?.descriptionRu ??
+        (hasCyrillic(ucs?.descriptionRu) ? ucs.descriptionRu : undefined) ??
+        (hasCyrillic(unitAbilityTexts[cleanName]) ? unitAbilityTexts[cleanName] : undefined);
+      return {
+        ...ability,
+        name: cleanName,
+        description: hasCyrillic(ability.description) ? ability.description : ruDescription ?? '',
+        nameRu,
+        icon: ability.icon ?? resolveUnitAbilityIcon(cleanName),
+        availableIn:
+          ability.availableIn ??
+          (doctrineNamesForAbilityName(cleanName, lite?.faction).length
+            ? doctrineNamesForAbilityName(cleanName, lite?.faction)
+            : undefined),
+      };
+    })
+    .filter((ability) => !isExcluded(ability.name));
+
+  return dedupeByDisplayName([...game, ...wiki]);
 }
 
 // Translated ability names collide across sources (e.g. wiki 'Repair' and game

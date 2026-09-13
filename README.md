@@ -20,7 +20,7 @@ npm run build
 - Боевые характеристики: [coh2.serealia.ca](https://coh2.serealia.ca/)
 - Иллюстрации, способности, доктрины, стоимость и требования: Company of Heroes Wiki (Fandom)
 
-`src/data/units.json` содержит выгруженные боевые характеристики. `src/data/wiki.ts` создаётся автоматически и добавляет материалы Wiki.
+`src/data/units.json` содержит выгруженные боевые характеристики. `src/data/wiki.ts` создаётся автоматически и добавляет материалы Wiki. `src/data/game-ability-texts.ts` создаётся автоматически и содержит русские тексты способностей из локали игры — не редактируйте эти файлы вручную.
 
 ## Обновление данных
 
@@ -35,6 +35,7 @@ npm run extract -- /path/to/serealia_script.js /path/to/serealia.html
 ```bash
 npm run fetch-wiki
 npm run cache-wiki-assets
+npm run extract-ability-texts
 ```
 
 Скрипт Wiki делает запросы с паузой и выполняется несколько минут. `cache-wiki-assets` скачивает найденные изображения в `public/media`, чтобы просмотр сайта не зависел от CDN Fandom. Не редактируйте `src/data/wiki.ts` вручную.

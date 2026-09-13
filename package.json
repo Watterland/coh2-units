@@ -15,6 +15,7 @@
     "extract-game-abilities": "node tools/extract-game-abilities.mjs",
     "extract-game-doctrines": "node tools/extract-game-doctrines.mjs",
     "extract-game-ability-icons": "node tools/extract-game-ability-icons.mjs",
+    "extract-ability-texts": "node tools/build-ability-texts.mjs",
     "extract-faction-symbols": "node tools/extract-faction-symbols.mjs",
     "split-data": "node tools/split-data.mjs",
     "test": "vitest run",
